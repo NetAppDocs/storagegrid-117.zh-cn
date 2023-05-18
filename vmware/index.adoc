@@ -1,0 +1,49 @@
+---
+permalink: vmware/index.html 
+sidebar: sidebar 
+keywords: vmware 
+summary: 在 VMware 环境中安装 StorageGRID 系统包括三个主要步骤。 
+---
+= 安装 VMware ：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 VMware 环境中安装 StorageGRID 系统包括三个主要步骤。
+
+. * 准备 * ：在规划和准备期间，您将执行以下任务：
++
+** 了解 StorageGRID 的硬件，软件，虚拟机，存储和性能要求。
+** 了解的具体信息 link:../network/index.html["StorageGRID 网络连接"] 这样，您就可以正确配置网络了。
+** 确定并准备要用于托管 StorageGRID 网格节点的物理服务器。
+** 在已准备好的服务器上：
++
+*** 安装 VMware vSphere 虚拟机管理程序
+*** 配置 ESX 主机
+*** 安装和配置 VMware vSphere 和 vCenter
+
+
+
+
+. * 部署 * ：使用 VMware vSphere Web Client 部署网格节点。部署网格节点时，它们会作为 StorageGRID 系统的一部分创建并连接到一个或多个网络。
++
+.. 使用 VMware vSphere Web Client ， .vmdk 文件和一组 .OVF 文件模板将基于软件的节点部署为您在步骤 1 中准备的服务器上的虚拟机（ VM ）。
+.. 使用 StorageGRID 设备安装程序部署 StorageGRID 设备节点。
++
+
+NOTE: StorageGRID 安装操作步骤 中不包含特定于硬件的安装和集成说明。要了解如何安装StorageGRID 设备、请参见 link:../installconfig/index.html["硬件安装快速入门"] 以查找您的产品的说明。
+
+
+
+. * 配置 * ：部署完所有节点后，请使用网格管理器配置网格并完成安装。
+
+
+以下说明为在 VMware 环境中部署和配置 StorageGRID 系统建议了一种标准方法。另请参见有关以下替代方法的信息：
+
+* 使用 deploy-vsphere-ovftool.sh Bash 脚本（可从安装归档中获取）在 VMware vSphere 中部署网格节点。
+* 使用 Python 配置脚本（在安装归档中提供）自动部署和配置 StorageGRID 系统。
+* 使用 Python 配置脚本（可从安装归档或 StorageGRID 设备安装程序获取）自动部署和配置设备网格节点。
+* 如果您是 StorageGRID 部署的高级开发人员，请使用安装 REST API 自动安装 StorageGRID 网格节点。
+

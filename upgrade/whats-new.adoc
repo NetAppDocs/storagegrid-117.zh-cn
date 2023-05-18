@@ -1,0 +1,245 @@
+---
+permalink: upgrade/whats-new.html 
+sidebar: sidebar 
+keywords: what is new in StorageGRID 11.7 
+summary: 此版本的 StorageGRID 引入了以下功能。 
+---
+= StorageGRID 11.7中的新增功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此版本的StorageGRID 引入了以下特性和功能变更。
+
+
+
+== 新增功能
+
+
+
+=== 网格联盟
+
+您可以在两个StorageGRID 系统之间配置网格联合连接、以克隆租户帐户信息并在网格之间复制分段对象、以便进行灾难恢复。请参见 link:../admin/grid-federation-overview.html["什么是网格联合？"]， link:../admin/grid-federation-what-is-account-clone.html["什么是帐户克隆"]，和 link:../admin/grid-federation-what-is-cross-grid-replication.html["什么是跨网格复制"]。
+
+
+
+=== 提高了读取可用性
+
+改进了"读后新写"(默认)一致性控制、使其更加可用。如果每个站点上最多有一个存储节点脱机、则对不存在的对象的GET或HEAD请求将成功。在这种情况下、不再需要将存储分段设置为可用的一致性控制。例如、即使在软件升级期间有一个存储节点脱机、在创建之前检查对象是否存在的应用程序也能正常运行、并保持新写后读取状态。
+
+
+
+=== 重命名网格、站点和节点
+
+通过新的维护操作步骤 、您可以更改在网格管理器中显示的显示名称。您可以根据需要随时安全地更新显示名称。请参见 link:../maintain/rename-grid-site-node-overview.html["重命名网格、站点和节点"]。
+
+
+
+=== FabricPool 和S3设置向导
+
+FabricPool 和S3设置向导将指导您完成配置StorageGRID 以用于ONTAP FabricPool 或其他S3客户端应用程序的每个步骤、并生成一个文件、您可以在其他应用程序中输入所需值时使用该文件。请参见 link:../fabricpool/use-fabricpool-setup-wizard.html["使用FabricPool 设置向导"] 和 link:../admin/use-s3-setup-wizard.html["使用S3设置向导"]。
+
+与此更改相关的是、信息板上现在会显示一个横幅、提醒新用户进行配置 link:../admin/configuring-s3-api-endpoint-domain-names.html["S3端点域名"] 用于S3虚拟托管模式请求并进行设置 link:../monitor/email-alert-notifications.html["警报电子邮件通知"]。
+
+
+
+=== 防火墙控制
+
+通过防火墙控制页面、您可以管理网格中节点上端口的外部访问、并定义允许访问已关闭端口的主机地址和IP子网。新页面还包括不可信客户端网络设置、现在允许您选择在配置不可信客户端网络时要打开的其他端口。请参见 link:../admin/configure-firewall-controls.html["配置内部防火墙"]。
+
+
+
+=== 增强的安全策略
+
+现在、您可以确定使用哪些协议和加密方法与客户端应用程序建立安全TLS连接、并确保与内部StorageGRID 服务的安全SSH连接。请参见 link:../admin/manage-tls-ssh-policy.html["管理TLS和SSH策略"]。
+
+
+
+=== 负载平衡器端点发生更改
+
+时间 link:../admin/configuring-load-balancer-endpoints.html["正在配置负载平衡器端点"]现在、您可以：
+
+* 允许所有租户访问端点(默认)、或者指定允许或阻止的租户列表、以便在租户及其端点之间实现更好的安全隔离。
+* 使用*Node Type*绑定模式要求客户端根据您选择的节点类型使用任何管理节点的IP地址(或相应的FQDN)或任何网关节点的IP地址。
+
+
+
+
+== GF6112全闪存设备
+
+全新StorageGRID SGF6112存储设备采用紧凑型设计、将计算控制器和存储控制器集成到1U机箱中。此设备支持12个SSD NVMe驱动器、每个驱动器的存储容量高达15.3 TB。SSD驱动器位于可提供弹性对象存储的RAID中。请参见 link:../installconfig/hardware-description-sg6100.html["GF6112设备：概述"]。
+
+
+
+== 其他 Grid Manager 增强功能
+
+
+
+=== ILM增强功能
+
+经过改进的ILM向导可以更轻松地指定筛选器、输入时间段和放置位置以及查看保留图表。选择存储池和EC方案进行放置时、系统会自动创建纠删编码配置文件。对于新安装的StorageGRID 11.7 (非升级)，系统会自动为每个站点创建一个存储池，并且新的*1每个站点复制*默认规则可确保新安装的多站点在默认情况下具有站点丢失保护。请参见 link:../ilm/index.html["使用 ILM 管理对象"]。
+
+
+
+=== 可自定义的信息板
+
+现在、您可以为网格管理器配置自定义信息板。请参见 link:../monitor/viewing-dashboard.html["查看和管理信息板"]。
+
+
+
+=== 卷还原UI
+
+通过存储卷还原、您可以在存储卷发生故障时还原对象数据。对于StorageGRID 11.7、除了现有的手动输入命令方法之外、您还可以从网格管理器启动卷还原。现在、使用网格管理器是还原对象数据的首选方法。请参见 link:../maintain/restoring-volume.html["使用网格管理器还原对象数据"]。
+
+
+
+=== 升级和修补程序UI
+
+升级到StorageGRID 11.7后、您可以同时应用最新的11.7修补程序。StorageGRID 升级页面将显示建议的升级路径、并直接链接到正确的下载页面。请参见 link:performing-upgrade.html["执行升级"]。
+
+
+
+=== 存储值的单位
+
+现在、您可以为网格管理器和租户管理器中显示的存储值选择基数为10或基数为2的单位。选择网格管理器或租户管理器右上角的用户下拉列表，然后选择*用户首选项*。
+
+
+
+=== 从网格管理器访问MIB
+
+现在、您可以使用SNMP代理页面从网格管理器访问SNMP兼容MIB文件。请参见 link:../monitor/access-snmp-mib.html["访问MIB文件"]。
+
+
+
+=== 为新节点自定义存储等级
+
+现在、在执行扩展以添加新站点或新存储节点时、您可以为每个新节点分配自定义存储级别。请参见 link:../expand/performing-expansion.html["执行扩展"]。
+
+
+
+== 租户管理器更新
+
+
+
+=== 跨网格复制
+
+有权使用的租户帐户 <<grid-federation,网格联合连接>> 可以将租户组、用户和S3密钥从一个网格克隆到另一个网格、并使用跨网格复制在两个网格之间复制存储分段对象。请参见 link:../tenant/grid-federation-account-clone.html["克隆租户组和用户"] 和 link:../tenant/grid-federation-manage-cross-grid-replication.html["管理跨网格复制"]。
+
+
+
+=== 从存储分段中删除所有对象
+
+租户管理器用户现在可以删除存储分段中的所有对象、以便可以删除存储分段。请参见 link:../tenant/deleting-s3-bucket-objects.html["删除存储分段中的对象"]。
+
+
+
+=== S3对象锁定默认保留
+
+现在、租户管理器用户可以在创建S3对象锁定分段时启用和配置默认保留。请参见 link:../tenant/creating-s3-bucket.html["创建 S3 存储区。"]。
+
+
+
+== S3更新
+
+
+
+=== S3对象锁定监管模式
+
+现在、在为对象指定S3对象锁定设置或为分段指定默认保留设置时、您可以使用监管模式。此保留模式允许具有特殊权限的用户绕过某些保留设置。请参见 link:../tenant/using-s3-object-lock.html["使用S3对象锁定保留对象"] 和 link:../s3/use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象锁定"]。
+
+
+
+=== 用于缓解勒索软件的S3组策略
+
+将此示例策略添加为S3租户帐户的组策略后、有助于缓解勒索软件攻击。它可防止永久删除旧对象版本。请参见 link:../tenant/creating-groups-for-s3-tenant.html["为 S3 租户创建组"]。
+
+
+
+=== S3存储分段的NewerNoncurrentVersion阈值
+
+。 `NewerNoncurrentVersions` 分段生命周期配置中的操作指定受版本控制的S3分段中保留的非当前版本数。此阈值将覆盖ILM提供的生命周期规则。请参见 link:../ilm/how-objects-are-deleted.html["如何删除对象"]。
+
+
+
+=== S3 Select更新
+
+S3选择对象内容现在支持镶木地板对象。此外、您现在可以将S3 Select与管理和网关负载平衡器端点结合使用、这些端点是运行内核且启用了cgroup v2的裸机节点。请参见 link:../s3/select-object-content.html["S3选择对象内容"]。
+
+
+
+== 其他增强功能
+
+
+
+=== 证书主题可选
+
+证书主题字段现在为可选字段。如果此字段留空、则生成的证书将使用第一个域名或IP地址作为使用者公用名(CN)。请参见 link:../admin/using-storagegrid-security-certificates.html["管理安全证书"]。
+
+
+
+=== ILM审核消息类别和新消息
+
+为ILM操作添加了一个审核消息类别、其中包括idel、LKCU和ORLM消息。此新类别设置为*Normal。请参见 link:../audit/ilm-audit-messages.html["ILM操作审核消息"]。
+
+此外、还添加了新的审核消息以支持11.7版的新功能：
+
+* link:../audit/bror-bucket-read-only-request.html["BROR：存储分段只读请求"]
+* link:../audit/cgrr-cross-grid-replication-request.html["CGRR：跨网格复制请求"]
+* link:../audit/ebdl-empty-bucket-delete.html["EBDL：清空存储分段删除"]
+* link:../audit/ebkr-empty-bucket-request.html["EBKR：空分段请求"]
+* link:../audit/s3-select-request.html["S3SL：S3选择请求"]
+
+
+
+
+=== 新警报
+
+为StorageGRID 11.7添加了以下新警报：
+
+* 检测到设备DAS驱动器故障
+* 设备DAS驱动器正在重建
+* 检测到设备风扇故障
+* 检测到设备NIC故障
+* 设备SSD严重警告
+* 无法发送AutoSupport 消息
+* Cassand拉 特写错误
+* 跨网格复制永久请求失败
+* 跨网格复制资源不可用
+* 调试性能影响
+* 网格联合证书到期
+* FabricPool 存储分段具有不受支持的存储分段一致性设置
+* 防火墙配置失败
+* 网格联合连接失败
+* 检测到存储设备风扇故障
+* 存储节点未处于所需的存储状态
+* 存储卷需要引起注意
+* 需要还原存储卷
+* 存储卷脱机
+* 已启用跟踪配置
+* 卷还原无法启动复制的数据修复
+
+
+
+
+=== 文档更改
+
+* 一个新的快速参考总结了StorageGRID 如何支持Amazon Simple Storage Service (S3) API。请参见 link:../s3/quick-reference-support-for-aws-apis.html["快速参考：支持的S3 API请求"]。
+* 新的 link:../primer/quick-start.html["StorageGRID 快速入门"] 列出了配置和使用StorageGRID 系统的高级步骤、并提供了指向相关说明的链接。
+* 为了便于使用、设备硬件安装说明进行了合并和整合。添加了快速入门作为硬件安装的高级指南。请参见link:../installconfig/index.html["硬件安装快速入门"]。
+* 对所有设备型号通用的维护说明进行了合并、整合并移至文档站点的维护部分。请参见 link:../commonhardware/index.html["通用节点维护：概述"]。
+* 每个设备型号的维护说明也移至维护部分：
++
+link:../sg6100/index.html["维护SGF6112硬件"]
+
++
+link:../sg6000/index.html["维护SG6000硬件"]
+
++
+link:../sg5700/index.html["维护SG5700硬件"]
+
++
+link:../sg100-1000/index.html["维护SG100和SG1000硬件"]
+
+

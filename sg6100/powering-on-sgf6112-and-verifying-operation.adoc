@@ -1,0 +1,75 @@
+---
+permalink: sg6100/powering-on-sgf6112-and-verifying-operation.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112,storage node, storage appliance, power on, turn on, start 
+summary: 完成维护后，打开产品电源。 
+---
+= 打开SGF6112并验证操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+完成维护后，打开控制器电源。
+
+.开始之前
+* 您已将控制器安装在机柜或机架中并连接了数据和电源线。
++
+link:reinstalling-sgf6112-into-cabinet-or-rack.html["将GF6112控制器重新安装到机柜或机架中"]
+
+* 您已将控制器物理定位在数据中心中。
++
+link:locating-sgf6112-in-data-center.html["在数据中心中找到GF6112设备"]
+
+
+
+.步骤
+. 打开产品电源。
++
+您可能需要卸下挡板才能接触到电源开关；如果是、请记得稍后重新安装。
+
+. 使用以下方法之一监控控制器LED和启动代码：
++
+** 按下控制器正面的电源开关。
+** 使用控制器 BMC 界面：
++
+... 访问控制器 BMC 界面。
++
+link:../installconfig/accessing-bmc-interface.html["访问 BMC 界面"]
+
+... 选择 * 电源控制 * 。
+... 选择*开机*，然后选择*执行操作*。
++
+image::../media/sgf6112_power_on_from_bmc.png[从BMC启动设备]
+
++
+使用 BMC 界面监控启动状态。
+
+
+
+
+
+. 确认设备控制器显示在网格管理器中且未显示任何警报。
++
+控制器可能需要长达 20 分钟才能显示在网格管理器中。
+
++
+
+CAUTION: 除非此设备具有绿色图标、否则请勿使其他设备节点脱机。
+
+. 使用PuTTY或其他ssh客户端登录到网格节点、以确认新设备完全正常运行：
++
+.. 输入以下命令： `ssh _Appliance_IP_`
+.. 输入中列出的密码 `Passwords.txt` 文件
+.. 输入以下命令切换到root： `su -`
+.. 输入中列出的密码 `Passwords.txt` 文件
++
+以root用户身份登录后、提示符将从变为 `$` to `#`。
+
+
+
+
+
+.相关信息
+link:../installconfig/viewing-status-indicators.html["查看状态指示器"]

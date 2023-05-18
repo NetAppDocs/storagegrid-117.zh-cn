@@ -1,0 +1,40 @@
+---
+permalink: installconfig/troubleshooting-connection-issues-sg100-and-sg1000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg100, sg1000, service appliance, services appliance, gateway Node, admin node, troubleshoot, troubleshooting, connection 
+summary: 如果您在 StorageGRID 设备安装期间遇到连接问题，应执行列出的更正操作步骤。 
+---
+= 对连接问题（ SG100 和 SG1000 ）进行故障排除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您在 StorageGRID 设备安装期间遇到连接问题，应执行列出的更正操作步骤。
+
+
+
+== 无法连接到设备
+
+如果无法连接到服务设备、则可能存在网络问题描述 、或者硬件安装可能未成功完成。
+
+.步骤
+. 尝试使用设备的IP地址对设备执行ping操作：+
+`*ping _services_appliance_IP_*`
+. 如果 ping 未收到任何响应，请确认您使用的 IP 地址正确无误。
++
+您可以使用网格网络，管理网络或客户端网络上设备的 IP 地址。
+
+. 如果 IP 地址正确，请检查设备布线， QSFP 或 SFP 收发器以及网络设置。
+. 如果可以物理访问设备、则可以直接连接到永久链路本地IP `169.254.0.1` 检查控制器网络配置并根据需要进行更新。有关详细说明，请参见中的步骤 2 link:accessing-storagegrid-appliance-installer.html["访问 StorageGRID 设备安装程序"]。
++
+如果无法解决问题描述 问题，请联系技术支持。
+
+. 如果 ping 成功，请打开 Web 浏览器。
+. 输入StorageGRID 设备安装程序的URL：+
+`*https://_appliances_controller_IP_:8443*`
++
+此时将显示主页页面。
+
+

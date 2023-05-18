@@ -1,0 +1,59 @@
+---
+permalink: ubuntu/required-materials.html 
+sidebar: sidebar 
+keywords: installation materials ubuntu debian 
+summary: 在安装 StorageGRID 之前，您必须收集并准备所需的材料。 
+---
+= 所需材料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 StorageGRID 之前，您必须收集并准备所需的材料。
+
+|===
+| 项目 | 注释： 
+
+
+ a| 
+NetApp StorageGRID 许可证
+ a| 
+您必须具有有效的数字签名 NetApp 许可证。
+
+* 注意 * ： StorageGRID 安装归档中包含一个非生产许可证，可用于测试和概念验证网格。
+
+
+
+ a| 
+StorageGRID 安装归档
+ a| 
+您必须 link:downloading-and-extracting-storagegrid-installation-files.html["下载 StorageGRID 安装归档并解压缩文件"]。
+
+
+
+ a| 
+服务笔记本电脑
+ a| 
+StorageGRID 系统通过服务笔记本电脑进行安装。
+
+服务笔记本电脑必须具有：
+
+* 网络端口
+* SSH 客户端（例如 PuTTY ）
+* link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]
+
+
+
+
+ a| 
+StorageGRID 文档
+ a| 
+* link:../release-notes/index.html["发行说明"]
+* link:../admin/index.html["有关管理 StorageGRID 的说明"]
+
+
+|===
+.相关信息
+https://["NetApp 互操作性表工具"^]

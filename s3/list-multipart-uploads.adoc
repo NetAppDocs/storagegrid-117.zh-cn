@@ -1,0 +1,32 @@
+---
+permalink: s3/list-multipart-uploads.html 
+sidebar: sidebar 
+keywords: list multipart uploads, uploads, multipart uploads, bucket 
+summary: '" 列出多部件上传 " 操作会列出某个存储分段正在进行的多部件上传。' 
+---
+= 列出多部件上传
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+" 列出多部件上传 " 操作会列出某个存储分段正在进行的多部件上传。
+
+支持以下请求参数：
+
+* `encoding-type`
+* `key-marker`
+* `max-uploads`
+* `prefix`
+* `upload-id-marker`
+* `Host`
+* `Date`
+* `Authorization`
+
+
+
+
+== 版本控制
+
+多部分上传包括启动上传，发布上传，上传部件，组装上传的部件以及完成上传的操作。执行完 " 多部分上传 " 操作后，即创建对象（并在适用情况下进行版本控制）。

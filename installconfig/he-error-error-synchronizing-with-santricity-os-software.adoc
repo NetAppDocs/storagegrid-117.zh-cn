@@ -1,0 +1,23 @@
+---
+permalink: installconfig/he-error-error-synchronizing-with-santricity-os-software.html 
+sidebar: sidebar 
+keywords: storage node, storage appliance, troubleshooting, HE, error, synchronize, synchronizing, sunconization, SANtricity OS Software, santricity 
+summary: 如果 StorageGRID 设备安装程序无法与 SANtricity 操作系统软件同步，则计算控制器上的七段显示会显示一个错误代码。 
+---
+= HE错误：与SANtricity OS软件同步时出错(SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果StorageGRID 设备安装程序无法与SANtricity OS软件同步、计算控制器上的七段显示屏将显示HE错误代码。
+
+.关于此任务
+如果显示错误代码，请执行此更正操作。
+
+.步骤
+. 检查两根 SAS 互连缆线的完整性，并确认它们已牢固连接。
+. 根据需要更换一根或两根缆线，然后重试。
+. 如果无法解决问题描述 问题，请联系技术支持。
+

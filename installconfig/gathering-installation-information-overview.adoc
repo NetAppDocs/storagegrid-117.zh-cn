@@ -1,0 +1,24 @@
+---
+permalink: installconfig/gathering-installation-information-overview.html 
+sidebar: sidebar 
+keywords: install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: 在安装和配置StorageGRID 设备时、您需要做出决策并收集有关以太网交换机端口、IP地址以及端口和网络绑定模式的信息。 
+---
+= 收集安装信息：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装和配置StorageGRID 设备时、您需要做出决策并收集有关以太网交换机端口、IP地址以及端口和网络绑定模式的信息。
+
+请参阅设备的说明以确定所需的信息：
+
+* link:gathering-installation-information-sg6100.html["GF6112"]
+* link:gathering-installation-information-sg6000.html["SG6000"]
+* link:gathering-installation-information-sg5700.html["SG5700"]
+* link:gathering-installation-information-sg100-and-sg1000.html["SG100和SG1000"]
+
+
+或者、您也可以与NetApp专业服务顾问合作、使用NetApp ConfigBuilder工具简化和自动执行配置步骤。请参见 link:automating-appliance-installation-and-configuration.html["自动安装和配置设备"]。

@@ -1,0 +1,22 @@
+---
+permalink: maintain/rebooting-grid-node.html 
+sidebar: sidebar 
+keywords: reboot grid node 
+summary: 您可以从网格管理器或节点的命令 Shell 重新启动网格节点。 
+---
+= 重新启动网格节点：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从网格管理器或节点的命令 Shell 重新启动网格节点。
+
+重新启动网格节点时，该节点将关闭并重新启动。所有服务都会自动重新启动。
+
+如果您计划重新启动存储节点，请注意以下事项：
+
+* 如果ILM规则指定了双提交或平衡的加网行为、并且无法立即创建所有必需的副本、则StorageGRID 会立即将所有新加网的对象提交到同一站点上的两个存储节点、并在稍后评估ILM。如果要重新启动给定站点上的两个或多个存储节点，则在重新启动期间可能无法访问这些对象。
+* 为了确保您可以在存储节点重新启动时访问所有对象，请在重新启动节点之前，停止在站点上载入对象大约一小时。
+

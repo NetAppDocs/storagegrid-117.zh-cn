@@ -1,0 +1,37 @@
+---
+permalink: upgrade/changes-to-grid-management-api.html 
+sidebar: sidebar 
+keywords: grid management api, api, api version, swagger, rest api 
+summary: StorageGRID 11.7使用网格管理API版本3。版本 3 已弃用版本 2 ；但版本 1 和版本 2 仍受支持。 
+---
+= 对网格管理 API 进行的更改
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.7使用网格管理API版本3。版本 3 已弃用版本 2 ；但版本 1 和版本 2 仍受支持。
+
+
+IMPORTANT: 您可以继续在StorageGRID 11.7中使用管理API版本1和版本2；但是、在StorageGRID 的未来版本中、将不再支持这些版本的API。升级到StorageGRID 11.7后、可以使用停用已弃用的v1和v2 API `PUT /grid/config/management` API。
+
+要了解更多信息，请访问 link:../admin/using-grid-management-api.html["使用网格管理 API"]。
+
+
+
+== 现在、显示名称会包含在对节点运行状况请求的响应中
+
+与新的相关 link:../maintain/rename-grid-site-node-overview.html["重命名网格、站点和节点操作步骤"]，重命名站点或节点后，项目的名称(其系统名称)及其显示名称都由*no-Health……API返回。
+
+
+
+== 可以为新S3租户创建存储分段和访问密钥
+
+新增 `s3Bucket` 和 `s3AccessKey` 选项已添加到*accounts* API中。在使用网格管理API创建S3租户帐户时、您可以选择为该租户创建存储分段、并为租户的root用户创建访问密钥ID和机密密钥。
+
+
+
+== 可以更改存储节点的存储状态
+
+您可以使用新的*节点存储状态* API端点来确定和更改存储节点中的存储状态(联机、脱机、只读)。

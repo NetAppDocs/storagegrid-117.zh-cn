@@ -1,0 +1,95 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords: features, removed, deprecated 
+summary: 此版本已删除或弃用某些功能。查看这些项目，了解在升级之前是需要更新客户端应用程序还是修改配置。 
+---
+= 已删除或已弃用的功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此版本已删除或弃用某些功能。查看这些项目，了解在升级之前是需要更新客户端应用程序还是修改配置。
+
+
+
+== 已删除连接负载平衡器(CLB)服务
+
+网关节点上的连接负载平衡器(CLB)服务在StorageGRID 11.4中已弃用、现已从此软件中完全删除。要将传入的网络连接从客户端应用程序分布到存储节点、您可以为所有管理节点和网关节点上都包含的负载平衡器服务配置负载平衡器端点、也可以集成第三方负载平衡器。请参见 link:../admin/managing-load-balancing.html["负载平衡注意事项"]。
+
+如果在现有StorageGRID 版本中为S3或Swift API设置了自定义证书、则在升级到StorageGRID 11.7期间、CLB端口8082、8083、8084和8085将自动转换为负载平衡器端点。
+
+
+
+== SG5600设备停止支持
+
+SG5600设备已停止支持。有关硬件更新选项、请联系您的NetApp销售代表。
+
+如果需要对SG5600硬件执行维护过程、请使用 https://["StorageGRID 11.6说明"^]。
+
+
+
+== Swift支持已弃用
+
+自StorageGRID 11.7版起、不再支持Swift客户端应用程序。在未来版本中、将删除支持Swift客户端应用程序的用户界面和API。
+
+
+
+== 已弃用归档节点支持
+
+已弃用对归档节点的支持(使用S3 API归档到云以及使用TSM中间件归档到磁带)、并将在未来版本中删除。将对象从归档节点移动到外部归档存储系统已被提供更多功能的ILM云存储池所取代。
+
+请参见
+
+* link:../admin/migrating-objects-from-cloud-tiering-s3-to-cloud-storage-pool.html["将对象迁移到云存储池"]
+* link:../ilm/what-cloud-storage-pool-is.html["使用云存储池"]
+
+
+此外、在StorageGRID 11.7或更早版本中、您应从活动ILM策略中删除归档节点。删除存储在归档节点上的对象数据将简化将来的升级。请参见 link:../ilm/working-with-ilm-rules-and-ilm-policies.html["使用ILM规则和ILM策略"]。
+
+
+
+== 已删除通过CIFS或Samba进行的审核导出
+
+StorageGRID WebScale 11.1已弃用通过CIFS或Samba进行审核导出、现在已删除此功能。您可以根据需要执行此操作 link:../monitor/considerations-for-external-syslog-server.html["使用外部系统日志服务器"] 或 link:../admin/configuring-audit-client-access.html["配置NFS的审核客户端访问"]。
+
+
+
+== 用于将存储池指定为已删除的临时位置的选项
+
+以前、在创建对象放置包含单个存储池的ILM规则时、系统会提示您指定另一个存储池用作临时位置。从StorageGRID 11.7开始、此选项已被删除。
+
+
+
+== 已移动或删除网格管理器选项
+
+已移动或删除多个Grid Manager选项。
+
+* 。 link:../admin/configuring-stored-object-compression.html["压缩存储的对象"] 选项已移至*configuration*>*System*>*对象压缩*。
+* 已删除*网络传输加密*内部连接设置，并将其替换为 link:../admin/manage-tls-ssh-policy.html["TLS和SSH策略"] 选项卡。
++
+
+NOTE: 在StorageGRID 11.6中、AES256-SHA选项是默认设置、也是StorageGRID 11.7中唯一可用的设置。在网格管理API中会忽略ES128-SHA值。在StorageGRID 11.7升级期间、网络传输加密算法会设置为ES256-SHA。
+
+* 已将*存储对象加密*、*防止客户端修改*和*为存储节点连接启用HTTP *选项移至 link:../admin/changing-network-options-object-encryption.html["网络和对象选项卡"] 在新的*configuration*>*Security*>*Security settings *页面上。
+* 。 link:../admin/changing-browser-session-timeout-interface.html["浏览器非活动超时"] 选项已移至新的*配置*>*安全性*>*安全性设置*页面。
+* 。 link:../admin/manage-link-costs.html["链路成本"] 选项已移至*support*>*other *>*链接成本*。
+* NMS实体列表已移至*support*>*其他*>* NMS实体*。
+* 已删除*存储对象哈希*选项。SHA-1*和*SHA-256*设置不再用于内部后台验证，因为它们需要通过MD5和包CRC32检查获得额外的CPU资源。
+* 已删除*首选发件人*选项。如果您的StorageGRID 部署包含多个管理节点、则主管理节点是警报通知、AutoSupport 消息、SNMP陷阱和通知以及原有警报通知的首选发送方。如果主管理节点不可用、则其他管理节点会临时发送通知。请参见 link:../admin/what-admin-node-is.html["什么是管理节点？"]。
+* 。 link:../admin/configure-firewall-controls.html#untrusted-client-network["不可信的客户端网络设置"] 已移至*configuration*>*Firewall control*。
+
+
+
+
+== S3端点域名格式限制
+
+不支持使用IP地址作为端点域名。未来版本将阻止此配置。如果需要对端点域名使用IP地址、请联系技术支持。请参见 link:../admin/configuring-s3-api-endpoint-domain-names.html["S3端点域名"]。
+
+
+
+== 已删除用户启动的卷丢失命令
+
+。 `proc/CMSI/Volume_Lost` 已删除。使用 `repair-data start-replicated-volume-repair` 命令以还原卷的复制数据。

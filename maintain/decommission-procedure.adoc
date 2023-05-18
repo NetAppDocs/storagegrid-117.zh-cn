@@ -1,0 +1,29 @@
+---
+permalink: maintain/decommission-procedure.html 
+sidebar: sidebar 
+keywords: how to decommission 
+summary: 您可以执行停用操作步骤 ，以便从 StorageGRID 系统中永久删除网格节点或整个站点。 
+---
+= 停用操作步骤 ：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以执行停用操作步骤 ，以便从 StorageGRID 系统中永久删除网格节点或整个站点。
+
+要删除网格节点或站点，请执行以下停用过程之一：
+
+* 执行 link:grid-node-decommissioning.html["网格节点停用"] 删除一个或多个节点、这些节点可以位于一个或多个站点上。您删除的节点可以联机并连接到 StorageGRID 系统，也可以脱机并断开连接。
+* 执行 link:site-decommissioning.html["站点停用"] 删除站点。如果所有节点都连接到StorageGRID ，则执行*已连接站点停用*。如果所有节点都与StorageGRID 断开连接，则执行*断开连接的站点停用*。
++
+
+IMPORTANT: 在执行已断开连接的站点停用之前，您必须联系您的 NetApp 客户代表。在取消配置站点向导中启用所有步骤之前， NetApp 将查看您的要求。如果您认为可以恢复站点或从站点恢复对象数据，则不应尝试执行已断开连接的站点停用。
+
+
+
+如果站点包含混合的 Connected （image:../media/icon_alert_green_checkmark.png["图标警报绿色复选标记"]）和已断开连接的节点（image:../media/icon_alarm_gray_administratively_down.png["图标警报灰色已管理员关闭"] 或 image:../media/icon_alarm_blue_unknown.png["图标警报蓝色未知"]），您必须使所有脱机节点重新联机。
+
+
+NOTE: 如果需要执行第二个维护操作步骤 ，可以 link:pausing-and-resuming-decommission-process-for-storage-nodes.html["在删除存储节点时暂停停用操作步骤"]。只有在达到 ILM 评估或纠删编码的数据停用阶段时， * 暂停 * 按钮才会启用；但是， ILM 评估（数据迁移）将继续在后台运行。第二个维护操作步骤 完成后，您可以恢复停用。

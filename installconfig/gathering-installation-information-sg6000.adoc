@@ -1,0 +1,442 @@
+---
+permalink: installconfig/gathering-installation-information-sg6000.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance StorageGRID, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: 使用表记录连接到设备的每个网络所需的信息。安装和配置硬件需要这些值。 
+---
+= 收集安装信息（ SG6000 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用表记录连接到设备的每个网络所需的信息。安装和配置硬件需要这些值。
+
+
+TIP: 请使用随ConfigBuilder提供的工作簿、而不是使用这些表。通过使用ConfigBuilder工作簿、您可以上传系统信息并生成JSON文件、以自动完成StorageGRID 设备安装程序中的某些配置步骤。请参见 link:automating-appliance-installation-and-configuration.html["自动安装和配置设备"]。
+
+
+
+== 连接到存储控制器上的 SANtricity System Manager 所需的信息
+
+您可以将设备中的两个存储控制器(E2800系列控制器或EF570控制器)连接到要用于SANtricity System Manager的管理网络。控制器位于每个设备中，如下所示：
+
+* SG6060和SG6060X：控制器A位于顶部、控制器B位于底部。
+* SGF6024 ：控制器 A 位于左侧，控制器 B 位于右侧。
+
+
+[cols="2a,1a,1a"]
+|===
+| 所需信息 | 控制器 A 的值 | 控制器 B 的值 
+
+
+ a| 
+要连接到管理端口 1 的以太网交换机端口（在控制器上标记为 P1 ）
+ a| 
+ a| 
+
+
+
+ a| 
+管理端口 1 的 MAC 地址（印在端口 P1 附近的标签上）
+ a| 
+ a| 
+
+
+
+ a| 
+DHCP 为管理端口 1 分配的 IP 地址（如果在启动后可用）
+
+* 注： * 如果要连接到存储控制器的网络包含 DHCP 服务器，则网络管理员可以使用 MAC 地址确定 DHCP 服务器分配的 IP 地址。
+ a| 
+ a| 
+
+
+
+ a| 
+您计划在管理网络上用于设备的静态 IP 地址
+ a| 
+对于 IPv4 ：
+
+* IPv4 地址：
+* 子网掩码：
+* 网关
+
+
+对于 IPv6 ：
+
+* IPv6 地址：
+* 可路由的 IP 地址：
+* 存储控制器路由器 IP 地址：
+
+ a| 
+对于 IPv4 ：
+
+* IPv4 地址：
+* 子网掩码：
+* 网关
+
+
+对于 IPv6 ：
+
+* IPv6 地址：
+* 可路由的 IP 地址：
+* 存储控制器路由器 IP 地址：
+
+
+
+
+ a| 
+IP 地址格式
+ a| 
+选择一项：
+
+* IPv4
+* IPv6
+
+ a| 
+选择一项：
+
+* IPv4
+* IPv6
+
+
+
+
+ a| 
+速度和双工模式
+
+* 注： * 您必须确保 SANtricity System Manager 管理网络的以太网交换机设置为自动协商。
+ a| 
+必须为：
+
+* 自动协商（默认）
+
+ a| 
+必须为：
+
+* 自动协商（默认）
+
+
+|===
+
+
+== 将 SG6000-CN 控制器连接到管理网络所需的信息
+
+StorageGRID 管理网络是一个可选网络，用于系统管理和维护。此设备使用 SG6000-CN 控制器上的以下 1-GbE 管理端口连接到管理网络。
+
+image::../media/rj_45_ports_circled.png[RJ-45 端口]
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+已启用管理网络
+ a| 
+选择一项：
+
+* 否
+* 是（默认）
+
+
+
+
+ a| 
+网络绑定模式
+ a| 
+选择一项：
+
+* 独立（默认）
+* 主动备份
+
+
+
+
+ a| 
+图中红色圆圈中左侧端口的交换机端口（独立网络绑定模式的默认活动端口）
+ a| 
+
+
+
+ a| 
+图中红色圆圈中右侧端口的交换机端口（仅限主动备份网络绑定模式）
+ a| 
+
+
+
+ a| 
+管理网络端口的 MAC 地址
+
+* 注： * SG6000-CN 控制器正面的 MAC 地址标签列出了 BMC 管理端口的 MAC 地址。要确定管理网络端口的 MAC 地址，必须在标签上的十六进制数字中添加 * 。 2 *例如，如果标签上的 MAC 地址以 *09* 结尾，则管理端口的 MAC 地址将以 *0B* 结尾。如果标签上的 MAC 地址以 * （ _y_ ） FF* 结尾，则管理端口的 MAC 地址将以 * （ _y_+1 ） 01* 结尾。您可以通过在 Windows 中打开 Calculator ，将其设置为程序编程模式，选择十六进制，键入 MAC 地址，然后键入 * + 2 =* 来轻松进行计算。
+ a| 
+
+
+
+ a| 
+DHCP 为管理网络端口分配的 IP 地址（如果在启动后可用）
+
+* 注： * 您可以使用 MAC 地址查找已分配的 IP 来确定 DHCP 分配的 IP 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划在管理网络上用于设备存储节点的静态 IP 地址
+
+* 注： * 如果您的网络没有网关，请为此网关指定相同的静态 IPv4 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+管理网络子网（ CIDR ）
+ a| 
+
+|===
+
+
+== 在 SG6000-CN 控制器上连接和配置 10/225-GbE 端口所需的信息
+
+SG6000-CN 控制器上的四个 10/225-GbE 端口连接到 StorageGRID 网格网络和可选客户端网络。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+链路速度
+ a| 
+选择一项：
+
+* 自动（默认）
+* 10 GbE
+* 25 GbE
+
+
+
+
+ a| 
+端口绑定模式
+ a| 
+选择一项：
+
+* FIXED （默认）
+* 聚合
+
+
+
+
+ a| 
+端口 1 的交换机端口（固定模式的客户端网络）
+ a| 
+
+
+
+ a| 
+端口 2 的交换机端口（固定模式的网格网络）
+ a| 
+
+
+
+ a| 
+端口 3 的交换机端口（固定模式的客户端网络）
+ a| 
+
+
+
+ a| 
+端口 4 的交换机端口（固定模式的网格网络）
+ a| 
+
+|===
+
+
+== 将 SG6000-CN 控制器连接到网格网络所需的信息
+
+适用于 StorageGRID 的网格网络是一个必需的网络，用于所有内部 StorageGRID 流量。此设备使用 SG6000-CN 控制器上的 10/225-GbE 端口连接到网格网络。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+网络绑定模式
+ a| 
+选择一项：
+
+* Active-Backup （默认）
+* LACP （ 802.3ad ）
+
+
+
+
+ a| 
+已启用 VLAN 标记
+ a| 
+选择一项：
+
+* 否（默认）
+* 是的。
+
+
+
+
+ a| 
+VLAN 标记（如果启用了 VLAN 标记）
+ a| 
+输入一个介于 0 到 4095 之间的值：
+
+
+
+ a| 
+DHCP 为网格网络分配的 IP 地址（如果在启动后可用）
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划用于网格网络上设备存储节点的静态 IP 地址
+
+* 注： * 如果您的网络没有网关，请为此网关指定相同的静态 IPv4 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+网格网络子网（ GRID ）
+ a| 
+
+|===
+
+
+== 将 SG6000-CN 控制器连接到客户端网络所需的信息
+
+适用于 StorageGRID 的客户端网络是一个可选网络，通常用于提供对网格的客户端协议访问。设备使用 SG6000-CN 控制器上的 10/225-GbE 端口连接到客户端网络。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+已启用客户端网络
+ a| 
+选择一项：
+
+* 否（默认）
+* 是的。
+
+
+
+
+ a| 
+网络绑定模式
+ a| 
+选择一项：
+
+* Active-Backup （默认）
+* LACP （ 802.3ad ）
+
+
+
+
+ a| 
+已启用 VLAN 标记
+ a| 
+选择一项：
+
+* 否（默认）
+* 是的。
+
+
+
+
+ a| 
+VLAN 标记（如果启用了 VLAN 标记）
+ a| 
+输入一个介于 0 到 4095 之间的值：
+
+
+
+ a| 
+DHCP 为客户端网络分配的 IP 地址（如果在启动后可用）
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划在客户端网络上用于设备存储节点的静态 IP 地址
+
+* 注： * 如果启用了客户端网络，则控制器上的默认路由将使用此处指定的网关。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+|===
+
+
+== 将 SG6000-CN 控制器连接到 BMC 管理网络所需的信息
+
+您可以使用以下 1-GbE 管理端口访问 SG6000-CN 控制器上的 BMC 接口。此端口支持使用智能平台管理接口（ Intelligent Platform Management Interface ， IPMI ）标准通过以太网远程管理控制器硬件。
+
+image::../media/bmc_management_port.gif[BMC 管理端口]
+
+
+NOTE: 您可以使用管理API专用端点put /privation/bmc为包含BMC的所有设备启用或禁用远程IPMI访问。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+要连接到 BMC 管理端口的以太网交换机端口（在图中圈出）
+ a| 
+
+
+
+ a| 
+为 BMC 管理网络分配的 DHCP IP 地址（如果在启动后可用）
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划用于 BMC 管理端口的静态 IP 地址
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+|===
+.相关信息
+* link:../installconfig/controllers-in-sg6000-appliances.html["SG6000控制器"]
+* link:../installconfig/reviewing-appliance-network-connections.html["查看设备网络连接"]
+* link:../installconfig/port-bond-modes-for-sg6000-cn-controller.html["端口绑定模式(SG6000-CN控制器)"]
+* link:cabling-appliance-sg6000.html["缆线设备（ SG6000 ）"]
+* link:../installconfig/setting-ip-configuration.html["配置 StorageGRID IP 地址"]
+

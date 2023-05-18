@@ -1,0 +1,49 @@
+---
+permalink: tenant/use-s3-console.html 
+sidebar: sidebar 
+keywords: how to use s3 console 
+summary: 您可以使用 S3 控制台查看 S3 存储分段中的对象。 
+---
+= 使用试验性 S3 控制台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 S3 控制台查看 S3 存储分段中的对象。
+
+您也可以使用 S3 控制台执行以下操作：
+
+* 添加和删除对象，对象版本和文件夹
+* 重命名对象
+* 在分段和文件夹之间移动和复制对象
+* 管理对象标记
+* 查看对象元数据
+* 下载对象
+
+
+
+NOTE: S3控制台标记为"试验性"、因为它尚未完成、或者尚未批准在生产环境中使用。只有在为少量对象执行功能时，租户才应使用 S3 控制台，例如上传对象以模拟新的 ILM 策略，排除载入问题或使用概念验证或非生产网格。
+
+.开始之前
+* 您将使用登录到租户管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+* 您所属的用户组具有root访问权限、或者同时具有"使用S3控制台管理所有分段"和"管理对象" link:tenant-management-permissions.html["权限"]。
++
+
+NOTE: 具有"管理具有S3控制台"权限的对象但没有"管理所有分段"权限的用户仍可直接导航到"试行S3控制台"。
+
+* 您已创建存储分段。
+* 已为此用户配置S3组或存储分段策略。
+* 您知道用户的访问密钥 ID 和机密访问密钥。(可选)您有 `.csv` 包含此信息的文件。请参见 link:creating-your-own-s3-access-keys.html["创建访问密钥的说明"]。
+
+
+.步骤
+. 选择 * 分段 * 。
+. 选择 ... image:../media/s3_console_link.png["S3 控制台链接"]。您也可以从存储分段详细信息页面访问此链接。
+. 在试验性 S3 控制台登录页面上，将访问密钥 ID 和机密访问密钥粘贴到字段中。否则，请选择*上传访问密钥*并选择您的 `.csv` 文件
+. 选择 * 登录 * 。
+. 根据需要管理对象。
+
+
+image::../media/s3_console_example.png[S3 控制台示例]

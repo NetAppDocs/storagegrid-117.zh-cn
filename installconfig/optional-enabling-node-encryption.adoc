@@ -1,0 +1,74 @@
+---
+permalink: installconfig/optional-enabling-node-encryption.html 
+sidebar: sidebar 
+keywords: node encryption, encryption, kms, key management server 
+summary: 如果启用节点加密，则可以通过安全密钥管理服务器 \ （ KMS\ ）加密保护设备中的磁盘，防止物理丢失或从站点中删除。您必须在设备安装期间选择并启用节点加密。在KMS加密过程启动后、您将无法禁用节点加密。 
+---
+= 可选：启用节点加密
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果启用了节点加密，则可以通过安全密钥管理服务器（ KMS ）加密来保护设备中的磁盘，防止物理丢失或从站点中删除。您必须在设备安装期间选择并启用节点加密。在KMS加密过程启动后、您无法禁用节点加密。
+
+如果使用ConfigBuilder生成JSON文件、则可以自动启用节点加密。请参见 link:automating-appliance-installation-and-configuration.html["自动安装和配置设备"]。
+
+.开始之前
+查看有关的信息 link:../admin/kms-configuring.html["正在配置KMS"]。
+
+.关于此任务
+启用了节点加密的设备将连接到为 StorageGRID 站点配置的外部密钥管理服务器（ KMS ）。每个 KMS （或 KMS 集群）负责管理站点上所有设备节点的加密密钥。这些密钥对启用了节点加密的设备中每个磁盘上的数据进行加密和解密。
+
+可以在 StorageGRID 中安装 KMS 之前或之后在网格管理器中设置此设备。有关更多详细信息，请参见管理 StorageGRID 的说明中有关 KMS 和设备配置的信息。
+
+* 如果在安装设备之前设置了 KMS ，则在设备上启用节点加密并将其添加到配置了 KMS 的 StorageGRID 站点时， KMS 控制的加密将开始。
+* 如果在安装此设备之前未设置 KMS ，则在为包含此设备节点的站点配置了 KMS 并可使用此 KMS 后，将对启用了节点加密的每个设备执行 KMS 控制的加密。
+
+
+
+IMPORTANT: 如果设备上的数据在连接到KMS之前已启用节点加密、则会使用不安全的临时密钥对其进行加密。除非将密钥设置为 KMS 提供的值，否则设备不会受到删除或被盗的保护。
+
+如果没有解密磁盘所需的KMS密钥、则无法检索设备上的数据、并且实际上会丢失。如果无法从KMS中检索到解密密钥、则会出现这种情况。如果客户清除 KMS 配置， KMS 密钥过期，与 KMS 的连接断开或从安装了 KMS 密钥的 StorageGRID 系统中删除设备，则无法访问此密钥。
+
+.步骤
+. 打开浏览器，然后输入设备计算控制器的 IP 地址之一。
++
+`*https://_Controller_IP_:8443*`
+
++
+`_Controller_IP_` 是三个StorageGRID 网络中任何一个网络上计算控制器(而不是存储控制器)的IP地址。
+
++
+此时将显示 StorageGRID 设备安装程序主页页面。
+
++
+
+IMPORTANT: 使用KMS密钥对设备加密后、如果不使用同一个KMS密钥、则无法对设备磁盘进行解密。
+
+. 选择 * 配置硬件 * > * 节点加密 * 。
++
+image::../media/kms_fde_enabled.png[已启用 Kms FDE]
+
+. 选择 * 启用节点加密 * 。
++
+在安装设备之前，您可以清除*启用节点加密*，而不会丢失数据。安装开始时、设备节点会访问StorageGRID 系统中的KMS加密密钥并开始磁盘加密。安装此设备后、您将无法禁用节点加密。
+
++
+
+IMPORTANT: 在将启用了节点加密的设备添加到具有KMS的StorageGRID 站点之后、您无法停止对此节点使用KMS加密。
+
+. 选择 * 保存 * 。
+. 将设备部署为 StorageGRID 系统中的节点。
++
+当设备访问为 StorageGRID 站点配置的 KMS 密钥时，便会开始使用由 KMS 控制的加密。安装程序会在 KMS 加密过程中显示进度消息，此过程可能需要几分钟时间，具体取决于设备中的磁盘卷数。
+
++
+
+NOTE: 设备最初会配置一个随机的非 KMS 加密密钥，该密钥会分配给每个磁盘卷。磁盘会使用此临时加密密钥进行加密，这种加密密钥不安全，直到启用了节点加密的设备访问为 StorageGRID 站点配置的 KMS 密钥为止。
+
+
+
+.完成后
+您可以查看节点加密状态， KMS 详细信息以及设备节点处于维护模式时正在使用的证书。请参见 link:../commonhardware/monitoring-node-encryption-in-maintenance-mode.html["监控维护模式下的节点加密"] 以了解相关信息。

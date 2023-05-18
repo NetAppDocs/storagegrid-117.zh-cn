@@ -1,0 +1,36 @@
+---
+permalink: sg6100/removing-sgf6112-cover.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112, storage node, storage appliance, cover, remove, removing, removal 
+summary: 卸下产品盖板，以便检修内部组件。 
+---
+= 拆下SGF6112盖
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+卸下产品盖板，以便检修内部组件。
+
+.开始之前
+从机柜或机架中取出产品，以便检修顶盖。
+
+link:reinstalling-sgf6112-into-cabinet-or-rack.html#remove-from-rack["从机柜或机架中卸下GF6112"]
+
+.步骤
+. 确保未锁定SGF6112盖板闩锁。如有必要，将蓝色塑料闩锁按解锁方向转动四分之一圈，如闩锁上所示。
+. 将闩锁向上并向后向SGF6112机箱后部旋转、直至其停止；然后、小心地将机箱盖从机箱中提起并放在一旁。
++
+image::../media/sg6060_cover_latch_open.jpg[SGF6112盖板闩锁打开]
+
++
+
+IMPORTANT: 将ESD腕带的腕带端缠绕在手腕上、并将扣具端固定到金属接地、以防止在GF6112内部工作时发生静电放电。
+
+
+
+更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://["部件退回和放大器；更换"^] 第页，了解更多信息。
+
+.相关信息
+link:replace-nic-in-sgf6112.html["更换NIC"]

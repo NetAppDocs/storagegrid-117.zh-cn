@@ -1,0 +1,18 @@
+---
+permalink: maintain/site-decommissioning.html 
+sidebar: sidebar 
+keywords: site decommission 
+summary: 您可能需要从 StorageGRID 系统中删除数据中心站点。要删除站点，必须停用它。 
+---
+= 站点停用：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能需要从 StorageGRID 系统中删除数据中心站点。要删除站点，必须停用它。
+
+流程图显示了停用站点的高级步骤。
+
+image::../media/overview_decommission_site.png[概述：停用站点]

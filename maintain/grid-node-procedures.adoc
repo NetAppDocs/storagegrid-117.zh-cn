@@ -1,0 +1,22 @@
+---
+permalink: maintain/grid-node-procedures.html 
+sidebar: sidebar 
+keywords: storagegrid, grid node procedure 
+summary: 您可能需要在特定网格节点上执行相关过程。虽然您可以从Grid Manager执行其中的一些过程、但大多数过程都要求您从命令行访问Server Manager。 
+---
+= 网格节点过程：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可能需要在特定网格节点上执行相关过程。虽然您可以从网格管理器执行其中几个过程，但大多数过程都要求您从节点的命令行访问 Server Manager 。
+
+服务器管理器在每个网格节点上运行，用于监控服务的启动和停止，并确保服务正常加入和退出 StorageGRID 系统。Server Manager 还会监控每个网格节点上的服务，并自动尝试重新启动报告故障的任何服务。
+
+
+IMPORTANT: 只有在技术支持指示您访问 Server Manager 时，才应访问此服务器管理器。
+
+
+NOTE: 使用完 Server Manager 后，您必须关闭当前命令 Shell 会话并注销。输入 ... `exit`

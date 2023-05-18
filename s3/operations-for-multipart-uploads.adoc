@@ -1,0 +1,93 @@
+---
+permalink: s3/operations-for-multipart-uploads.html 
+sidebar: sidebar 
+keywords: operations, multipart uploads, uploads, rest API 
+summary: 本节介绍 StorageGRID 如何支持多部件上传操作。 
+---
+= 多部分上传操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本节介绍 StorageGRID 如何支持多部件上传操作。
+
+以下条件和注释适用于所有多部件上传操作：
+
+* 一个存储分段的并发多部件上传数不应超过 1 ， 000 次，因为该存储分段的 List Multipart uploads 查询结果可能会返回不完整的结果。
+* StorageGRID 对多部件部件强制实施 AWS 大小限制。S3 客户端必须遵循以下准则：
++
+** 多部分上传中的每个部分必须介于 5 MiB （ 5 ， 242 ， 880 字节）和 5 GiB （ 5 ， 368 ， 709 ， 120 字节）之间。
+** 最后一部分可以小于 5 MiB （ 5 ， 242 ， 880 字节）。
+** 通常，部件大小应尽可能大。例如，对于 100 GiB 对象，请使用部件大小 5 GiB 。由于每个部件都被视为唯一的对象、因此使用较大的部件可降低StorageGRID 元数据开销。
+** 对于小于 5 GiB 的对象，请考虑使用非多部分上传。
+
+
+* 如果ILM规则使用平衡或严格的载入行为、则载入多部分对象时会针对该对象的每个部分以及完成多部分上传后对整个对象进行ILM评估。您应了解这会对对象和部件放置产生何种影响：
++
+** 如果在 S3 多部分上传过程中 ILM 发生更改，则在多部分上传完成后，对象的某些部分可能无法满足当前的 ILM 要求。任何放置不正确的部件都会排队等待 ILM 重新评估，并稍后移至正确的位置。
+** 在评估某个部件的 ILM 时， StorageGRID 会筛选该部件的大小，而不是对象的大小。这意味着、对象的某些部分可以存储在不满足对象整体ILM要求的位置。例如，如果规则指定所有 10 GB 或更大的对象都存储在 DC1 中，而所有较小的对象存储在 DC2 中，则在载入时， 10 部分多部分上传的每个 1 GB 部分都存储在 DC2 中。在对对象整体进行 ILM 评估时，对象的所有部分都将移至 DC1 。
+
+
+* 所有多部分上传操作均支持 StorageGRID 一致性控制。
+* 您可以根据需要对多部分上传使用服务器端加密。要使用SSE (服务器端加密与StorageGRID管理的密钥)、您需要包括 `x-amz-server-side-encryption` 仅在"启动多部件上传请求"中显示请求标题。要对客户提供的密钥使用 SSI-C （服务器端加密），您可以在 " 启动多部件上传请求 " 和后续的每个 " 上传部件请求 " 中指定相同的三个加密密钥请求标头。
+
+
+[cols="2a,3a"]
+|===
+| 操作 | 实施 
+
+
+ a| 
+列出多部件上传
+ a| 
+请参见 link:list-multipart-uploads.html["列出多部件上传"]
+
+
+
+ a| 
+启动多部件上传
+ a| 
+请参见 link:initiate-multipart-upload.html["启动多部件上传"]
+
+
+
+ a| 
+上传部件
+ a| 
+请参见 link:upload-part.html["上传部件"]
+
+
+
+ a| 
+上传部件—复制
+ a| 
+请参见 link:upload-part-copy.html["上传部件—复制"]
+
+
+
+ a| 
+完成多部件上传
+ a| 
+请参见 link:complete-multipart-upload.html["完成多部件上传"]
+
+
+
+ a| 
+中止多部分上传
+ a| 
+在所有 Amazon S3 REST API 行为下实施。如有更改、恕不另行通知。
+
+
+
+ a| 
+列出部件
+ a| 
+在所有 Amazon S3 REST API 行为下实施。如有更改、恕不另行通知。
+
+|===
+.相关信息
+* link:consistency-controls.html["一致性控制"]
+* link:using-server-side-encryption.html["使用服务器端加密"]
+

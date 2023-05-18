@@ -1,0 +1,48 @@
+---
+permalink: admin/kms-removing.html 
+sidebar: sidebar 
+keywords: remove kms, remove key management server 
+summary: 在某些情况下，您可能需要删除密钥管理服务器。例如，如果您已停用站点，则可能需要删除站点专用的 KMS 。 
+---
+= 删除密钥管理服务器（ KMS ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情况下，您可能需要删除密钥管理服务器。例如，如果您已停用站点，则可能需要删除站点专用的 KMS 。
+
+.开始之前
+* 您已查看 link:kms-considerations-and-requirements.html["使用密钥管理服务器的注意事项和要求"]。
+* 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+* 您具有 root 访问权限。
+
+
+.关于此任务
+在以下情况下，您可以删除 KMS ：
+
+* 如果站点已停用，或者站点中没有启用节点加密的设备节点，则可以删除站点专用的 KMS 。
+* 如果每个站点已存在站点专用的 KMS ，并且已启用设备节点加密，则可以删除默认 KMS 。
+
+
+.步骤
+. 选择 * 配置 * > * 安全性 * > * 密钥管理服务器 * 。
++
+此时将显示密钥管理服务器页面、并显示已配置的所有密钥管理服务器。
+
+. 选择要删除的KMS，然后选择*Actions*>*Remove*。
++
+您也可以通过在表中选择KMS名称并从KMS详细信息页面中选择*Remove*来删除KMS。
+
+. 确认满足以下条件：
++
+** 您要删除某个站点的特定于站点的KMS、而此站点没有启用节点加密的设备节点。
+** 您要删除默认KMS、但每个站点都已存在具有节点加密的站点专用KMS。
+
+
+. 选择 * 是 * 。
++
+此时将删除 KMS 配置。
+
+

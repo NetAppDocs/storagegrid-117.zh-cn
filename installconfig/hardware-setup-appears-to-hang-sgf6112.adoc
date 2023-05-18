@@ -1,0 +1,24 @@
+---
+permalink: installconfig/hardware-setup-appears-to-hang-sgf6112.html 
+sidebar: sidebar 
+keywords: storagegrid, sgf6112, sg6100, troubleshoot, troubleshooting, hardware, setup, hang, hangs, fails, failure, stop, terminate, terminates, stuck 
+summary: 如果硬件故障或布线错误阻止 StorageGRID 设备完成启动处理，则此设备安装程序可能不可用。 
+---
+= 硬件设置似乎挂起(GF6112)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果硬件故障或布线错误阻止 StorageGRID 设备完成启动处理，则此设备安装程序可能不可用。
+
+.步骤
+. 查看设备上的 LED 以及 BMC 中显示的启动和错误代码。
+. 如果您需要有关解决问题描述 的帮助，请联系技术支持。
+
+
+.相关信息
+* link:viewing-boot-up-codes-for-sgf6112.html["查看启动代码(GF6112)"]
+* link:viewing-error-codes-for-sgf6112.html["查看错误代码(SGF6112)"]
+

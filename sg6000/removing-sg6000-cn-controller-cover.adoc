@@ -1,0 +1,36 @@
+---
+permalink: sg6000/removing-sg6000-cn-controller-cover.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, controller, cover, remove, removing, removal 
+summary: 拆下控制器盖板，以便检修内部组件以进行维护。 
+---
+= 拆下 SG6000-CN 控制器盖板
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+拆下控制器盖板，以便检修内部组件以进行维护。
+
+.开始之前
+从机柜或机架中卸下控制器，以便检修顶盖。
+
+link:removing-sg6000-cn-controller-from-cabinet-or-rack.html["从机柜或机架中卸下 SG6000-CN 控制器"]
+
+.步骤
+. 确保 SG6000-CN 控制器盖板闩锁未锁定。如有必要，将蓝色塑料闩锁按解锁方向转动四分之一圈，如闩锁上所示。
+. 将闩锁向 SG6000-CN 控制器机箱的后部来回旋转，直到其停止为止；然后，小心地将机箱盖从机箱中提起并放在一旁。
++
+image::../media/sg6060_cover_latch_open.jpg[SG6060 盖板闩锁打开]
+
++
+
+IMPORTANT: 将 ESD 腕带的腕带一端绑在腕带周围，并将扣具一端固定到金属接地，以防止在 SG6000-CN 控制器内部工作时发生静电放电。
+
+
+
+更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://["部件退回和放大器；更换"^] 第页，了解更多信息。
+
+.相关信息
+link:removing-fibre-channel-hba.html["删除光纤通道 HBA"]

@@ -1,0 +1,16 @@
+---
+permalink: sg6100/replacing-nic-in-sgf6112.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6100, sgf6112, storage node, storage appliance, Replacing, replace, nic, network interface card 
+summary: '如果SGF6112中的网络接口卡\(NIC)运行不正常或出现故障、您可能需要更换该卡。' 
+---
+= 更换SGF6112中的网络接口卡
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果SGF6112中的网络接口卡(Network Interface Card、NIC)运行不正常或出现故障、则可能需要更换该卡。
+
+使用以下步骤：*验证网卡以更换*删除网卡*重新安装网卡

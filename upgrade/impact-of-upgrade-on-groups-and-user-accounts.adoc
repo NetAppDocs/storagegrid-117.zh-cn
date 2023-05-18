@@ -1,0 +1,35 @@
+---
+permalink: upgrade/impact-of-upgrade-on-groups-and-user-accounts.html 
+sidebar: sidebar 
+keywords: upgrade, permissions 
+summary: 您必须了解 StorageGRID 升级的影响，以便可以在升级完成后相应地更新组和用户帐户。 
+---
+= 升级对组和用户帐户的影响
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须了解 StorageGRID 升级的影响，以便可以在升级完成后相应地更新组和用户帐户。
+
+
+
+== 对组权限和选项进行的更改
+
+升级到StorageGRID 11.7后、可以选择为租户用户组分配以下新权限。
+
+[cols="1a,2a"]
+|===
+| 权限 | Description 
+
+
+ a| 
+租户管理器>使用S3控制台管理对象
+ a| 
+与管理所有存储分段权限结合使用时、此权限允许用户访问 link:../tenant/use-s3-console.html["试验性S3控制台"] 。
+
+具有此权限但不具有"管理所有存储分段"权限的用户仍可直接导航到体验S3控制台。
+
+|===
+请参见 link:../tenant/tenant-management-permissions.html["租户管理权限"]。

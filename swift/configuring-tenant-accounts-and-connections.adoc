@@ -1,0 +1,246 @@
+---
+permalink: swift/configuring-tenant-accounts-and-connections.html 
+sidebar: sidebar 
+keywords: swift configure tenant account, swift configure tenant connection 
+summary: 要将 StorageGRID 配置为接受来自客户端应用程序的连接，需要创建一个或多个租户帐户并设置连接。 
+---
+= 配置租户帐户和连接
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要将 StorageGRID 配置为接受来自客户端应用程序的连接，需要创建一个或多个租户帐户并设置连接。
+
+
+
+== 创建和配置 Swift 租户帐户
+
+要使 Swift API 客户端能够在 StorageGRID 上存储和检索对象，需要使用 Swift 租户帐户。每个租户帐户都有自己的帐户 ID ，组和用户以及容器和对象。
+
+Swift 租户帐户由 StorageGRID 网格管理员使用网格管理器或网格管理 API 创建。
+
+时间 link:../swift/configuring-tenant-accounts-and-connections.html["创建Swift租户帐户"]，网格管理员指定以下信息：
+
+* link:../admin/editing-tenant-account.html["租户的显示名称"] (租户的帐户ID会自动分配、无法更改)
+* (可选) link:../admin/editing-tenant-account.html["租户帐户的存储配额"] --可供租户对象使用的最大GB、TB或PB数。租户的存储配额表示逻辑容量（对象大小），而不是物理容量（磁盘大小）。
+* 条件 link:../admin/configuring-sso.html["单点登录(SSO)"] 未用于StorageGRID 系统、租户帐户是使用自己的身份源还是共享网格的身份源、以及租户本地root用户的初始密码。
+* 如果启用了SSO、则哪个联盟组具有配置租户帐户的root访问权限。
+
+
+创建Swift租户帐户后、具有root访问权限的用户可以访问租户管理器来执行如下任务：
+
+* 设置身份联合（除非身份源与网格共享），并创建本地组和用户
+* 监控存储使用情况
+
+
+
+IMPORTANT: Swift用户必须具有的root访问权限 link:../tenant/signing-in-to-tenant-manager.html["访问租户管理器"]。但是， " 根 " 访问权限不允许用户通过 Swift REST API 的身份验证来创建容器和载入对象。用户必须具有 Swift 管理员权限才能向 Swift REST API 进行身份验证。
+
+
+
+== 如何配置客户端连接
+
+网格管理员可以选择影响 Swift 客户端连接到 StorageGRID 以存储和检索数据的配置。建立连接所需的具体信息取决于所选的配置。
+
+客户端应用程序可以通过连接到管理节点或网关节点上的负载平衡器服务来存储或检索对象、也可以连接到管理节点或网关节点的高可用性(HA)组的虚拟IP地址。
+
+
+NOTE: 所有依赖StorageGRID 提供负载平衡的应用程序都应使用负载平衡器服务进行连接。
+
+* 存储节点，具有或不具有外部负载平衡器
+
+
+配置 StorageGRID 时，网格管理员可以使用网格管理器或网格管理 API 执行以下步骤，所有这些步骤均为可选步骤：
+
+. 为负载平衡器服务配置端点。
++
+您必须配置端点才能使用负载平衡器服务。管理节点或网关节点上的负载平衡器服务会将传入的网络连接从客户端应用程序分发到存储节点。创建负载平衡器端点时， StorageGRID 管理员会指定端口号，端点是否接受 HTTP 或 HTTPS 连接，将使用此端点的客户端类型（ S3 或 Swift ）以及用于 HTTPS 连接的证书（如果适用）。Swift支持这些功能 link:supported-swift-api-endpoints.html["端点类型"]。
+
+. 配置不可信客户端网络。
++
+如果 StorageGRID 管理员将节点的客户端网络配置为不可信，则节点仅接受客户端网络上显式配置为负载平衡器端点的端口上的入站连接。
+
+. 配置高可用性组。
++
+如果管理员创建了一个 HA 组，则多个管理节点或网关节点的网络接口将置于主动备份配置中。客户端连接使用 HA 组的虚拟 IP 地址进行。
+
+
+
+请参见 link:../admin/configuration-options-for-ha-groups.html["HA 组的配置选项"] 有关详细信息 ...
+
+
+
+=== 摘要：客户端连接的 IP 地址和端口
+
+客户端应用程序使用网格节点的 IP 地址以及该节点上服务的端口号连接到 StorageGRID 。如果配置了高可用性（ HA ）组，则客户端应用程序可以使用 HA 组的虚拟 IP 地址进行连接。
+
+
+
+==== 建立客户端连接所需的信息
+
+下表总结了客户端连接到 StorageGRID 的不同方式以及每种连接类型所使用的 IP 地址和端口。请参见 link:../admin/summary-ip-addresses-and-ports-for-client-connections.html["客户端连接的IP地址和端口"] 或联系您的StorageGRID 管理员以了解详细信息。
+
+|===
+| 建立连接的位置 | 客户端连接到的服务 | IP 地址 | Port 
+
+
+ a| 
+HA 组
+ a| 
+负载平衡器
+ a| 
+HA 组的虚拟 IP 地址
+ a| 
+* 负载平衡器端点端口
+
+
+
+
+ a| 
+管理节点
+ a| 
+负载平衡器
+ a| 
+管理节点的 IP 地址
+ a| 
+* 负载平衡器端点端口
+
+
+
+
+ a| 
+网关节点
+ a| 
+负载平衡器
+ a| 
+网关节点的 IP 地址
+ a| 
+* 负载平衡器端点端口
+
+
+
+
+ a| 
+存储节点
+ a| 
+LDR
+ a| 
+存储节点的 IP 地址
+ a| 
+默认 Swift 端口：
+
+* HTTPS ： 18083
+* HTTP ： 18085
+
+
+|===
+
+
+==== 示例
+
+要将 Swift 客户端连接到网关节点 HA 组的负载平衡器端点，请使用以下结构化 URL ：
+
+* `https://_VIP-of-HA-group:LB-endpoint-port_`
+
+
+例如，如果 HA 组的虚拟 IP 地址为 192.0.2.6 ， Swift 负载平衡器端点的端口号为 10444 ，则 Swift 客户端可以使用以下 URL 连接到 StorageGRID ：
+
+* `\https://192.0.2.6:10444`
+
+
+可以为客户端用于连接到 StorageGRID 的 IP 地址配置 DNS 名称。请与本地网络管理员联系。
+
+
+
+=== 决定使用 HTTPS 或 HTTP 连接
+
+使用负载平衡器端点建立客户端连接时，必须使用为此端点指定的协议（ HTTP 或 HTTPS ）进行连接。要使用HTTP进行客户端到存储节点的连接、必须启用HTTP。
+
+默认情况下、当客户端应用程序连接到存储节点时、它们必须对所有连接使用加密的HTTPS。或者、您也可以通过选择来启用不太安全的HTTP连接 link:../admin/changing-network-options-object-encryption.html["为存储节点连接启用HTTP"] 选项。例如，在非生产环境中测试与存储节点的连接时，客户端应用程序可能会使用 HTTP 。
+
+
+IMPORTANT: 为生产网格启用HTTP时请小心、因为请求和响应将以未加密的方式发送。
+
+如果选择了*为存储节点连接启用HTTP *选项，则客户端对HTTP使用的端口必须与对HTTPS使用的端口不同。
+
+
+
+== 在 Swift API 配置中测试连接
+
+您可以使用 Swift 命令行界面测试与 StorageGRID 系统的连接，并验证是否可以向系统读取和写入对象。
+
+.开始之前
+* 您必须已下载并安装 python swiftclient ，即 Swift 命令行客户端。
++
+https://["SwiftStack ： Python-swiftclient"^]
+
+* 您必须在 StorageGRID 系统中具有 Swift 租户帐户。
+
+
+.关于此任务
+如果尚未配置安全性、则必须添加 `--insecure` 标记这些命令中的每个命令。
+
+.步骤
+. 查询 StorageGRID Swift 部署的信息 URL ：
++
+[listing]
+----
+swift
+-U <Tenant_Account_ID:Account_User_Name>
+-K <User_Password>
+-A https://<FQDN | IP>:<Port>/info
+capabilities
+----
++
+这足以测试您的 Swift 部署是否正常运行。要通过存储对象进一步测试帐户配置，请继续执行其他步骤。
+
+. 将对象放入容器中：
++
+[listing]
+----
+touch test_object
+swift
+-U <Tenant_Account_ID:Account_User_Name>
+-K <User_Password>
+-A https://<FQDN | IP>:<Port>/auth/v1.0
+upload test_container test_object
+--object-name test_object
+----
+. 获取用于验证对象的容器：
++
+[listing]
+----
+swift
+-U <Tenant_Account_ID:Account_User_Name>
+-K <User_Password>
+-A https://<FQDN | IP>:<Port>/auth/v1.0
+list test_container
+----
+. 删除对象：
++
+[listing]
+----
+swift
+-U <Tenant_Account_ID:Account_User_Name>
+-K <User_Password>
+-A https://<FQDN | IP>:<Port>/auth/v1.0
+delete test_container test_object
+----
+. 删除容器：
++
+[listing]
+----
+swift
+-U `<_Tenant_Account_ID:Account_User_Name_>`
+-K `<_User_Password_>`
+-A `\https://<_FQDN_ | _IP_>:<_Port_>/auth/v1.0'
+delete test_container
+----
+
+
+.相关信息
+link:configuring-tenant-accounts-and-connections.html["创建和配置 Swift 租户帐户"]
+
+link:configuring-security-for-rest-api.html["配置 REST API 的安全性"]

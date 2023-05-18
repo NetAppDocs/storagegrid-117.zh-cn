@@ -1,0 +1,398 @@
+---
+permalink: installconfig/controllers-in-sg6000-appliances.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, controller, controllers, SG6000-CN, compute controller, E2800, storage controller, E-Series storage controller 
+summary: 每个型号的 StorageGRID SG6000 设备都在 1U 机箱中包含一个 SG6000-CN 计算控制器，并在 2U 或 4U 机箱中包含双工 E 系列存储控制器，具体取决于型号。查看图表，了解有关每种控制器类型的更多信息。 
+---
+= SG6000控制器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+每个型号的 StorageGRID SG6000 设备都在 1U 机箱中包含一个 SG6000-CN 计算控制器，并在 2U 或 4U 机箱中包含双工 E 系列存储控制器，具体取决于型号。查看图表，了解有关每种控制器类型的更多信息。
+
+
+
+== SG6000-CN计算控制器
+
+* 为设备提供计算资源。
+* 包括 StorageGRID 设备安装程序。
++
+
+NOTE: 设备上未预安装 StorageGRID 软件。部署设备时，系统会从管理节点检索此软件。
+
+* 可以连接到所有三个 StorageGRID 网络，包括网格网络，管理网络和客户端网络。
+* 连接到 E 系列存储控制器并作为启动程序运行。
+
+
+
+
+=== SG6000-CN连接器
+
+image::../media/sg6000_cn_rear_connectors.gif[SG6000-CN 背面连接器]
+
+[cols="1a,2a,2a,3a"]
+|===
+| Callout | Port | Type | 使用 ... 
+
+
+ a| 
+1.
+ a| 
+互连端口 1-4
+ a| 
+16 Gb/ 秒光纤通道（ FC ），具有集成光纤
+ a| 
+将 SG6000-CN 控制器连接到 E2800 控制器（每个 E2800 有两个连接）。
+
+
+
+ a| 
+2.
+ a| 
+网络端口 1-4
+ a| 
+10-GbE 或 25-GbE ，取决于缆线或 SFP 收发器类型，交换机速度和已配置的链路速度
+ a| 
+连接到网格网络和 StorageGRID 客户端网络。
+
+
+
+ a| 
+3.
+ a| 
+BMC 管理端口
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+连接到 SG6000-CN 基板管理控制器。
+
+
+
+ a| 
+4.
+ a| 
+诊断和支持端口
+ a| 
+* VGA
+* 串行， 115200 8-N-1
+* USB
+
+ a| 
+保留供技术支持使用。
+
+
+
+ a| 
+5.
+ a| 
+管理网络端口 1
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+将 SG6000-CN 连接到 StorageGRID 管理网络。
+
+
+
+ a| 
+6.
+ a| 
+管理网络端口 2
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+选项：
+
+* 与管理端口 1 绑定，以便与 StorageGRID 的管理网络建立冗余连接。
+* 保持未连接状态，并可用于临时本地访问（ IP 169.254.0.1 ）。
+* 在安装期间、如果DHCP分配的IP地址不可用、请使用端口2进行IP配置。
+
+
+|===
+
+
+== SGF6024 ： EF570 存储控制器
+
+* 两个控制器，用于提供故障转移支持。
+* 管理驱动器上的数据存储。
+* 在双工配置中用作标准 E 系列控制器。
+* 包括 SANtricity 操作系统软件（控制器固件）。
+* 包括用于监控存储硬件和管理警报的 SANtricity System Manager ， AutoSupport 功能和驱动器安全功能。
+* 连接到 SG6000-CN 控制器并提供对闪存存储的访问权限。
+
+
+
+
+=== EF570连接器
+
+image::../media/ef570_rear_connectors.gif[EF570 背面连接器]
+
+[cols="1a,2a,2a,3a"]
+|===
+| Callout | Port | Type | 使用 ... 
+
+
+ a| 
+1.
+ a| 
+互连端口 1 和 2
+ a| 
+16 Gb/秒FC光纤SFP
+ a| 
+将每个 EF570 控制器连接到 SG6000-CN 控制器。
+
+SG6000-CN 控制器有四个连接（每个 EF570 有两个连接）。
+
+
+
+ a| 
+2.
+ a| 
+诊断和支持端口
+ a| 
+* RJ-45 串行端口
+* 微型 USB 串行端口
+* USB 端口
+
+ a| 
+保留供技术支持使用。
+
+
+
+ a| 
+3.
+ a| 
+驱动器扩展端口
+ a| 
+12 Gb/ 秒 SAS
+ a| 
+未使用。SGF6024 设备不支持扩展驱动器架。
+
+
+
+ a| 
+4.
+ a| 
+管理端口 1 和 2
+ a| 
+1 Gb （ RJ-45 ）以太网
+ a| 
+* 端口 1 连接到通过浏览器访问 SANtricity 系统管理器的网络。
+* 端口 2 预留用于技术支持。
+
+
+|===
+
+
+== SG6060和SG6060X：E2800存储控制器
+
+* 两个控制器，用于提供故障转移支持。
+* 管理驱动器上的数据存储。
+* 在双工配置中用作标准 E 系列控制器。
+* 包括 SANtricity 操作系统软件（控制器固件）。
+* 包括用于监控存储硬件和管理警报的 SANtricity System Manager ， AutoSupport 功能和驱动器安全功能。
+* 连接到 SG6000-CN 控制器并提供对存储的访问权限。
+
+
+SG6060和SG6060X使用E2800存储控制器。
+
+[cols="1a,2a,2a"]
+|===
+| 设备 | 控制器 | 控制器HIC 
+
+
+ a| 
+SG6060
+ a| 
+两个E2800A存储控制器
+ a| 
+无
+
+
+
+ a| 
+SG6060X
+ a| 
+两个E2800B存储控制器
+ a| 
+四端口HIC
+
+|===
+E2800A和E2800B存储控制器的规格和功能相同、但互连端口的位置除外。
+
+
+CAUTION: 请勿在同一设备中使用E2800A和E2800B。
+
+
+
+=== E2800A连接器
+
+image::../media/e2800_controller_with_callouts.gif[E2800A控制器上的连接器]
+
+[cols="1a,2a,2a,3a"]
+|===
+| Callout | Port | Type | 使用 ... 
+
+
+ a| 
+1.
+ a| 
+互连端口 1 和 2
+ a| 
+16 Gb/秒FC光纤SFP
+ a| 
+将每个E2800A控制器连接到SG6000-CN控制器。
+
+SG6000-CN控制器有四个连接(每个E2800A两个)。
+
+
+
+ a| 
+2.
+ a| 
+管理端口 1 和 2
+ a| 
+1 Gb （ RJ-45 ）以太网
+ a| 
+* 端口 1 选项：
++
+** 连接到管理网络以启用对 SANtricity 系统管理器的直接 TCP/IP 访问
+** 保持未连接状态以保存交换机端口和 IP 地址。使用网格管理器或存储网格设备安装程序 UI 访问 SANtricity System Manager 。
+
+
+
+
+* 注 * ：如果您选择使端口 1 保持未连接状态，则某些可选的 SANtricity 功能（例如 NTP 同步以获得准确的日志时间戳）将不可用。
+
+* 注 * ：如果不对端口 1 布线，则需要 StorageGRID 11.5 或更高版本以及 SANtricity 11.70 或更高版本。
+
+* 端口 2 预留用于技术支持。
+
+
+
+
+ a| 
+3.
+ a| 
+诊断和支持端口
+ a| 
+* RJ-45 串行端口
+* 微型 USB 串行端口
+* USB 端口
+
+ a| 
+保留供技术支持使用。
+
+
+
+ a| 
+4.
+ a| 
+驱动器扩展端口 1 和 2
+ a| 
+12 Gb/ 秒 SAS
+ a| 
+将端口连接到扩展架中 IOM 上的驱动器扩展端口。
+
+|===
+
+
+=== E2800B连接器
+
+image::../media/e2800B_controller_with_callouts.gif[E2800B控制器上的连接器]
+
+[cols="1a,2a,2a,3a"]
+|===
+| Callout | Port | Type | 使用 ... 
+
+
+ a| 
+1.
+ a| 
+互连端口 1 和 2
+ a| 
+16 Gb/秒FC光纤SFP
+ a| 
+将每个E2800B控制器连接到SG6000-CN控制器。
+
+SG6000-CN控制器有四个连接(每个E2800B两个)。
+
+
+
+ a| 
+2.
+ a| 
+管理端口 1 和 2
+ a| 
+1 Gb （ RJ-45 ）以太网
+ a| 
+* 端口 1 选项：
++
+** 连接到管理网络以启用对 SANtricity 系统管理器的直接 TCP/IP 访问
+** 保持未连接状态以保存交换机端口和 IP 地址。使用网格管理器或存储网格设备安装程序 UI 访问 SANtricity System Manager 。
+
+
+
+
+* 注 * ：如果您选择使端口 1 保持未连接状态，则某些可选的 SANtricity 功能（例如 NTP 同步以获得准确的日志时间戳）将不可用。
+
+* 注 * ：如果不对端口 1 布线，则需要 StorageGRID 11.5 或更高版本以及 SANtricity 11.70 或更高版本。
+
+* 端口 2 预留用于技术支持。
+
+
+
+
+ a| 
+3.
+ a| 
+诊断和支持端口
+ a| 
+* RJ-45 串行端口
+* 微型 USB 串行端口
+* USB 端口
+
+ a| 
+保留供技术支持使用。
+
+
+
+ a| 
+4.
+ a| 
+驱动器扩展端口 1 和 2
+ a| 
+12 Gb/ 秒 SAS
+ a| 
+将端口连接到扩展架中 IOM 上的驱动器扩展端口。
+
+|===
+
+
+== SG6060和SG6060X：用于可选扩展架的IOM
+
+扩展架包含两个输入 / 输出模块（ IOM ），这些模块连接到存储控制器或其他扩展架。
+
+
+
+=== IOM连接器
+
+image::../media/iom_connectors.gif[IOM 背面]
+
+[cols="1a,2a,2a,3a"]
+|===
+| Callout | Port | Type | 使用 ... 
+
+
+ a| 
+1.
+ a| 
+驱动器扩展端口 1-4
+ a| 
+12 Gb/ 秒 SAS
+ a| 
+将每个端口连接到存储控制器或其他扩展架（如果有）。
+
+|===

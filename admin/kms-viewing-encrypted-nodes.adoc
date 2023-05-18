@@ -1,0 +1,103 @@
+---
+permalink: admin/kms-viewing-encrypted-nodes.html 
+sidebar: sidebar 
+keywords: view encrypted nodes, kms nodes, appliances with kms 
+summary: 您可以查看有关 StorageGRID 系统中已启用节点加密设置的设备节点的信息。 
+---
+= 查看加密节点
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看有关 StorageGRID 系统中已启用 * 节点加密 * 设置的设备节点的信息。
+
+.步骤
+. 选择 * 配置 * > * 安全性 * > * 密钥管理服务器 * 。
++
+此时将显示密钥管理服务器页面。配置详细信息选项卡显示已配置的任何密钥管理服务器。
+
+. 从页面顶部选择*加密节点*选项卡。
++
+加密节点选项卡列出了StorageGRID 系统中启用了*Node Encryption *设置的设备节点。
+
+. 查看表中每个设备节点的信息。
++
+[cols="1a,2a"]
+|===
+| 列 | Description 
+
+
+ a| 
+Node name
+ a| 
+设备节点的名称。
+
+
+
+ a| 
+节点类型
+ a| 
+节点的类型：存储，管理或网关。
+
+
+
+ a| 
+站点
+ a| 
+安装节点的 StorageGRID 站点的名称。
+
+
+
+ a| 
+Kms名称
+ a| 
+用于节点的 KMS 的描述性名称。
+
+如果未列出KMS、请选择配置详细信息选项卡以添加KMS。
+
+link:kms-adding.html["添加密钥管理服务器（ KMS ）"]
+
+
+
+ a| 
+密钥 UID
+ a| 
+用于对设备节点上的数据进行加密和解密的加密密钥的唯一 ID 。要查看整个密钥UID、请将光标置于单元格上方。
+
+短划线（ - ）表示密钥 UID 未知，可能是因为设备节点和 KMS 之间存在连接问题描述 。
+
+
+
+ a| 
+Status
+ a| 
+KMS 与设备节点之间的连接状态。如果节点已连接，则时间戳每 30 分钟更新一次。更改 KMS 配置后，可能需要几分钟才能更新连接状态。
+
+* 注意： * 您必须刷新 Web 浏览器才能查看新值。
+
+|===
+. 如果状态列指示 KMS 问题描述 ，请立即解决此问题描述 。
++
+在正常的 KMS 操作期间，状态将为 * 已连接到 KMS* 。如果节点与网格断开连接，则会显示节点连接状态（ administratively down 或 Unknown ）。
+
++
+其他状态消息对应于同名的 StorageGRID 警报：
+
++
+** 无法加载 Kms 配置
+** Kms 连接错误
+** 未找到 Kms 加密密钥名称
+** Kms 加密密钥轮换失败
+** Kms 密钥无法对设备卷进行解密
+** 未配置公里
+
+
++
+对这些警报执行建议的操作。
+
+
+
+
+CAUTION: 您必须立即解决任何问题，以确保您的数据得到完全保护。

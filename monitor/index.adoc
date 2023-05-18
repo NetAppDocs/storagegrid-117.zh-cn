@@ -1,0 +1,24 @@
+---
+permalink: monitor/index.html 
+sidebar: sidebar 
+keywords: monitor StorageGRID 
+summary: 按照以下说明监控 StorageGRID 系统，并评估和解决可能发生的问题。 
+---
+= 监控StorageGRID 系统：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+按照以下说明监控StorageGRID 系统并评估可能发生的问题。
+
+以下说明介绍如何使用网格管理器监控 StorageGRID 系统。您将了解应定期监控哪些信息，如何管理警报和旧警报，如何使用 SNMP 进行监控以及如何获取其他 StorageGRID 数据，包括指标和诊断。
+
+.开始之前
+* 您必须使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+* 您必须拥有 link:../admin/admin-group-permissions.html["特定访问权限"]。
+
+
+
+NOTE: 要更改网格管理器中显示的存储值的单位，请选择网格管理器右上角的用户下拉列表，然后选择*用户首选项*。

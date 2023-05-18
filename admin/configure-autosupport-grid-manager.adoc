@@ -1,0 +1,195 @@
+---
+permalink: admin/configure-autosupport-grid-manager.html 
+sidebar: sidebar 
+keywords: how to configure autosupport, what is autosupport-on-demand 
+summary: 您可以在首次安装 StorageGRID 时启用 AutoSupport 功能和各个 AutoSupport 选项，也可以稍后启用它们。 
+---
+= 配置 AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在首次安装 StorageGRID 时启用 AutoSupport 功能和各个 AutoSupport 选项，也可以稍后启用它们。
+
+.开始之前
+* 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+* 您具有 root 访问权限或其他网格配置权限。
+* 如果您要使用HTTPS发送AutoSupport 消息、则表示您已直接或提供了对主管理节点的出站Internet访问 link:configuring-admin-proxy-settings.html["使用代理服务器"] (不需要入站连接)。
+* 如果在"HTTPS"页面上选择了StorageGRID AutoSupport 、则表示您已将代理服务器配置为以HTTPS形式转发AutoSupport 消息。NetApp的AutoSupport 服务器将拒绝使用HTTP发送的消息。
+* 如果要使用 SMTP 作为 AutoSupport 消息的协议，则表示已配置 SMTP 邮件服务器。警报电子邮件通知使用相同的邮件服务器配置（旧系统）。
+
+
+
+
+== 指定 AutoSupport 消息的协议
+
+您可以使用以下任一协议发送 AutoSupport 消息：
+
+* * HTTPS ：这是新安装的默认和建议设置。此协议使用端口443。如果您要 ... <<启用 AutoSupport On Demand,启用AutoSupport On Demand功能>>，则必须使用HTTPS。
+* *HTTPS*：如果选择HTTP，则必须将代理服务器配置为以HTTPS形式转发AutoSupport 消息。NetApp的AutoSupport 服务器会拒绝使用HTTP发送的消息。此协议使用端口80。
+* * SMTP ：如果要通过电子邮件发送 AutoSupport 消息，请使用此选项。如果使用 SMTP 作为 AutoSupport 消息的协议，则必须在 " 旧电子邮件设置 " 页面上配置 SMTP 邮件服务器（ * 支持 * > * 警报（旧） * > * 旧电子邮件设置 * ）。
++
+
+NOTE: 在 StorageGRID 11.2 版本之前， SMTP 是唯一可用于 AutoSupport 消息的协议。如果您最初安装的是早期版本的 StorageGRID ，则可能选择了 SMTP 协议。
+
+
+
+您设置的协议用于发送所有类型的 AutoSupport 消息。
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
++
+此时将显示 AutoSupport 页面，并选择 * 设置 * 选项卡。
+
++
+image::../media/autosupport_settings_tab.png[包含设置选项卡 selected.png 的 AutoSupport 页面]
+
+. 选择要用于发送 AutoSupport 消息的协议。
+. 如果选择了 * HTTPS * ，请选择是否使用 TLS 证书来保护与 NetApp 支持服务器的连接。
++
+** * 使用 NetApp 支持证书 * （默认）：证书验证可确保 AutoSupport 消息的传输安全。NetApp 支持证书已随 StorageGRID 软件一起安装。
+** * 不验证证书 * ：只有当您有充分理由不使用证书验证时，例如证书出现临时问题时，才选择此选项。
+
+
+. 选择 * 保存 * 。
++
+所有每周消息，用户触发的消息和事件触发的消息均使用选定协议发送。
+
+
+
+
+
+== 禁用每周 AutoSupport 消息
+
+默认情况下， StorageGRID 系统配置为每周向 NetApp 支持发送一次 AutoSupport 消息。
+
+要确定每周 AutoSupport 消息的发送时间，请转到 * AutoSupport * > * 结果 * 选项卡。在 * 每周 AutoSupport * 部分中，查看 * 下一计划时间 * 的值。
+
+image::../media/autosupport_weekly_next_scheduled_time.png[每周 AutoSupport 下一计划时间]
+
+您可以随时禁止自动发送每周 AutoSupport 消息。
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
+. 清除*启用每周AutoSupport *复选框。
+. 选择 * 保存 * 。
+
+
+
+
+== 禁用事件触发的 AutoSupport 消息
+
+默认情况下， StorageGRID 系统配置为在发生重要警报或其他重要系统事件时向 NetApp 支持发送 AutoSupport 消息。
+
+您可以随时禁用事件触发的 AutoSupport 消息。
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
+. 清除*启用事件触发的AutoSupport *复选框。
+. 选择 * 保存 * 。
+
+
+
+
+== 启用 AutoSupport On Demand
+
+AutoSupport On Demand 可帮助解决技术支持正在积极处理的问题。
+
+默认情况下， AutoSupport On Demand 处于禁用状态。启用此功能后，技术支持可以请求 StorageGRID 系统自动发送 AutoSupport 消息。技术支持还可以为 AutoSupport On Demand 查询设置轮询时间间隔。
+
+技术支持无法启用或禁用AutoSupport On Demand。
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
+. 为协议选择 * HTTPS * 。
+. 选中*启用每周AutoSupport *复选框。
+. 选中*启用AutoSupport On Demand*复选框。
+. 选择 * 保存 * 。
++
+已启用 AutoSupport On Demand ，技术支持可以将 AutoSupport On Demand 请求发送到 StorageGRID 。
+
+
+
+
+
+== 禁用软件更新检查
+
+默认情况下， StorageGRID 会联系 NetApp 以确定您的系统是否有可用的软件更新。如果提供了 StorageGRID 修补程序或新版本，则新版本将显示在 StorageGRID 升级页面上。
+
+根据需要，您可以选择禁用软件更新检查。例如，如果您的系统无法访问 WAN ，则应禁用此检查以避免下载错误。
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
+. 清除*检查软件更新*复选框。
+. 选择 * 保存 * 。
+
+
+
+
+== 添加其他 AutoSupport 目标
+
+启用AutoSupport 后、运行状况和状态消息将发送给NetApp支持部门。您可以为所有 AutoSupport 消息指定一个其他目标。
+
+要验证或更改用于发送 AutoSupport 消息的协议，请参见中的说明 <<指定 AutoSupport 消息的协议>>。
+
+
+NOTE: 您不能使用SMTP协议将AutoSupport 消息发送到其他目标。
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
+. 选择*启用其他AutoSupport 目标*。
+. 指定以下内容：
++
+[cols="1a,2a"]
+|===
+| 字段 | Description 
+
+
+ a| 
+主机名
+ a| 
+附加AutoSupport 目标服务器的服务器主机名或IP地址。
+
+*注*:只能输入一个附加目的地。
+
+
+
+ a| 
+Port
+ a| 
+用于连接到其他AutoSupport 目标服务器的端口。对于HTTP、默认为端口80；对于HTTPS、默认为端口443。
+
+
+
+ a| 
+认证验证
+ a| 
+是否使用TLS证书来保护与其他目标的连接。
+
+** 选择*不验证证书*发送AutoSupport 消息而不验证证书。
++
+只有当您有充分的理由不使用证书验证时，例如证书出现临时问题时，才选择此选项。
+
+** 选择*使用自定义CA包*以使用证书验证。
+
+
+|===
+. 如果选择了*使用自定义CA包*，请执行以下操作之一：
++
+** 选择 * 浏览 * ，导航到包含证书的文件，然后选择 * 打开 * 上传文件。
+** 使用编辑工具将PEM编码的每个CA证书文件的所有内容复制并粘贴到按证书链顺序连接的*CA Bundle*字段中。
++
+您必须包括 `----BEGIN CERTIFICATE----` 和 `----END CERTIFICATE----` 您选择的内容。
+
++
+image::../media/autosupport_certificate.png[AutoSupport 证书]
+
+
+
+. 选择 * 保存 * 。
++
+未来所有每周，事件触发和用户触发的 AutoSupport 消息都将发送到其他目标。
+
+

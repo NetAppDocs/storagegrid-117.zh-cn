@@ -1,0 +1,101 @@
+---
+permalink: admin/what-is-autosupport.html 
+sidebar: sidebar 
+keywords: autosupport, technical support, storagegrid health, system status, Active IQ 
+summary: 通过 AutoSupport 功能， StorageGRID 系统可以向技术支持发送运行状况和状态消息。 
+---
+= 使用AutoSupport ：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 AutoSupport 功能， StorageGRID 系统可以向技术支持发送运行状况和状态消息。
+
+使用 AutoSupport 可以显著加快问题的确定和解决速度。技术支持还可以监控系统的存储需求，并帮助您确定是否需要添加新节点或站点。您也可以将 AutoSupport 消息配置为发送到另一个目标。
+
+您应仅在主管理节点上配置StorageGRID AutoSupport。但是、您必须配置 <<hardware_autosupport,Hardware AutoSupport (硬件配置)>> 在每个设备上。
+
+
+
+== AutoSupport 消息中包含的信息
+
+AutoSupport 消息包含如下信息：
+
+* StorageGRID 软件版本
+* 操作系统版本
+* 系统级别和位置级别属性信息
+* 近期警报和警报（旧系统）
+* 所有网格任务的当前状态，包括历史数据
+* 管理节点数据库使用情况
+* 丢失或缺失对象的数量
+* 网格配置设置
+* NMS 实体
+* 活动 ILM 策略
+* 已配置网格规范文件
+* 诊断指标
+
+
+您可以在首次安装 StorageGRID 时启用 AutoSupport 功能和各个 AutoSupport 选项，也可以稍后启用它们。如果未启用AutoSupport 、网格管理器信息板上将显示一条消息。此消息包含指向 AutoSupport 配置页面的链接。
+
+image::../media/autosupport_disabled_message.png[AutoSupport 已禁用消息]
+
+如果关闭此消息，则此消息将不会再次显示，直到清除浏览器缓存为止，即使 AutoSupport 仍处于禁用状态。
+
+
+
+== 什么是 Active IQ ？
+
+Active IQ 是一名基于云的数字顾问，利用 NetApp 客户群的预测性分析和社区智慧。其持续风险评估，预测性警报，规范化指导和自动化操作可帮助您在问题发生之前防患于未然，从而改善系统运行状况并提高系统可用性。
+
+如果要在NetApp 支持站点 上使用Active IQ 信息板和功能、则必须启用AutoSupport。
+
+https://["Active IQ Digital Advisor 文档"^]
+
+
+
+== 用于发送 AutoSupport 消息的协议
+
+您可以选择以下三种协议之一来发送 AutoSupport 消息：
+
+* HTTPS
+* HTTP
+* SMTP
+
+
+如果使用 SMTP 作为 AutoSupport 消息的协议，则必须配置 SMTP 邮件服务器。
+
+
+
+== AutoSupport 选项
+
+您可以使用以下选项的任意组合向技术支持发送 AutoSupport 消息：
+
+* * 每周 * ：每周自动发送一次 AutoSupport 消息。默认设置： enabled 。
+* * 事件触发 * ：每小时或发生重大系统事件时自动发送 AutoSupport 消息。默认设置： enabled 。
+* * 按需 * ：允许技术支持请求您的 StorageGRID 系统自动发送 AutoSupport 消息，这在他们正在使用问题描述 （需要 HTTPS AutoSupport 传输协议）时非常有用。默认设置： disabled 。
+* * 用户触发 * ：随时手动发送 AutoSupport 消息。
+
+
+
+
+== [[harder_autostsupport]]适用于设备的AutoSupport
+
+适用于设备的AutoSupport 报告StorageGRID 硬件问题、而StorageGRID AutoSupport 报告StorageGRID 软件问题(SGF6112除外、其中StorageGRID AutoSupport 同时报告硬件和软件问题)。您必须在每个设备上配置AutoSupport 、但SGF6112除外、它不需要额外配置。对于服务和存储设备、AutoSupport 的实施方式有所不同。
+
+您必须在SANtricity 中为每个存储设备启用AutoSupport。您可以在初始设备设置期间或安装设备后配置SANtricity AutoSupport ：
+
+* 对于SG6000和SG5700设备、 link:../installconfig/accessing-and-configuring-santricity-system-manager.html["在SANtricity 系统管理器中配置AutoSupport"]
+
+
+如果您在中配置了通过代理传送AutoSupport 、则可以将来自E系列设备的AutoSupport 消息包含在StorageGRID AutoSupport 中 link:../admin/sending-eseries-autosupport-messages-through-storagegrid.html["SANtricity 系统管理器"]。
+
+StorageGRID AutoSupport 不会报告硬件问题、例如DIMM或主机接口卡(Host Interface Card、HIC)故障。但是、某些组件可能会触发故障 link:../monitor/alerts-reference.html["硬件警报"]。对于带有底板管理控制器(BMC)的StorageGRID 设备、例如SG100、SG1000、SG6060或SGF6024、您可以配置电子邮件和SNMP陷阱来报告硬件故障：
+
+* link:../installconfig/setting-up-email-notifications-for-alerts.html["为警报设置电子邮件通知"]
+* link:../installconfig/configuring-snmp-settings-for-bmc.html["配置SNMP设置"] 对于SG6000-CN控制器或SG100和SG1000服务设备
+
+
+.相关信息
+https://["NetApp 支持"^]

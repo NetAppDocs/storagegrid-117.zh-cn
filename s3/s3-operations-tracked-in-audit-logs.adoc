@@ -1,0 +1,51 @@
+---
+permalink: s3/s3-operations-tracked-in-audit-logs.html 
+sidebar: sidebar 
+keywords: audit log actions tracked 
+summary: StorageGRID 审核日志会跟踪多个存储分段操作和对象操作。 
+---
+= 审核日志中跟踪的 S3 操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 审核日志会跟踪多个存储分段操作和对象操作。
+
+
+
+== 审核日志中跟踪的存储分段操作
+
+* 删除存储分段
+* 删除存储分段标记
+* 删除多个对象
+* 获取存储分段（列出对象）
+* 获取 Bucket 对象版本
+* 获取存储分段标记
+* 头存储分段
+* 放入存储分段
+* PUT 存储分段合规性
+* 放置存储分段标记
+* PUT 存储分版本
+
+
+
+
+== 审核日志中跟踪的对象操作
+
+* 完成多部件上传
+* 上传部件(当ILM规则使用平衡或严格载入行为时)
+* 上传部件-副本(当ILM规则使用平衡或严格载入行为时)
+* 删除对象
+* 获取对象
+* HEAD 对象
+* 后对象还原
+* PUT 对象
+* PUT 对象—复制
+
+
+.相关信息
+link:operations-on-buckets.html["对存储分段执行的操作"]
+
+link:operations-on-objects.html["对对象执行的操作"]

@@ -1,0 +1,136 @@
+---
+permalink: swift/monitoring-and-auditing-operations.html 
+sidebar: sidebar 
+keywords: monitor operations, audit operations 
+summary: 您可以通过查看整个网格或特定节点的事务趋势来监控客户端操作的工作负载和效率。您可以使用审核消息监控客户端操作和事务。 
+---
+= 监控和审核操作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过查看整个网格或特定节点的事务趋势来监控客户端操作的工作负载和效率。您可以使用审核消息监控客户端操作和事务。
+
+
+
+== 监控对象载入和检索速率
+
+您可以监控对象载入和检索速率，以及对象计数，查询和验证的指标。您可以查看客户端应用程序在 StorageGRID 系统中成功尝试读取，写入和修改对象的次数和失败的尝试次数。
+
+.步骤
+. 使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+. 在信息板上，选择*Performance*>*S3 operations*或*Performance*>*Swift operations*。
++
+本节总结了 StorageGRID 系统执行的客户端操作的数量。协议速率是过去两分钟的平均值。
+
+. 选择 * 节点 * 。
+. 从节点主页（部署级别）中，单击 * 负载平衡器 * 选项卡。
++
+这些图表显示了定向到网格中负载平衡器端点的所有客户端流量的趋势。您可以选择以小时，天，周，月或年为单位的时间间隔， 或者，您也可以应用自定义间隔。
+
+. 从节点主页（部署级别）中，单击 * 对象 * 选项卡。
++
+此图表显示了整个 StorageGRID 系统的载入和检索速率，以每秒字节数和总字节数为单位。您可以选择以小时，天，周，月或年为单位的时间间隔， 或者，您也可以应用自定义间隔。
+
+. 要查看特定存储节点的信息，请从左侧列表中选择该节点，然后单击 * 对象 * 选项卡。
++
+此图表显示了此存储节点的对象载入速率和检索速率。此选项卡还包括对象计数，查询和验证的指标。您可以单击这些标签以查看这些指标的定义。
+
++
+image::../media/nodes_storage_node_objects_help.png[节点 >_Storage Nodge_ > 对象 > 属性帮助的屏幕截图]
+
+. 如果您需要更多详细信息：
++
+.. 选择 * 支持 * > * 工具 * > * 网格拓扑 * 。
+.. 选择 * 站点 _* > * 概述 * > * 主要 * 。
++
+API Operations 部分显示整个网格的摘要信息。
+
+.. 选择 * 存储节点 _* > * LDR* > * 客户端应用程序 _* > * 概述 * > * 主 *
++
+操作部分显示选定存储节点的摘要信息。
+
+
+
+
+
+
+
+== 访问和查看审核日志
+
+审核消息由 StorageGRID 服务生成并存储在文本日志文件中。审核日志中特定于 API 的审核消息提供关键的安全性，操作和性能监控数据，可帮助您评估系统的运行状况。
+
+.开始之前
+* 您必须具有特定的访问权限。
+* 您必须具有 `Passwords.txt` 文件
+* 您必须知道管理节点的 IP 地址。
+
+
+.关于此任务
+。 link:../audit/audit-message-flow-and-retention.html["活动审核日志文件"] 名为 `audit.log`、并存储在管理节点上。
+
+每天保存一次活动的 audit.log 文件，并启动一个新的 audit.log 文件。已保存文件的名称以格式指示其保存的时间 `yyyy-mm-dd.txt`。
+
+一天之后、保存的文件将按格式进行压缩和重命名 `yyyy-mm-dd.txt.gz`、用于保留原始日期。
+
+此示例显示了活动的audit.log文件、前一天的文件(2018-04-15.txt)以及前一天的压缩文件 (`2018-04-14.txt.gz`）。
+
+[listing]
+----
+audit.log
+2018-04-15.txt
+2018-04-14.txt.gz
+----
+.步骤
+. 登录到管理节点：
++
+.. 输入以下命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 输入中列出的密码 `Passwords.txt` 文件
+.. 输入以下命令切换到root： `su -`
+.. 输入中列出的密码 `Passwords.txt` 文件
++
+以root用户身份登录后、提示符将从变为 `$` to `#`。
+
+
+
+. 转到包含审核日志文件的目录：``cd /var/local/audit/export``
+. 根据需要查看当前审核日志文件或已保存的审核日志文件。
+
+
+
+
+=== 审核日志中跟踪的 Swift 操作
+
+系统会在中跟踪所有成功的存储删除、获取、机头、发布和放置操作 link:../audit/audit-messages-main.html["StorageGRID 审核日志"]。不会记录故障、也不会记录信息、身份验证或选项请求。
+
+跟踪以下Swift操作的信息。
+
+
+
+==== 帐户操作
+
+* link:account-operations.html["获取帐户"]
+* link:account-operations.html["主帐户"]
+
+
+
+
+==== 容器操作
+
+* link:container-operations.html["删除容器"]
+* link:container-operations.html["获取容器"]
+* link:container-operations.html["机头容器"]
+* link:container-operations.html["放入容器"]
+
+
+
+
+==== 对象操作
+
+* link:object-operations.html["删除对象"]
+* link:object-operations.html["获取对象"]
+* link:object-operations.html["head 对象"]
+* link:object-operations.html["PUT 对象"]
+

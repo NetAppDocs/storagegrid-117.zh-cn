@@ -1,0 +1,39 @@
+---
+permalink: rhel/installing-linux.html 
+sidebar: sidebar 
+keywords: how to install on red hat linux, how to install on centos 
+summary: 您必须在所有网格主机上安装 Red Hat Enterprise Linux 或 CentOS Linux 。使用 NetApp 互操作性表工具可获取受支持版本的列表。 
+---
+= 安装 Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须在所有网格主机上安装 Linux 。使用 https://["NetApp 互操作性表工具"^] 以获取支持的版本列表。
+
+
+IMPORTANT: 确保您的操作系统已升级到Linux内核4.15或更高版本。
+
+.步骤
+. 按照分销商的说明或您的标准操作步骤 在所有物理或虚拟网格主机上安装 Linux 。
++
+
+NOTE: 如果您使用的是标准 Linux 安装程序， NetApp 建议选择 "`compute node` " 软件配置（如果可用）或 " `minimal install` " 基础环境。不要安装任何图形桌面环境。
+
+. 确保所有主机均可访问软件包存储库，包括其他通道。
++
+您可能需要在此安装操作步骤 中稍后再安装这些附加软件包。
+
+. 如果已启用交换：
++
+.. 运行以下命令： `$ sudo swapoff --all`
+.. 删除中的所有交换条目 `/etc/fstab` 以保留设置。
+
+
++
+
+IMPORTANT: 如果未完全禁用交换，则会严重降低性能。
+
+

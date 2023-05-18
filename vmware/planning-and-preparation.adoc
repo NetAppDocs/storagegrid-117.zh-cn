@@ -1,0 +1,35 @@
+---
+permalink: vmware/planning-and-preparation.html 
+sidebar: sidebar 
+keywords: how to plan before installation 
+summary: 在部署网格节点和配置 StorageGRID 网格之前，您必须熟悉完成操作步骤 的步骤和要求。 
+---
+= 安装前（ VMware ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署网格节点和配置 StorageGRID 网格之前，您必须熟悉完成操作步骤 的步骤和要求。
+
+StorageGRID 部署和配置过程假定您熟悉 StorageGRID 系统的架构和操作功能。
+
+您可以一次部署一个或多个站点；但是，所有站点必须满足至少有三个存储节点的最低要求。
+
+在开始节点部署和网格配置操作步骤 之前，您必须：
+
+* 规划 StorageGRID 部署。
+* 按照规格安装，连接和配置所有必需的硬件，包括任何 StorageGRID 设备。
++
+
+IMPORTANT: 如果您的StorageGRID 安装不会使用StorageGRID 设备(硬件)存储节点、则必须使用具有备用电池的写入缓存(BBWC)的硬件RAID存储。StorageGRID 不支持使用虚拟存储区域网络(VSAN)、软件RAID或不支持RAID保护。
+
++
+
+NOTE: StorageGRID 安装操作步骤 中不包含特定于硬件的安装和集成说明。要了解如何安装StorageGRID 设备、请参见 link:../installconfig/index.html["安装设备硬件"]。
+
+* 了解 link:../network/index.html["可用网络选项以及如何在网格节点上实施每个网络选项"]。
+* 提前收集所有网络信息。除非使用DHCP、否则请收集要分配给每个网格节点的IP地址以及要使用的DNS和NTP服务器的IP地址。
+* 确定要使用的可用部署和配置工具。
+

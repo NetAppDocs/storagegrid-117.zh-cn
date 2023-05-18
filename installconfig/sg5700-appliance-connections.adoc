@@ -1,0 +1,90 @@
+---
+permalink: installconfig/sg5700-appliance-connections.html 
+sidebar: sidebar 
+keywords: network connections, appliance, grid, admin, client, bmc, management 
+summary: 安装SG5700 StorageGRID 设备时、需要将这两个控制器彼此相连并连接到所需的网络。 
+---
+= 网络连接(SG5700)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装SG5700 StorageGRID 设备时、需要将这两个控制器彼此相连并连接到所需的网络。
+
+此图显示了 SG5760 中的两个控制器，其中 E2800 控制器位于顶部， E5700SG 控制器位于底部。在 SG5712 中， E2800 控制器位于 E5700SG 控制器的左侧。
+
+image::../media/sg5760_connections.gif[SG5760 设备上的连接]
+
+[cols="1a,2a,2a,2a"]
+|===
+| Callout | Port | 端口类型 | 使用 ... 
+
+
+ a| 
+1.
+ a| 
+每个控制器上两个互连端口
+ a| 
+16 GB/s FC 光纤 SFP+
+ a| 
+将两个控制器彼此连接。
+
+
+
+ a| 
+2.
+ a| 
+E2800 控制器上的管理端口 1
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+连接到访问 SANtricity System Manager 的网络。您可以使用适用于 StorageGRID 的管理网络或独立的管理网络。
+
+
+
+ a| 
+E2800 控制器上的管理端口 2
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+为技术支持预留。
+
+
+
+ a| 
+3.
+ a| 
+E5700SG 控制器上的管理端口 1
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+将 E5700SG 控制器连接到 StorageGRID 管理网络。
+
+
+
+ a| 
+E5700SG 控制器上的管理端口 2
+ a| 
+1-GbE （ RJ-45 ）
+ a| 
+* 如果要与管理网络建立冗余连接，则可以与管理端口 1 绑定。
+* 可以保持未连接状态，并可用于临时本地访问（ IP 169.254.0.1 ）。
+* 在安装期间、如果DHCP分配的IP地址不可用、可使用将E5700SG控制器连接到服务笔记本电脑。
+
+
+
+
+ a| 
+4.
+ a| 
+E5700SG 控制器上的 10/225-GbE 端口 1-4
+ a| 
+10-GbE 或 25-GbE
+
+* 注： * 设备附带的 SFP+ 收发器支持 10-GbE 链路速度。如果要对四个网络端口使用 25 GbE 链路速度，则必须提供 SFP28 收发器。
+ a| 
+连接到网格网络和 StorageGRID 客户端网络。请参见 link:port-bond-modes-for-e5700sg-controller-ports.html["端口绑定模式(E5700SG控制器)"]。
+
+|===

@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: earlier-versions.html 
+keywords: storagegrid, earlier version, documentation, doc site, 11.5, 11.4, 11.3 
+summary: 您可以在此处找到有关NetApp StorageGRID 软件最新版本的文档。 
+---
+= 早期版本的 NetApp StorageGRID 文档
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在此处找到有关NetApp StorageGRID 软件最新版本的文档：
+
+* https://["StorageGRID 11.6文档"^]
+* https://["StorageGRID 11.5 文档"^]
+* https://["StorageGRID 11.4 文档中心"^]
+* https://["StorageGRID 11.3 文档中心"^]
+

@@ -1,0 +1,46 @@
+---
+permalink: sg6000/reinstalling-fibre-channel-hba.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, install, installing, installation, reinstall, reinstalling, reinstallation 
+summary: 替代光纤通道 HBA 安装在与已删除的光纤通道 HBA 相同的位置。 
+---
+= 重新安装光纤通道 HBA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+替代光纤通道 HBA 安装在与已删除的光纤通道 HBA 相同的位置。
+
+.开始之前
+* 您拥有正确的替代光纤通道 HBA 。
+* 您已删除现有光纤通道 HBA 。
++
+link:removing-fibre-channel-hba.html["删除光纤通道 HBA"]
+
+
+
+.步骤
+. 将 ESD 腕带的腕带一端绕在腕带上，并将扣具一端固定到金属接地，以防止静电放电。
+. 从包装中取出更换用的光纤通道 HBA 。
+. 在蓝色适配器闩锁处于打开位置的情况下，将光纤通道 HBA 与其在提升板部件上的连接器对齐；然后，小心地将适配器按入连接器中，直到其完全就位。
++
+image::../media/sg6060_fc_hba_location.jpg[SG6060 光纤通道 HBA 位于提升板部件中]
+
++
+提升板部件中有两个适配器：一个光纤通道 HBA 和一个以太网网络适配器。图中显示了光纤通道 HBA 。
+
+. 找到与系统板上的导销对齐的竖板部件上的对齐孔（带圆圈），以确保竖板部件正确定位。
++
+image::../media/sg6060_riser_alignment_hole.jpg[SG6060 提升板部件上的对齐孔]
+
+. 将提升板部件置于机箱中，确保其与系统板上的连接器和导销对齐；然后，插入提升板部件。
+. 小心地将竖板部件沿着其中心线，蓝色标记的孔旁边按到位，直到其完全就位。
+. 从要重新安装缆线的光纤通道 HBA 端口上取下保护盖。
+
+
+.完成后
+如果控制器中没有其他要执行的维护过程，请重新安装控制器盖板。
+
+link:reinstalling-sg6000-cn-controller-cover.html["重新安装 SG6000-CN 控制器盖板"]

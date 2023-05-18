@@ -1,0 +1,27 @@
+---
+permalink: admin/grid-federation-workflow.html 
+sidebar: sidebar 
+keywords: grid federation workflow, cross-grid replication, account clone, cgr, disaster recovery 
+summary: 作为网格管理员、您必须与租户用户密切协调、以便在两个StorageGRID 系统之间建立和使用网格联合连接、以进行帐户克隆和跨网格复制。 
+---
+= 网格联合工作流
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+作为网格管理员、您必须与租户用户密切协调、以便在两个StorageGRID 系统之间建立和使用网格联合连接、以进行帐户克隆和跨网格复制。
+
+此工作流图显示了网格管理员和租户用户为在两个网格之间建立网格联合连接以及设置帐户克隆和跨网格复制而要执行的高级步骤。
+
+在两个网格之间创建网格联合连接后、网格管理员将创建一个或多个新租户帐户、并分配权限以确定谁可以使用此连接。保存新租户后、StorageGRID 会自动在另一个网格上创建相同的租户。
+
+在两个网格上都有新租户可用后、租户用户可以执行以下操作：
+
+* 从租户的源网格中、创建新的租户用户和组、这些用户和组会自动克隆到租户的目标网格。
+* 从租户的源网格中、创建新的S3访问密钥、可以选择将这些密钥克隆到租户的目标网格。
+* 在两个网格上创建新分段、并可选择在一个方向或两个方向上启用跨网格复制。
+
+
+image:../media/grid-federation-workflow.png["网格联合工作流"]

@@ -1,0 +1,25 @@
+---
+permalink: ubuntu/deployment-tools.html 
+sidebar: sidebar 
+keywords: deployment tools 
+summary: 自动执行全部或部分 StorageGRID 安装可能会让您受益匪浅。 
+---
+= 部署工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自动执行全部或部分 StorageGRID 安装可能会让您受益匪浅。
+
+在以下任一情况下，自动部署可能会很有用：
+
+* 您已使用标准业务流程框架（例如 Ansible ， Puppet 或 Chef ）部署和配置物理或虚拟主机。
+* 您打算部署多个 StorageGRID 实例。
+* 您正在部署一个大型的复杂 StorageGRID 实例。
+
+
+StorageGRID 主机服务由软件包安装，并由配置文件驱动，这些配置文件可以在手动安装期间以交互方式创建，也可以提前准备（或以编程方式），以便使用标准业务流程框架实现自动安装。StorageGRID 提供了可选的 Python 脚本，用于自动配置 StorageGRID 设备和整个 StorageGRID 系统（ "`grid` " ）。您可以直接使用这些脚本，也可以对其进行检查，了解如何在您自己开发的网格部署和配置工具中使用 StorageGRID 安装 REST API 。
+
+如果您希望自动执行全部或部分 StorageGRID 部署，请查看 link:automating-installation.html["自动安装"] 开始安装过程之前。

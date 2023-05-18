@@ -1,0 +1,25 @@
+---
+permalink: upgrade/changes-to-tenant-management-api.html 
+sidebar: sidebar 
+keywords: tenant management api, api, api version, swagger, rest api 
+summary: StorageGRID 11.7使用租户管理API版本3。版本 3 已弃用版本 2 ；但版本 1 和版本 2 仍受支持。 
+---
+= 对租户管理 API 进行的更改
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 11.7使用租户管理API版本3。版本 3 已弃用版本 2 ；但版本 1 和版本 2 仍受支持。
+
+
+IMPORTANT: 您可以继续在StorageGRID 11.7中使用管理API版本1和版本2；但是、在StorageGRID 的未来版本中、将不再支持这些版本的API。升级到StorageGRID 11.7后、可以使用停用已弃用的v1和v2 API `PUT /grid/config/management` API。
+
+
+
+== 用于网格联盟的新端点
+
+您可以使用*grid联合连接* API端点列出当前租户的网格联合连接并清除当前租户和选定网格联合连接的上次跨网格复制错误。
+
+要了解更多信息，请访问 link:../tenant/understanding-tenant-management-api.html["了解租户管理 API"]。

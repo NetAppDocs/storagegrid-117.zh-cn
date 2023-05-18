@@ -1,0 +1,51 @@
+---
+permalink: s3/monitoring-object-ingest-and-retrieval-rates.html 
+sidebar: sidebar 
+keywords: monitor object ingest rates, view object ingest rates, monitor object retrieval rates, view object retrieval rates 
+summary: 您可以监控对象载入和检索速率，以及对象计数，查询和验证的指标。您可以查看客户端应用程序在 StorageGRID 系统中成功尝试读取，写入和修改对象的次数和失败的尝试次数。 
+---
+= 监控对象载入和检索速率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以监控对象载入和检索速率，以及对象计数，查询和验证的指标。您可以查看客户端应用程序在 StorageGRID 系统中成功尝试读取，写入和修改对象的次数和失败的尝试次数。
+
+.步骤
+. 使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+. 在信息板上，选择*Performance*>*S3 operations*或*Performance*>*Swift operations*。
++
+本节总结了 StorageGRID 系统执行的客户端操作的数量。协议速率是过去两分钟的平均值。
+
+. 选择 * 节点 * 。
+. 从节点主页（部署级别）中，单击 * 负载平衡器 * 选项卡。
++
+这些图表显示了定向到网格中负载平衡器端点的所有客户端流量的趋势。您可以选择以小时，天，周，月或年为单位的时间间隔， 或者，您也可以应用自定义间隔。
+
+. 从节点主页（部署级别）中，单击 * 对象 * 选项卡。
++
+此图表显示了整个 StorageGRID 系统的载入和检索速率，以每秒字节数和总字节数为单位。您可以选择以小时，天，周，月或年为单位的时间间隔， 或者，您也可以应用自定义间隔。
+
+. 要查看特定存储节点的信息，请从左侧列表中选择该节点，然后单击 * 对象 * 选项卡。
++
+此图表显示了此存储节点的对象载入速率和检索速率。此选项卡还包括对象计数，查询和验证的指标。您可以单击这些标签以查看这些指标的定义。
+
++
+image::../media/nodes_storage_node_objects_help.png[节点 >_Storage Nodge_ > 对象 > 属性帮助的屏幕截图]
+
+. 如果您需要更多详细信息：
++
+.. 选择 * 支持 * > * 工具 * > * 网格拓扑 * 。
+.. 选择 * 站点 _* > * 概述 * > * 主要 * 。
++
+API Operations 部分显示整个网格的摘要信息。
+
+.. 选择 * 存储节点 _* > * LDR* > * 客户端应用程序 _* > * 概述 * > * 主 *
++
+操作部分显示选定存储节点的摘要信息。
+
+
+
+

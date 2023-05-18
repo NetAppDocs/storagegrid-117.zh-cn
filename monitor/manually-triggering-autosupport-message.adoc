@@ -1,0 +1,31 @@
+---
+permalink: monitor/manually-triggering-autosupport-message.html 
+sidebar: sidebar 
+keywords: autosupport, triggering autosupport, manually triggering autosupport, autosupport triggers 
+summary: 为了帮助技术支持解决 StorageGRID 系统的问题，您可以手动触发要发送的 AutoSupport 消息。 
+---
+= 手动触发 AutoSupport 消息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+为了帮助技术支持解决 StorageGRID 系统的问题，您可以手动触发要发送的 AutoSupport 消息。
+
+.开始之前
+* 您必须使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+* 您必须具有root访问权限或其他网格配置权限。
+
+
+.步骤
+. 选择 * 支持 * > * 工具 * > * AutoSupport * 。
+. 在*设置*选项卡上，选择*发送用户触发的AutoSupport *。
++
+StorageGRID 尝试向技术支持发送 AutoSupport 消息。如果尝试成功，则会更新 * 结果 * 选项卡上的 * 最新结果 * 和 * 最后成功时间 * 值。如果出现问题， * 最新结果 * 值将更新为 " 失败 " ， StorageGRID 不会再尝试发送 AutoSupport 消息。
+
++
+
+NOTE: 发送用户触发的 AutoSupport 消息后，请在 1 分钟后刷新浏览器中的 AutoSupport 页面以访问最新结果。
+
+

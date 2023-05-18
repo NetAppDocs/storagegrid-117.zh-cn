@@ -1,0 +1,25 @@
+= 
+:allow-uri-read: 
+
+
+AutoSupport 消息包含如下信息：
+
+* StorageGRID 软件版本
+* 操作系统版本
+* 系统级别和位置级别属性信息
+* 近期警报和警报（旧系统）
+* 所有网格任务的当前状态，包括历史数据
+* 管理节点数据库使用情况
+* 丢失或缺失对象的数量
+* 网格配置设置
+* NMS 实体
+* 活动 ILM 策略
+* 已配置网格规范文件
+* 诊断指标
+
+
+您可以在首次安装 StorageGRID 时启用 AutoSupport 功能和各个 AutoSupport 选项，也可以稍后启用它们。如果未启用AutoSupport 、网格管理器信息板上将显示一条消息。此消息包含指向 AutoSupport 配置页面的链接。
+
+image::../media/autosupport_disabled_message.png[AutoSupport 已禁用消息]
+
+如果关闭此消息，则此消息将不会再次显示，直到清除浏览器缓存为止，即使 AutoSupport 仍处于禁用状态。

@@ -1,0 +1,41 @@
+---
+permalink: rhel/planning-and-preparation.html 
+sidebar: sidebar 
+keywords: installation planning red hat linux 
+summary: 在部署网格节点和配置 StorageGRID 网格之前，您必须熟悉完成操作步骤 的步骤和要求。 
+---
+= 安装前（ Red Hat 或 CentOS ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署网格节点和配置StorageGRID 之前、您必须熟悉完成操作步骤 的步骤和要求。
+
+StorageGRID 部署和配置过程假定您熟悉 StorageGRID 系统的架构和操作。
+
+您可以一次部署一个或多个站点；但是，所有站点必须满足至少有三个存储节点的最低要求。
+
+在开始安装 StorageGRID 之前，您必须：
+
+* 了解计算要求、包括每个节点的最低CPU和RAM要求。
+* 了解 StorageGRID 如何支持多个网络以实现流量隔离，安全性和管理便利性，并计划要连接到每个 StorageGRID 节点的网络。
++
+请参见StorageGRID link:../network/index.html["网络连接准则"]。
+
+* 了解每种类型的网格节点的存储和性能要求。
+* 确定一组服务器（物理服务器，虚拟服务器或两者），这些服务器可在聚合中提供足够的资源来支持您计划部署的 StorageGRID 节点的数量和类型。
+* 了解 link:node-container-migration-requirements.html["节点迁移的要求"]，以便在不中断任何服务的情况下对物理主机执行计划内维护。
+* 提前收集所有网络信息。除非使用DHCP、否则请收集要分配给每个网格节点的IP地址以及要使用的DNS和NTP服务器的IP地址。
+* 按照规格安装，连接和配置所有必需的硬件，包括任何 StorageGRID 设备。
++
+
+IMPORTANT: 如果您的StorageGRID 安装不会使用StorageGRID 设备(硬件)存储节点、则必须使用具有备用电池的写入缓存(BBWC)的硬件RAID存储。StorageGRID 不支持使用虚拟存储区域网络(VSAN)、软件RAID或不支持RAID保护。
+
++
+
+NOTE: StorageGRID 安装操作步骤 中不包含特定于硬件的安装和集成说明。要了解如何安装StorageGRID 设备、请参见 link:../installconfig/index.html["安装设备硬件"]。
+
+* 确定要使用的可用部署和配置工具。
+

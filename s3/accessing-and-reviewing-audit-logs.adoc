@@ -1,0 +1,54 @@
+---
+permalink: s3/accessing-and-reviewing-audit-logs.html 
+sidebar: sidebar 
+keywords: access audit logs, review audit logs, view audit logs 
+summary: 审核消息由 StorageGRID 服务生成并存储在文本日志文件中。审核日志中特定于 API 的审核消息提供关键的安全性，操作和性能监控数据，可帮助您评估系统的运行状况。 
+---
+= 访问和查看审核日志
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+审核消息由 StorageGRID 服务生成并存储在文本日志文件中。审核日志中特定于 API 的审核消息提供关键的安全性，操作和性能监控数据，可帮助您评估系统的运行状况。
+
+.开始之前
+* 您具有特定的访问权限。
+* 您拥有 `Passwords.txt` 文件
+* 您知道管理节点的 IP 地址。
+
+
+.关于此任务
+活动审核日志文件名为 `audit.log`、并存储在管理节点上。
+
+每天保存一次活动的audit.log文件、并保存一个新文件 `audit.log` 文件已启动。已保存文件的名称以格式指示其保存的时间 `_yyyy-mm-dd.txt_`。
+
+一天之后、保存的文件将按格式进行压缩和重命名 `_yyyy-mm-dd.txt.gz_`、用于保留原始日期。
+
+此示例显示了活动的 `audit.log` file、前一天的文件 (`2018-04-15.txt`)、以及前一天的压缩文件 (`2018-04-14.txt.gz`）。
+
+[listing]
+----
+audit.log
+2018-04-15.txt
+2018-04-14.txt.gz
+----
+.步骤
+. 登录到管理节点：
++
+.. 输入以下命令： `ssh admin@_primary_Admin_Node_IP_`
+.. 输入中列出的密码 `Passwords.txt` 文件
+.. 输入以下命令切换到root： `su -`
+.. 输入中列出的密码 `Passwords.txt` 文件
++
+以root用户身份登录后、提示符将从变为 `$` to `#`。
+
+
+
+. 转到包含审核日志文件的目录：
++
+`cd /var/local/audit/export`
+
+. 根据需要查看当前审核日志文件或已保存的审核日志文件。
+

@@ -1,0 +1,375 @@
+---
+permalink: installconfig/gathering-installation-information-sg5700.html 
+sidebar: sidebar 
+keywords: storagegrid, sg5700, storage node, storage appliance, install, information, site, pre-install, preparing, prepare, preinstall, info, preparation 
+summary: 使用表记录连接到设备的每个网络所需的信息。安装和配置硬件需要这些值。 
+---
+= 收集安装信息（ SG5700 ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用表记录连接到设备的每个网络所需的信息。安装和配置硬件需要这些值。
+
+
+TIP: 请使用随ConfigBuilder提供的工作簿、而不是使用这些表。通过使用ConfigBuilder工作簿、您可以上传系统信息并生成JSON文件、以自动完成StorageGRID 设备安装程序中的某些配置步骤。请参见 link:automating-appliance-installation-and-configuration.html["自动安装和配置设备"]。
+
+
+
+== 连接到 E2800 控制器上的 SANtricity System Manager 所需的信息
+
+将E2800系列控制器连接到要用于SANtricity System Manager的管理网络。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+要连接到管理端口 1 的以太网交换机端口
+ a| 
+
+
+
+ a| 
+管理端口 1 的 MAC 地址（印在端口 P1 附近的标签上）
+ a| 
+
+
+
+ a| 
+DHCP 为管理端口 1 分配的 IP 地址（如果在启动后可用）
+
+* 注： * 如果要连接到 E2800 控制器的网络包含 DHCP 服务器，则网络管理员可以使用 MAC 地址确定 DHCP 服务器分配的 IP 地址。
+ a| 
+
+
+
+ a| 
+速度和双工模式
+
+* 注： * 您必须确保 SANtricity System Manager 管理网络的以太网交换机设置为自动协商。
+ a| 
+必须为：
+
+* 自动协商（默认）
+
+
+
+
+ a| 
+IP 地址格式
+ a| 
+选择一项：
+
+* IPv4
+* IPv6
+
+
+
+
+ a| 
+您计划在管理网络上用于设备的静态 IP 地址
+ a| 
+对于 IPv4 ：
+
+* IPv4 地址：
+* 子网掩码：
+* 网关
+
+
+对于 IPv6 ：
+
+* IPv6 地址：
+* 可路由的 IP 地址：
+* E2800 控制器路由器 IP 地址：
+
+
+|===
+
+
+== 将 E5700SG 控制器连接到管理网络所需的信息
+
+StorageGRID 管理网络是一个可选网络，用于系统管理和维护。此设备使用 E5700SG 控制器上的 1-GbE 管理端口连接到管理网络。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+已启用管理网络
+ a| 
+选择一项：
+
+* 否
+* 是（默认）
+
+
+
+
+ a| 
+网络绑定模式
+ a| 
+选择一项：
+
+* 独立
+* 主动备份
+
+
+
+
+ a| 
+端口 1 的交换机端口
+ a| 
+
+
+
+ a| 
+端口 2 的交换机端口（仅限主动备份网络绑定模式）
+ a| 
+
+
+
+ a| 
+DHCP 为管理端口 1 分配的 IP 地址（如果在启动后可用）
+
+* 注： * 如果管理网络包含 DHCP 服务器，则 E5700SG 控制器会在启动后在其七段显示器上显示 DHCP 分配的 IP 地址。您还可以使用 MAC 地址查找分配的 IP ，从而确定 DHCP 分配的 IP 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划在管理网络上用于设备存储节点的静态 IP 地址
+
+* 注： * 如果您的网络没有网关，请为此网关指定相同的静态 IPv4 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+管理网络子网（ CIDR ）
+ a| 
+
+|===
+
+
+== 在 E5700SG 控制器上连接和配置 10/25/GbE 端口所需的信息
+
+E5700SG 控制器上的四个 10/225-GbE 端口连接到 StorageGRID 网格网络和客户端网络。
+
+
+NOTE: 请参见 link:port-bond-modes-for-e5700sg-controller-ports.html["端口绑定模式(E5700SG控制器)"]。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+链路速度
+
+*注：*如果选择25 GbE，请安装SPF28收发器。不支持自动互连、因此您还必须为25GbE配置端口和连接的交换机。
+ a| 
+选择一项：
+
+* 10 GbE （默认）
+* 25 GbE
+
+
+
+
+ a| 
+端口绑定模式
+ a| 
+选择一项：
+
+* FIXED （默认）
+* 聚合
+
+
+
+
+ a| 
+端口 1 的交换机端口（客户端网络）
+ a| 
+
+
+
+ a| 
+端口 2 的交换机端口（网格网络）
+ a| 
+
+
+
+ a| 
+端口 3 的交换机端口（客户端网络）
+ a| 
+
+
+
+ a| 
+端口 4 的交换机端口（网格网络）
+ a| 
+
+|===
+
+
+== 将 E5700SG 控制器连接到网格网络所需的信息
+
+适用于 StorageGRID 的网格网络是一个必需的网络，用于所有内部 StorageGRID 流量。此设备使用 E5700SG 控制器上的 10/225-GbE 端口连接到网格网络。
+
+
+NOTE: 请参见 link:port-bond-modes-for-e5700sg-controller-ports.html["端口绑定模式(E5700SG控制器)"]。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+网络绑定模式
+ a| 
+选择一项：
+
+* Active-Backup （默认）
+* LACP （ 802.3ad ）
+
+
+
+
+ a| 
+已启用 VLAN 标记
+ a| 
+选择一项：
+
+* 否（默认）
+* 是的。
+
+
+
+
+ a| 
+VLAN 标记（如果启用了 VLAN 标记）
+ a| 
+输入一个介于 0 到 4095 之间的值：
+
+
+
+ a| 
+DHCP 为网格网络分配的 IP 地址（如果在启动后可用）
+
+* 注： * 如果网格网络包含 DHCP 服务器，则 E5700SG 控制器会在启动后在其七段显示中显示为网格网络分配的 DHCP IP 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划用于网格网络上设备存储节点的静态 IP 地址
+
+* 注： * 如果您的网络没有网关，请为此网关指定相同的静态 IPv4 地址。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+网格网络子网（ CIDR ）
+
+* 注： * 如果未启用客户端网络，则控制器上的默认路由将使用此处指定的网关。
+ a| 
+
+|===
+
+
+== 将 E5700SG 控制器连接到客户端网络所需的信息
+
+适用于 StorageGRID 的客户端网络是一个可选网络，通常用于提供对网格的客户端协议访问。设备使用 E5700SG 控制器上的 10/225-GbE 端口连接到客户端网络。
+
+
+NOTE: 请参见 link:port-bond-modes-for-e5700sg-controller-ports.html["端口绑定模式(E5700SG控制器)"]。
+
+[cols="2a,1a"]
+|===
+| 所需信息 | 您的价值 
+
+
+ a| 
+已启用客户端网络
+ a| 
+选择一项：
+
+* 否（默认）
+* 是的。
+
+
+
+
+ a| 
+网络绑定模式
+ a| 
+选择一项：
+
+* Active-Backup （默认）
+* LACP （ 802.3ad ）
+
+
+
+
+ a| 
+已启用 VLAN 标记
+ a| 
+选择一项：
+
+* 否（默认）
+* 是的。
+
+
+
+
+ a| 
+VLAN 标记
+
+（如果启用了 VLAN 标记）
+ a| 
+输入一个介于 0 到 4095 之间的值：
+
+
+
+ a| 
+DHCP 为客户端网络分配的 IP 地址（如果在启动后可用）
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+
+
+ a| 
+您计划在客户端网络上用于设备存储节点的静态 IP 地址
+
+* 注： * 如果启用了客户端网络，则控制器上的默认路由将使用此处指定的网关。
+ a| 
+* IPv4 地址（ CIDR ）：
+* 网关
+
+
+|===
+.相关信息
+* link:sg5700-appliance-connections.html["网络连接(SG5700)"]
+* link:port-bond-modes-for-e5700sg-controller-ports.html["端口绑定模式(E5700SG控制器)"]
+* link:configuring-hardware.html["配置硬件（ SG5700 ）"]
+

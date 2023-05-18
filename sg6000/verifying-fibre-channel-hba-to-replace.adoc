@@ -1,0 +1,51 @@
+---
+permalink: sg6000/verifying-fibre-channel-hba-to-replace.html 
+sidebar: sidebar 
+keywords: storagegrid, sg6000, storage node, storage appliance, sg6000-cn, hba, host bus adapter, fibre channel, fiber channel, locate, identify, find, replace, replacing, replacement 
+summary: 如果您不确定要更换哪个光纤通道主机总线适配器（ HBA\ ），请完成此操作步骤 以进行识别。 
+---
+= 确认要更换的光纤通道 HBA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不确定要更换哪个光纤通道主机总线适配器（ HBA ），请完成此操作步骤 以进行识别。
+
+.开始之前
+* 您拥有需要更换光纤通道 HBA 的存储设备或 SG6000-CN 控制器的序列号。
++
+
+NOTE: 如果包含要更换的光纤通道 HBA 的存储设备的序列号以字母 Q 开头，则它不会在网格管理器中列出。您必须检查附加到数据中心中每个 SG6000-CN 控制器正面的标签，直到找到匹配项为止。
+
+* 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
+
+
+.步骤
+. 在网格管理器中，选择 * 节点 * 。
+. 从节点页面上的表中，选择设备存储节点。
+. 选择 * 硬件 * 选项卡。
++
+检查 StorageGRID 设备部分中的 * 存储设备机箱序列号 * 和 * 计算控制器序列号 * 。查看其中一个序列号是否与要更换光纤通道 HBA 的存储设备的序列号匹配。如果任一序列号匹配，则表明您找到了正确的设备。
+
++
+image::../media/nodes_page_hardware_tab_for_appliance_verify_HBA.png[光纤通道 HCA 的设备部分]
+
++
+** 如果未显示 StorageGRID 设备部分，则选定节点不是 StorageGRID 设备。从树视图中选择其他节点。
+** 如果设备型号不是SG6060或SG6060X、请从树视图中选择其他节点。
+** 如果序列号不匹配、请从树视图中选择其他节点。
+
+
+. 找到需要更换光纤通道 HBA 的节点后，记下 StorageGRID 设备部分列出的计算控制器 BMC IP 地址。
++
+您可以使用此 IP 地址打开计算控制器识别 LED ，以帮助您在数据中心中找到设备。
+
++
+link:turning-controller-identify-led-on-and-off.html["打开和关闭控制器识别 LED"]
+
+
+
+.相关信息
+link:removing-fibre-channel-hba.html["删除光纤通道 HBA"]

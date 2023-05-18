@@ -1,0 +1,62 @@
+---
+permalink: s3/how-storagegrid-ilm-rules-manage-objects.html 
+sidebar: sidebar 
+keywords: ilm manage object rules 
+summary: 网格管理员创建信息生命周期管理 \ （ ILM ）规则，以管理从 S3 REST API 客户端应用程序载入到 StorageGRID 系统的对象数据。然后，这些规则将添加到 ILM 策略中，以确定随着时间的推移对象数据的存储方式和存储位置。 
+---
+= StorageGRID ILM 规则如何管理对象
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+网格管理员创建信息生命周期管理（ ILM ）规则，用于管理从 S3 REST API 客户端应用程序输入到 StorageGRID 系统中的对象数据。然后，这些规则将添加到 ILM 策略中，以确定随着时间的推移对象数据的存储方式和存储位置。
+
+ILM 设置可确定对象的以下方面：
+
+* * 地理位置 *
++
+对象数据在 StorageGRID 系统（存储池）或云存储池中的位置。
+
+* * 存储级别 *
++
+用于存储对象数据的存储类型：例如闪存或旋转磁盘。
+
+* * 损失保护 *
++
+创建的副本数量以及创建的副本类型：复制，纠删编码或两者。
+
+* * 保留 *
++
+随着时间的推移，对象数据的管理方式，存储位置以及保护数据免受丢失的方式会发生变化。
+
+* * 载入期间的保护 *
++
+用于在载入期间保护对象数据的方法：同步放置（使用平衡或严格的 InGest 行为选项）或创建中间副本（使用双提交选项）。
+
+
+
+ILM 规则可以筛选和选择对象。对于使用 S3 载入的对象， ILM 规则可以根据以下元数据筛选对象：
+
+* 租户帐户
+* Bucket Name
+* 载入时间
+* 密钥
+* 上次访问时间
++
+
+NOTE: 默认情况下，对所有 S3 分段禁用上次访问时间更新。如果您的StorageGRID 系统包含使用上次访问时间选项的ILM规则、则必须为该规则中指定的S3存储分段启用上次访问时间更新。使用Put Bucket"最后一个访问时间"请求、租户经理(请参见 link:../tenant/enabling-or-disabling-last-access-time-updates.html["启用或禁用上次访问时间更新"])或租户管理API。启用上次访问时间更新时，请注意 StorageGRID 性能可能会降低，尤其是在具有小型对象的系统中。
+
+* 位置限制
+* 对象大小
+* 用户元数据
+* 对象标记
+
+
+.相关信息
+link:../tenant/index.html["使用租户帐户"]
+
+link:../ilm/index.html["使用 ILM 管理对象"]
+
+link:put-bucket-last-access-time-request.html["PUT 分段上次访问时间"]

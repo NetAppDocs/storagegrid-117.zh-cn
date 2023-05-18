@@ -1,0 +1,117 @@
+---
+permalink: upgrade/how-your-system-is-affected-during-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, firmware, appliance, alert 
+summary: 您必须了解 StorageGRID 系统在升级期间会受到什么影响。 
+---
+= 升级期间对系统的影响
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须了解 StorageGRID 系统在升级期间会受到什么影响。
+
+
+
+== StorageGRID 升级不会造成系统中断
+
+StorageGRID 系统可以在整个升级过程中从客户端应用程序载入和检索数据。如果您批准所有类型相同的节点(例如存储节点)进行升级、则这些节点会一次关闭一个、因此、所有网格节点或特定类型的所有网格节点都不可用。
+
+为了保证持续可用性、请确保ILM策略包含指定存储每个对象的多个副本的规则。此外，您还必须确保将所有外部 S3 或 Swift 客户端配置为向以下客户端之一发送请求：
+
+* 高可用性(HA)组虚拟IP地址
+* 高可用性第三方负载平衡器
+* 每个客户端具有多个网关节点
+* 每个客户端具有多个存储节点
+
+
+
+
+== 设备固件已升级
+
+在StorageGRID 11.7升级期间：
+
+* 所有StorageGRID 设备节点都会自动升级到StorageGRID 设备安装程序固件版本3.7。
+* SG6060和SGF6024设备会自动升级到BIOS固件版本3B07.EX和BMC固件版本3.97.07。
+* SG100和SG1000设备会自动升级到BIOS固件版本3B12.EC和BMC固件版本4.71.07。
+
+
+
+
+== 可能会触发警报
+
+服务启动和停止以及 StorageGRID 系统作为混合版本环境运行时（某些网格节点运行早期版本，而其他网格节点已升级到更高版本），可能会触发警报。升级完成后，可能会触发其他警报。
+
+例如，当服务停止时，您可能会看到*Unable to communication with node *警报，或者当某些节点已升级到StorageGRID 11.7，但其他节点仍在运行StorageGRID 11.6时，您可能会看到*cassandr communication error*警报。通常，这些警报将在升级完成后清除。
+
+升级到StorageGRID 11.7期间、如果存储节点停止、则可能会触发*无法实现ILM放置*警报。升级完成后，此警报可能会持续 1 天。
+
+升级完成后、您可以从Grid Manager信息板中选择*最近解决的警报*或*当前警报*来查看任何与升级相关的警报。
+
+
+
+== 系统会生成许多 SNMP 通知
+
+请注意，在升级期间停止并重新启动网格节点时，可能会生成大量 SNMP 通知。要避免通知过多，请在开始升级之前清除*启用SNMP代理通知*复选框(*configuration*>*Monitoring*>*SNMP agent*)以禁用SNMP通知。然后，在升级完成后重新启用通知。
+
+
+
+== 配置更改受限
+
+
+NOTE: 此列表专门适用于从StorageGRID 11.6升级到StorageGRID 11.7的情况。如果要升级到另一个StorageGRID 版本、请参见该版本的升级说明中的受限更改列表。
+
+直到 * 启用新功能 * 任务完成：
+
+* 请勿更改任何网格配置。
+* 不要启用或禁用任何新功能。例如、在两个StorageGRID 系统均已更新到StorageGRID 11.7之前、请勿尝试创建网格联合连接。
+* 请勿更新ILM配置。否则，您可能会遇到不一致的意外 ILM 行为。
+* 请勿应用修补程序或恢复网格节点。
++
+
+NOTE: 如果您需要在升级期间恢复节点、请联系技术支持。
+
+* 升级到StorageGRID 11.7时、不应管理HA组、VLAN接口或负载平衡器端点。
+* 在升级到StorageGRID 11.7之前、请勿删除任何HA组。其他HA组中的虚拟IP地址可能无法访问。
+
+
+完成 * 最终升级步骤 * 任务之前：
+
+* 请勿执行扩展操作步骤。
+* 请勿执行停用操作步骤。
+
+
+
+
+== 您不能从租户管理器查看存储分段详细信息或管理存储分段
+
+在升级到StorageGRID 11.7期间(即、系统以混合版本环境运行时)、您无法使用租户管理器查看存储分段详细信息或管理存储分段。租户管理器中的 " 分段 " 页面显示以下错误之一：
+
+* 升级到11.7版时、无法使用此API。
+* 升级到11.7版时、无法在租户管理器中查看存储分段版本控制详细信息。
+
+
+升级到11.7版后、此错误将得以解决。
+
+.临时解决策
+在11.7升级过程中、请使用以下工具查看存储分段详细信息或管理存储分段、而不是使用租户管理器：
+
+* 要对存储分段执行标准S3操作、请使用 link:../s3/operations-on-buckets.html["S3 REST API"] 或 link:../tenant/understanding-tenant-management-api.html["租户管理 API"]。
+* 要对存储分段执行 StorageGRID 自定义操作（例如，查看和修改存储分段一致性级别，启用或禁用上次访问时间更新或配置搜索集成），请使用租户管理 API 。
+
+
+
+
+== TLS加密或SSH配置可能会更改
+
+如果已手动更改TLS密码或SSH配置或节点间的配置不一致、则升级后所有节点都将被覆盖为旧兼容性或现代兼容性。如果使用了 `fips-ciphers.sh` 在StorageGRID 11.6中、通用标准策略将应用于所有节点。否则、将应用旧兼容性策略。如果您需要使用通用标准验证的配置、则必须使用通用标准策略或FIPS严格策略。如果未使用 `fips-ciphers.sh`，则在升级完成后应使用新的现代兼容性设置。要配置加密方法，请进入*configuration*>*Security*>*Security settings，然后选择*TLS和SSH policies*。
+
+
+
+== CLB端口可能会转换为负载平衡器端点
+
+在StorageGRID 11.7中删除了旧版连接负载平衡器(CLB)服务。如果在升级预检期间检测到CLB配置，将触发*检测到旧CLB负载平衡器活动*警报。如果在现有StorageGRID 版本中为S3或Swift API设置了自定义证书、则在升级到StorageGRID 11.7期间、CLB端口8082、8083、8084和8085将转换为负载平衡器端点。
+
+另请参见 link:../admin/managing-load-balancing.html["负载平衡注意事项"]。

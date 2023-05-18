@@ -1,0 +1,47 @@
+---
+permalink: s3/upload-part.html 
+sidebar: sidebar 
+keywords: s3 upload part operation 
+summary: '" 上传部件 " 操作会通过多部件上传方式为对象上传部件。' 
+---
+= 上传部件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+" 上传部件 " 操作会通过多部件上传方式为对象上传部件。
+
+
+
+== 支持的请求标头
+
+支持以下请求标头：
+
+* `Content-Length`
+* `Content-MD5`
+
+
+
+
+== 服务器端加密的请求标头
+
+如果您为启动多部件上传请求指定了 SSI-C 加密，则还必须在每个上传部件请求中包含以下请求标头：
+
+* `x-amz-server-side-encryption-customer-algorithm`：指定 `AES256`。
+* `x-amz-server-side-encryption-customer-key`：指定您在启动多部件上传请求中提供的相同加密密钥。
+* `x-amz-server-side-encryption-customer-key-MD5`：指定您在启动多部件上传请求中提供的相同MD5摘要。
+
+
+
+IMPORTANT: 您提供的加密密钥永远不会存储。如果丢失加密密钥，则会丢失相应的对象。在使用客户提供的密钥保护对象数据之前，请查看 "`使用服务器端加密 " 中的注意事项。`
+
+
+
+== 版本控制
+
+多部分上传包括启动上传，发布上传，上传部件，组装上传的部件以及完成上传的操作。在执行完整的多部件上传操作时，系统会创建对象（如果适用，还会进行版本控制）。
+
+.相关信息
+link:using-server-side-encryption.html["使用服务器端加密"]

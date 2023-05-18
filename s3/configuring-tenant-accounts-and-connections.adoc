@@ -1,0 +1,166 @@
+---
+permalink: s3/configuring-tenant-accounts-and-connections.html 
+sidebar: sidebar 
+keywords: configuring, tenant, connections 
+summary: 要将 StorageGRID 配置为接受来自客户端应用程序的连接，需要创建一个或多个租户帐户并设置连接。 
+---
+= 配置租户帐户和连接
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要将 StorageGRID 配置为接受来自客户端应用程序的连接，需要创建一个或多个租户帐户并设置连接。
+
+
+
+== 创建和配置 S3 租户帐户
+
+S3 API 客户端必须先具有 S3 租户帐户，然后才能在 StorageGRID 上存储和检索对象。每个租户帐户都有自己的帐户ID、组、用户、分段和对象。
+
+S3 租户帐户由 StorageGRID 网格管理员使用网格管理器或网格管理 API 创建。请参见 link:../admin/managing-tenants.html["管理租户"] 了解详细信息。创建S3租户帐户后、租户用户可以访问租户管理器来管理组、用户、访问密钥和分段。请参见 link:../tenant/index.html["使用租户帐户"] 了解详细信息。
+
+
+TIP: 虽然S3租户用户可以使用租户管理器创建和管理S3访问密钥和存储分段、但他们必须使用S3客户端应用程序来加存和管理对象。请参见 link:../s3/index.html["使用S3 REST API"] 了解详细信息。
+
+
+
+== 如何配置客户端连接
+
+网格管理员可以选择影响 S3 客户端连接到 StorageGRID 以存储和检索数据的配置。将StorageGRID 连接到任何S3应用程序有四个基本步骤：
+
+* 根据客户端应用程序连接到StorageGRID 的方式、在StorageGRID 中执行必备任务。
+* 使用StorageGRID 获取应用程序连接到网格所需的值。您可以执行以下任一操作 link:../admin/use-s3-setup-wizard.html["使用S3设置向导"] 或手动配置每个StorageGRID 实体。
+* 使用S3应用程序完成与StorageGRID 的连接。创建DNS条目以将IP地址与计划使用的任何域名关联起来。
+* 在应用程序和StorageGRID 中执行持续任务、以管理和监控一段时间内的对象存储。
+
+
+有关这些步骤的详细信息、请参见 link:../admin/configuring-client-connections.html["配置客户端连接"]。
+
+
+
+=== 客户端连接所需的信息
+
+要存储或检索对象、S3客户端应用程序会连接到负载平衡器服务(包含在所有管理节点和网关节点上)或本地分发路由器(LDR)服务(包含在所有存储节点上)。
+
+客户端应用程序可以使用网格节点的IP地址以及该节点上服务的端口号连接到StorageGRID。或者、您也可以为负载平衡节点创建高可用性(HA)组、以提供使用虚拟IP (VIP)地址的高可用性连接。如果要使用完全限定域名(FQDN)而不是IP或VIP地址连接到StorageGRID 、则可以配置DNS条目。
+
+请参见 link:../admin/summary-ip-addresses-and-ports-for-client-connections.html["摘要：客户端连接的 IP 地址和端口"] 有关详细信息 ...
+
+
+
+=== 决定使用 HTTPS 或 HTTP 连接
+
+使用负载平衡器端点建立客户端连接时，必须使用为此端点指定的协议（ HTTP 或 HTTPS ）进行连接。要使用HTTP进行客户端到存储节点的连接、必须启用HTTP。
+
+默认情况下、当客户端应用程序连接到存储节点时、它们必须对所有连接使用加密的HTTPS。或者，您也可以通过在网格管理器中选择*configuration*>*Security settings *>*Network and objects*>*Enable HTTP for Storage Node CONNECations*来启用不太安全的HTTP连接。例如，在非生产环境中测试与存储节点的连接时，客户端应用程序可能会使用 HTTP 。
+
+
+CAUTION: 为生产网格启用HTTP时请小心、因为请求和响应将以未加密的方式发送。
+
+.相关信息
+link:../admin/index.html["管理 StorageGRID"]
+
+link:benefits-of-active-idle-and-concurrent-http-connections.html["活动，空闲和并发 HTTP 连接的优势"]
+
+
+
+== 用于S3请求的S3端点域名
+
+在将S3端点域名用于客户端请求之前、StorageGRID 管理员必须先将系统配置为接受在S3路径模式和S3虚拟托管模式请求中使用S3端点域名的连接。
+
+.关于此任务
+要使用 S3 虚拟托管模式请求，网格管理员必须执行以下任务：
+
+* 使用网格管理器将 S3 端点域名添加到 StorageGRID 系统。
+* 确保客户端用于与 StorageGRID 的 HTTPS 连接的证书已针对客户端所需的所有域名进行签名。
++
+例如、如果S3 API服务端点域端点为 `s3.company.com`网格管理员必须确保用于HTTPS连接的证书具有 `s3.company.com` 作为使用者公用名和使用者替代名称、和 `*.s3.company.com` 在使用者替代名称中。
+
+* link:../maintain/configuring-dns-servers.html["配置DNS服务器"] 客户端用于包含与S3端点域名匹配的DNS记录、包括任何必需的通配符记录。
+
+
+如果客户端使用负载平衡器服务进行连接，则网格管理员配置的证书是客户端使用的负载平衡器端点的证书。
+
+
+NOTE: 每个负载平衡器端点都有自己的证书、并且可以对每个端点进行配置、使其能够识别不同的S3端点域名。
+
+如果客户端连接到存储节点、则网格管理员配置的证书就是用于网格的单个自定义服务器证书。
+
+请参见的说明 link:../admin/index.html["管理 StorageGRID"] 有关详细信息 ...
+
+完成这些步骤后、您可以使用虚拟托管模式请求。
+
+
+
+== 测试 S3 REST API 配置
+
+您可以使用 Amazon Web Services 命令行界面（ AWS 命令行界面）测试与系统的连接，并验证是否可以向系统读取和写入对象。
+
+.开始之前
+* 您已从下载并安装 AWS 命令行界面 https://["aws.amazon.com/cli"^]。
+* 您已在 StorageGRID 系统中创建 S3 租户帐户。
+* 您已在租户帐户中创建访问密钥。
+
+
+.步骤
+. 配置AWS命令行界面设置以使用您在StorageGRID 系统中创建的帐户：
++
+.. 进入配置模式： `aws configure`
+.. 输入您创建的帐户的访问密钥ID。
+.. 输入您创建的帐户的机密访问密钥。
+.. 输入要使用的默认区域，例如 us-east-1 。
+.. 输入要使用的默认输出格式，或者按 * 输入 * 选择 JSON 。
+
+
+. 创建存储分段。
++
+此示例假设您已将负载平衡器端点配置为使用IP地址10.96.101.17和端口10443。
+
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443
+--no-verify-ssl create-bucket --bucket testbucket
+----
++
+如果已成功创建存储分段，则会返回存储分段的位置，如以下示例所示：
+
++
+[listing]
+----
+"Location": "/testbucket"
+----
+. 上传对象。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+put-object --bucket testbucket --key s3.pdf --body C:\s3-test\upload\s3.pdf
+----
++
+如果对象上传成功，则返回一个 Etag ，该 Etag 是对象数据的哈希。
+
+. 列出存储分段的内容以验证是否已上传此对象。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+list-objects --bucket testbucket
+----
+. 删除对象。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+delete-object --bucket testbucket --key s3.pdf
+----
+. 删除存储分段。
++
+[listing]
+----
+aws s3api --endpoint-url https://10.96.101.17:10443 --no-verify-ssl
+delete-bucket --bucket testbucket
+----
+

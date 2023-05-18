@@ -1,0 +1,22 @@
+---
+permalink: admin/archiving-to-cloud-through-s3-api.html 
+sidebar: sidebar 
+keywords: archive node to AWS, Amazon Web Services 
+summary: 您可以将归档节点配置为直接连接到 Amazon Web Services \ （ AWS\ ）或可通过 S3 API 连接到 StorageGRID 系统的任何其他系统。 
+---
+= 通过 S3 API 归档到云
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将归档节点配置为直接连接到 Amazon Web Services （ AWS ）或可通过 S3 API 连接到 StorageGRID 系统的任何其他系统。
+
+[CAUTION]
+====
+已弃用对归档节点的支持(使用S3 API归档到云以及使用TSM中间件归档到磁带)、并将在未来版本中删除。将对象从归档节点移动到外部归档存储系统已被提供更多功能的ILM云存储池所取代。
+
+请参见 link:../ilm/what-cloud-storage-pool-is.html["使用云存储池"]。
+
+====

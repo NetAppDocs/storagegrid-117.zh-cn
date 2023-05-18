@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: 您可以使用管理API专用端点put /privation/bmc为包含BMC的所有设备启用或禁用远程IPMI访问。

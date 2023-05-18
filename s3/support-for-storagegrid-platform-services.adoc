@@ -1,0 +1,63 @@
+---
+permalink: s3/support-for-storagegrid-platform-services.html 
+sidebar: sidebar 
+keywords: platform services, cloudmirror replication, notifications, search integration 
+summary: 通过 StorageGRID 平台服务， StorageGRID 租户帐户可以利用外部服务（例如远程 S3 存储分段，简单通知服务 \ （ SNS ）端点或 Elasticsearch 集群）来扩展网格提供的服务。 
+---
+= 支持 StorageGRID 平台服务
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 StorageGRID 平台服务， StorageGRID 租户帐户可以利用远程 S3 存储分段，简单通知服务（ SNS ）端点或 Elasticsearch 集群等外部服务来扩展网格提供的服务。
+
+下表总结了可用的平台服务以及用于配置这些服务的 S3 API 。
+
+[cols="1a,2a,1a"]
+|===
+| 平台服务 | 目的 | 用于配置服务的 S3 API 
+
+
+ a| 
+CloudMirror 复制
+ a| 
+将对象从源 StorageGRID 存储分段复制到已配置的远程 S3 存储分段。
+ a| 
+放置分段复制(请参见 link:operations-on-buckets.html["对存储分段执行的操作"]）
+
+
+
+ a| 
+通知
+ a| 
+将有关源 StorageGRID 存储分段中事件的通知发送到已配置的简单通知服务（ Simple Notification Service ， SNS ）端点。
+ a| 
+放置存储分段通知(请参见 link:operations-on-buckets.html["对存储分段执行的操作"]）
+
+
+
+ a| 
+搜索集成
+ a| 
+将存储在 StorageGRID 存储分段中的对象的对象元数据发送到已配置的 Elasticsearch 索引。
+ a| 
+link:put-bucket-metadata-notification-configuration-request.html["PUT 存储分段元数据通知配置"]
+
+* 注： * 这是 StorageGRID 自定义 S3 API 。
+
+|===
+网格管理员必须先为租户帐户启用平台服务，然后才能使用这些服务。请参见 link:../admin/index.html["管理 StorageGRID"]。然后，租户管理员必须在租户帐户中创建一个表示远程服务的端点。要配置服务，必须执行此步骤。请参见 link:../tenant/index.html["使用租户帐户"]。
+
+
+
+== 使用平台服务的建议
+
+在使用平台服务之前，您必须了解以下建议：
+
+* NetApp 建议，对于需要进行 CloudMirror 复制，通知和搜索集成的 S3 请求，您允许的活动租户不超过 100 个。如果活动租户超过 100 个，则可能会导致 S3 客户端性能下降。
+* 如果StorageGRID 系统中的S3存储分段同时启用了版本控制和CloudMirror复制、则NetApp建议目标端点也启用S3存储分段版本控制。这样， CloudMirror 复制就可以在端点上生成类似的对象版本。
+* 如果源存储分段启用了 S3 对象锁定，则不支持 CloudMirror 复制。
+* 如果目标存储分段启用了原有合规性，则 CloudMirror 复制将失败并显示 AccessDenied 错误。
+

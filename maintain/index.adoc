@@ -1,0 +1,45 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords: maintain overview, maintenance overview, about maintain, about maintenance 
+summary: 按照以下说明维护 StorageGRID 系统并从故障中恢复。 
+---
+= 恢复和维护：概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+按照以下说明维护 StorageGRID 系统并从故障中恢复。
+
+
+
+== 关于这些说明
+
+这些说明介绍如何应用软件修补程序，恢复网格节点，恢复故障站点，停用网格节点或整个站点，执行网络维护，执行主机级别和中间件维护过程以及执行网格节点过程。
+
+
+NOTE: 在这些说明中， "`Linux` " 是指 Red Hat ® Enterprise Linux ® ， Ubuntu ® ， CentOS 或 Debian ® 部署。使用 https://["NetApp 互操作性表工具"^] 以获取支持的版本列表。
+
+
+
+== 开始之前
+
+* 您对 StorageGRID 系统有着广泛的了解。
+* 您已查看 StorageGRID 系统的拓扑并了解网格配置。
+* 您知道必须严格按照所有说明进行操作，并注意所有警告。
+* 您了解、未介绍的维护过程不受支持或不需要服务项目。
+
+
+
+
+== 设备的维护过程
+
+有关硬件过程、请参见StorageGRID 设备的维护说明。
+
+* link:../sg6100/index.html["维护SGF6112设备"]
+* link:../sg100-1000/index.html["维护SG100和SG1000设备"]
+* link:../sg6000/index.html["维护 SG6000 设备"]
+* link:../sg5700/index.html["维护 SG5700 设备"]
+
