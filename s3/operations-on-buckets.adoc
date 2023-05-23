@@ -17,7 +17,7 @@ summary: 对于每个 S3 租户帐户， StorageGRID 系统最多支持 1 ， 00
 
 有关详细信息，请参见以下内容：
 
-* https://["Amazon Web Services （ AWS ）文档：存储分段限制"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html["Amazon Web Services （ AWS ）文档：存储分段限制"^]
 * link:../admin/configuring-s3-api-endpoint-domain-names.html["配置S3端点域名"]
 
 
@@ -332,7 +332,7 @@ PUT 存储分段复制
  a| 
 此操作将进行配置 link:../tenant/understanding-cloudmirror-replication-service.html["StorageGRID CloudMirror复制"] 使用请求正文中提供的复制配置XML的存储分段。对于 CloudMirror 复制，您应了解以下实施详细信息：
 
-* StorageGRID 仅支持复制配置的 V1 。这意味着、StorageGRID 不支持使用 `Filter` Element中的规则、并遵循V1中有关删除对象版本的约定。有关详细信息，请参见 https://["有关复制配置的 Amazon S3 文档"^]。
+* StorageGRID 仅支持复制配置的 V1 。这意味着、StorageGRID 不支持使用 `Filter` Element中的规则、并遵循V1中有关删除对象版本的约定。有关详细信息，请参见 https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html["有关复制配置的 Amazon S3 文档"^]。
 * 分段复制可以在分版本或未分版本的分段上配置。
 * 您可以在复制配置 XML 的每个规则中指定不同的目标存储分段。一个源存储分段可以复制到多个目标存储分段。
 * 必须将目标分段指定为租户管理器或租户管理 API 中指定的 StorageGRID 端点的 URN 。请参见 link:../tenant/configuring-cloudmirror-replication.html["配置 CloudMirror 复制"]。

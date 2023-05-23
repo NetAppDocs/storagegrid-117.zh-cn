@@ -27,7 +27,7 @@ S3 REST API 的 StorageGRID 实施仅支持有效的 HTTP 日期格式。
 
 == 通用请求标头
 
-StorageGRID 系统支持定义的通用请求标头 https://["Amazon Simple Storage Service API参考：通用请求标头"^]，但有一个例外。
+StorageGRID 系统支持定义的通用请求标头 https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html["Amazon Simple Storage Service API参考：通用请求标头"^]，但有一个例外。
 
 [cols="1a,2a"]
 |===

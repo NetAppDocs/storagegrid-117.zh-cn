@@ -27,7 +27,7 @@ StorageGRID 设备出厂时预安装了 StorageGRID 设备安装程序。如果�
 +
 两个版本中的第二位数字应匹配。例如，如果您的 StorageGRID 系统运行的是 11.* 6* 。 _x_._y_ ，则 StorageGRID 设备安装程序版本应为 3.* 6* 。 _z_ 。
 
-. 如果设备安装了StorageGRID 设备安装程序的低级版本、请转到 https://["NetApp下载：StorageGRID 设备"^]。
+. 如果设备安装了StorageGRID 设备安装程序的低级版本、请转到 https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下载：StorageGRID 设备"^]。
 +
 使用您的 NetApp 帐户的用户名和密码登录。
 

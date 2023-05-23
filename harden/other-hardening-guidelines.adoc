@@ -53,4 +53,4 @@ summary: 除了遵循 StorageGRID 网络和节点的强化准则之外，您还�
 
 == 勒索软件防护
 
-按照中的建议帮助保护对象数据免受勒索软件攻击 https://["利用StorageGRID 防御勒索软件"^]。
+按照中的建议帮助保护对象数据免受勒索软件攻击 https://www.netapp.com/media/69498-tr-4921.pdf["利用StorageGRID 防御勒索软件"^]。

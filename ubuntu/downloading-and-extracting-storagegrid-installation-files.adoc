@@ -14,7 +14,7 @@ summary: 您必须下载 StorageGRID 安装归档并提取所需文件。
 您必须下载 StorageGRID 安装归档并提取所需文件。
 
 .步骤
-. 转至 https://["StorageGRID 的 "NetApp 下载 " 页面"^]。
+. 转至 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["StorageGRID 的 "NetApp 下载 " 页面"^]。
 . 选择用于下载最新版本的按钮，或者从下拉菜单中选择其他版本并选择 * 执行 * 。
 . 使用您的 NetApp 帐户的用户名和密码登录。
 . 如果显示Cauy/MustRead语句，请阅读该语句并选中该复选框。

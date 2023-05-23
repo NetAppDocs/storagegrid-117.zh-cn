@@ -184,4 +184,4 @@ image::../media/sgf6112_one-slot-riser_system-pin.png[用于单插槽提升板�
 .完成后
 如果您不需要对设备执行其他维护步骤、请重新安装设备盖、将设备装回机架、连接电缆并接通电源。
 
-更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://["部件退回和放大器；更换"^] 第页，了解更多信息。
+更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://mysupport.netapp.com/site/info/rma["部件退回和放大器；更换"^] 第页，了解更多信息。

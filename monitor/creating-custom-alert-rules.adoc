@@ -17,8 +17,8 @@ summary: 您可以创建自定义警报规则来定义自己触发警报的条�
 * 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]
 * 您具有管理警报或root访问权限
 * 您熟悉 link:commonly-used-prometheus-metrics.html["常用的 Prometheus 指标"]
-* 您了解 https://["Prometheus 查询的语法"^]
-* 您也可以观看以下视频： https://["视频：在StorageGRID 11.7中使用指标创建自定义警报"^]
+* 您了解 https://prometheus.io/docs/querying/basics/["Prometheus 查询的语法"^]
+* 您也可以观看以下视频： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=61acb7ba-7683-488a-a689-afb7010088f3["视频：在StorageGRID 11.7中使用指标创建自定义警报"^]
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=61acb7ba-7683-488a-a689-afb7010088f3]
 image::../media/video-screenshot-alert-create-custom-117.png[视频：在StorageGRID 11.7中使用指标创建自定义警报]

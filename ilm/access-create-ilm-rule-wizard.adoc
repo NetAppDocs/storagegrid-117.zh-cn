@@ -24,7 +24,7 @@ NOTE: 如果要为策略创建默认ILM规则、请按照执行操作 link:creat
 * 您已配置计划使用的任何云存储池。请参见 link:creating-cloud-storage-pool.html["创建云存储池"]。
 * 您熟悉 link:data-protection-options-for-ingest.html["加热选项"]。
 * 如果您需要创建一个用于 S3 对象锁定的合规规则，您将熟悉 link:requirements-for-s3-object-lock.html["S3 对象锁定的要求"]。
-* 您也可以观看以下视频： https://["视频：StorageGRID 11.7中的信息生命周期管理规则"^]。
+* 您也可以观看以下视频： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6baa2e69-95b7-4bcf-a0ff-afbd0092231c["视频：StorageGRID 11.7中的信息生命周期管理规则"^]。
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6baa2e69-95b7-4bcf-a0ff-afbd0092231c]
 image::../media/video-screenshot-ilm-rules-117.png[视频：StorageGRID 11.7中的信息生命周期管理规则]

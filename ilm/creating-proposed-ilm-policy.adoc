@@ -42,7 +42,7 @@ NOTE: 如果 link:enabling-s3-object-lock-globally.html["已启用全局S3对象
 
 --
 ====
-* 您也可以观看以下视频： https://["视频：StorageGRID 11.7中的信息生命周期管理策略"^]
+* 您也可以观看以下视频： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0009ebe1-3665-4cdc-a101-afbd009a0466["视频：StorageGRID 11.7中的信息生命周期管理策略"^]
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0009ebe1-3665-4cdc-a101-afbd009a0466]
 image::../media/video-screenshot-ilm-policies-117.png[视频：StorageGRID 11.7中的信息生命周期管理策略]

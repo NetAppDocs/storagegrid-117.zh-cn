@@ -23,7 +23,7 @@ summary: 您可能需要使用 StorageGRID S3 REST API 来管理使用原有合�
 
 * link:use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象锁定"]
 * link:../ilm/index.html["使用 ILM 管理对象"]
-* https://["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]
 
 
 已弃用的合规性请求：

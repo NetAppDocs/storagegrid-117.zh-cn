@@ -56,6 +56,6 @@ CAUTION: 如果用于保护ONTAP 和StorageGRID 之间连接的证书到期、Fa
 * 使用公共签名的CA证书。如果您使用的是由CA签名的证书、则可以使用网格管理API自动轮换证书。这样、您就可以无干扰地替换即将到期的证书。
 * 如果您已生成自签名StorageGRID 证书、并且该证书即将过期、则必须在现有证书过期之前手动替换StorageGRID 和ONTAP 中的证书。如果自签名证书已过期、请在ONTAP 中关闭证书验证以防止访问丢失。
 +
-请参见 https://["NetApp知识库：如何在现有ONTAP FabricPool 部署上配置新的StorageGRID 自签名服务器证书"^] 有关说明，请参见。
+请参见 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_a_new_StorageGRID_self-signed_server_certificate_on_an_existing_ONTAP_FabricPool_deployment["NetApp知识库：如何在现有ONTAP FabricPool 部署上配置新的StorageGRID 自签名服务器证书"^] 有关说明，请参见。
 
 

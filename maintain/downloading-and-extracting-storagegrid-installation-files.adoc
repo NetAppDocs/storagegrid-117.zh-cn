@@ -19,7 +19,7 @@ summary: 在恢复 StorageGRID 网格节点之前，您必须下载软件并提�
 . 确定当前安装的软件版本。从网格管理器顶部，选择帮助图标并选择 * 关于 * 。
 . 转到 StorageGRID 的 "NetApp 下载 " 页面。
 +
-https://["NetApp 下载： StorageGRID"^]
+https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp 下载： StorageGRID"^]
 
 . 选择网格上当前运行的 StorageGRID 版本。
 +

@@ -110,4 +110,4 @@ IMPORTANT: 您提供的加密密钥永远不会存储。如果丢失加密密钥
 
 
 .相关信息
-https://["Amazon S3 开发人员指南：使用客户提供的加密密钥（ SSI-C ）使用服务器端加密保护数据"^]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html["Amazon S3 开发人员指南：使用客户提供的加密密钥（ SSI-C ）使用服务器端加密保护数据"^]

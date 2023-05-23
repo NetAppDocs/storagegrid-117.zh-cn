@@ -15,6 +15,6 @@ summary: 完成安装过程后，归档节点无法正常运行。在 StorageGRI
 
 在准备 TSM 服务器以便与 StorageGRID 系统中的归档节点集成时，请根据需要参考以下 IBM 文档：
 
-* http://["《 IBM 磁带设备驱动程序安装和用户指南》"^]
-* http://["《 IBM 磁带设备驱动程序编程参考》"^]
+* http://www.ibm.com/support/docview.wss?rs=577&uid=ssg1S7002972["《 IBM 磁带设备驱动程序安装和用户指南》"^]
+* http://www.ibm.com/support/docview.wss?rs=577&uid=ssg1S7003032["《 IBM 磁带设备驱动程序编程参考》"^]
 

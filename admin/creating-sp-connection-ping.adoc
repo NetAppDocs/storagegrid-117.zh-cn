@@ -19,7 +19,7 @@ summary: 您可以使用 PingFederate 为系统中的每个管理节点创建服
 * 您拥有系统中每个管理节点的 * SP 连接 ID* 。您可以在 StorageGRID 单点登录页面上的管理节点详细信息表中找到这些值。
 * 您已为系统中的每个管理节点下载 * SAML 元数据 * 。
 * 您在 PingFederate 服务器中创建 SP 连接的经验。
-* 您拥有https://["《管理员参考指南》"^] PingFederate 服务器。PingFederate 文档提供了详细的分步说明和说明。
+* 您拥有https://docs.pingidentity.com/bundle/pingfederate-103/page/kfj1564002962494.html["《管理员参考指南》"^] PingFederate 服务器。PingFederate 文档提供了详细的分步说明和说明。
 * 您具有 PingFederate 服务器的管理员权限。
 
 

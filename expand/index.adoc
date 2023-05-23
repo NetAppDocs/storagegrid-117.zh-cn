@@ -32,6 +32,6 @@ summary: 按照以下说明扩展 StorageGRID 系统的容量或功能，而不�
 添加节点的步骤还取决于您是添加 StorageGRID 设备还是添加运行 VMware 或 Linux 的主机。
 
 
-NOTE: "`Linux` " 是指 Red Hat ® Enterprise Linux ® ， Ubuntu ® ， CentOS 或 Debian ® 部署。使用 https://["NetApp 互操作性表工具（ IMT ）"^] 以获取支持的版本列表。
+NOTE: "`Linux` " 是指 Red Hat ® Enterprise Linux ® ， Ubuntu ® ， CentOS 或 Debian ® 部署。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^] 以获取支持的版本列表。
 
 image::../media/expansion_workflow.png[显示扩展过程概述的流程图]

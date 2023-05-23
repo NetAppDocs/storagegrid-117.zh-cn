@@ -51,7 +51,7 @@ Active IQ 是一名基于云的数字顾问，利用 NetApp 客户群的预测�
 
 如果要在NetApp 支持站点 上使用Active IQ 信息板和功能、则必须启用AutoSupport。
 
-https://["Active IQ Digital Advisor 文档"^]
+https://docs.netapp.com/us-en/active-iq/index.html["Active IQ Digital Advisor 文档"^]
 
 
 
@@ -98,4 +98,4 @@ StorageGRID AutoSupport 不会报告硬件问题、例如DIMM或主机接口卡(
 
 
 .相关信息
-https://["NetApp 支持"^]
+https://mysupport.netapp.com/site/global/dashboard["NetApp 支持"^]

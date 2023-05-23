@@ -227,7 +227,7 @@ NOTE: 如果使用 SSE 或 SSI-C 对对象进行加密，则会忽略任何分�
 
 IMPORTANT: 作为一般最佳实践、请始终将这些标题包含在中 `CanonicalHeaders` 为了确保它们已通过验证；但是、如果排除这些标头、StorageGRID 不会返回错误。
 
-有关详细信息，请参见 https://["授权标头的签名计算：传输单个区块中的有效负载(AWS签名版本4)"^]。
+有关详细信息，请参见 https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html["授权标头的签名计算：传输单个区块中的有效负载(AWS签名版本4)"^]。
 
 .相关信息
 link:../ilm/index.html["使用 ILM 管理对象"]

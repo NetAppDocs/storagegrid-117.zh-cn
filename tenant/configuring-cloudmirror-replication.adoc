@@ -31,7 +31,7 @@ NOTE: CloudMirror复制与跨网格复制功能有重要的相似之处和不同
 
 NOTE: 启用了 S3 对象锁定的源或目标分段不支持复制。
 
-有关存储分段复制以及如何配置的常规信息、请参见 https://["Amazon Simple Storage Service (S3)文档：复制对象"^]。有关StorageGRID 如何实施GetBucketReplication、DeleteBucketReplication和PutBucketReplication的信息、请参见 link:../s3/operations-on-buckets.html["对存储分段执行的操作"]。
+有关存储分段复制以及如何配置的常规信息、请参见 https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html["Amazon Simple Storage Service (S3)文档：复制对象"^]。有关StorageGRID 如何实施GetBucketReplication、DeleteBucketReplication和PutBucketReplication的信息、请参见 link:../s3/operations-on-buckets.html["对存储分段执行的操作"]。
 
 如果在包含对象的存储分段上启用CloudMirror复制、则会复制添加到该存储分段的新对象、但不会复制该存储分段中的现有对象。您必须更新现有对象才能触发复制。
 

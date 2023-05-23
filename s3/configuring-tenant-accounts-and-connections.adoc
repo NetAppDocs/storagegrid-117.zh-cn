@@ -99,7 +99,7 @@ NOTE: 每个负载平衡器端点都有自己的证书、并且可以对每个�
 您可以使用 Amazon Web Services 命令行界面（ AWS 命令行界面）测试与系统的连接，并验证是否可以向系统读取和写入对象。
 
 .开始之前
-* 您已从下载并安装 AWS 命令行界面 https://["aws.amazon.com/cli"^]。
+* 您已从下载并安装 AWS 命令行界面 https://aws.amazon.com/cli["aws.amazon.com/cli"^]。
 * 您已在 StorageGRID 系统中创建 S3 租户帐户。
 * 您已在租户帐户中创建访问密钥。
 

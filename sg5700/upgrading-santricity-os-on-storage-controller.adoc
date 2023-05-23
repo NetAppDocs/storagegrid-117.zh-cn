@@ -13,9 +13,9 @@ summary: 为了确保存储控制器能够以最佳方式运行，您必须升�
 [role="lead"]
 为了确保存储控制器能够以最佳方式运行，您必须升级到适用于您的 StorageGRID 设备的最新 SANtricity 操作系统维护版本。
 
-请参见 https://["NetApp 互操作性表工具（ IMT ）"^] 以确定应使用的版本。
+请参见 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^] 以确定应使用的版本。
 
-从下载新的SANtricity OS软件文件 https://["NetApp下载：StorageGRID 设备"^]。
+从下载新的SANtricity OS软件文件 https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下载：StorageGRID 设备"^]。
 
 根据当前安装的 SANtricity OS 版本，使用以下过程之一：
 

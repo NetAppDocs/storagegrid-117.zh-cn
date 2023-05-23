@@ -24,7 +24,7 @@ summary: 如果 S3 租户帐户在保存对象数据时需要遵守法规要求�
 网格管理员必须启用全局 S3 对象锁定设置，以允许租户用户创建启用了 S3 对象锁定的新分段。启用此设置后、将无法禁用它。
 
 
-NOTE: 已弃用全局合规性设置。如果使用早期版本的StorageGRID 启用此设置、则会自动启用S3对象锁定设置。您可以继续使用StorageGRID 管理现有合规存储分段的设置、但不能创建新的合规存储分段。有关详细信息，请参见 https://["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]。
+NOTE: 已弃用全局合规性设置。如果使用早期版本的StorageGRID 启用此设置、则会自动启用S3对象锁定设置。您可以继续使用StorageGRID 管理现有合规存储分段的设置、但不能创建新的合规存储分段。有关详细信息，请参见 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]。
 
 .步骤
 . 选择 * 配置 * > * 系统 * > * S3 对象锁定 * 。

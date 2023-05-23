@@ -19,7 +19,7 @@ summary: 在配置外部密钥管理服务器（ KMS\ ）之前，您必须了�
 
 StorageGRID 支持 KMIP 1.4 版。
 
-http://["密钥管理互操作性协议规范 1.4 版"^]
+http://docs.oasis-open.org/kmip/spec/v1.4/os/kmip-spec-v1.4-os.html["密钥管理互操作性协议规范 1.4 版"^]
 
 设备节点与配置的 KMS 之间的通信使用安全 TLS 连接。StorageGRID 支持 KMIP 使用以下 TLS v1.2 密码：
 

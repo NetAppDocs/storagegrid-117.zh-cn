@@ -13,7 +13,7 @@ summary: 您可以通过 StorageGRID 管理节点而不是存储设备管理端�
 [role="lead"]
 您可以通过 StorageGRID 管理节点而不是存储设备管理端口向技术支持发送 E 系列 SANtricity System Manager AutoSupport 消息。
 
-请参见 https://["E系列硬件AutoSupport"^] 有关将AutoSupport 与E系列设备结合使用的详细信息、请参见。
+请参见 https://docs.netapp.com/us-en/e-series-santricity/sm-support/autosupport-feature-overview.html["E系列硬件AutoSupport"^] 有关将AutoSupport 与E系列设备结合使用的详细信息、请参见。
 
 .开始之前
 * 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
@@ -34,7 +34,7 @@ E 系列 AutoSupport 消息包含存储硬件的详细信息，比 StorageGRID �
 您可以在SANtricity 系统管理器中配置一个特殊的代理服务器地址、以便在不使用设备管理端口的情况下通过StorageGRID 管理节点传输AutoSupport 消息。以这种方式传输的AutoSupport 消息由发送 link:../admin/what-admin-node-is.html["首选发件人管理节点"]他们使用任何 link:../admin/configuring-admin-proxy-settings.html["管理代理设置"] 已在网格管理器中配置。
 
 
-NOTE: 此操作步骤 仅用于为 E 系列 AutoSupport 消息配置 StorageGRID 代理服务器。有关 E 系列 AutoSupport 配置的更多详细信息，请参见 https://["NetApp E 系列和 SANtricity 文档"^]。
+NOTE: 此操作步骤 仅用于为 E 系列 AutoSupport 消息配置 StorageGRID 代理服务器。有关 E 系列 AutoSupport 配置的更多详细信息，请参见 https://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E 系列和 SANtricity 文档"^]。
 
 .步骤
 . 在网格管理器中，选择 * 节点 * 。

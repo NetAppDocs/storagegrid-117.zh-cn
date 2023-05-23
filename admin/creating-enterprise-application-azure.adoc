@@ -31,9 +31,9 @@ NOTE: 您必须为 StorageGRID 系统中的每个管理节点创建一个企业�
 == 访问 Azure AD
 
 .步骤
-. 登录到 https://["Azure 门户"^]。
-. 导航到 https://["Azure Active Directory"^]。
-. 选择 ... https://["企业级应用程序"^]。
+. 登录到 https://portal.azure.com["Azure 门户"^]。
+. 导航到 https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade["Azure Active Directory"^]。
+. 选择 ... https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/Overview/menuId/["企业级应用程序"^]。
 
 
 

@@ -59,7 +59,7 @@ Azure 酒店
 
 
 
-NOTE: Windows Server 2016 应使用 https://["KB3201845 更新"^]或更高版本。
+NOTE: Windows Server 2016 应使用 https://support.microsoft.com/en-us/help/3201845/cumulative-update-for-windows-10-version-1607-and-windows-server-2016["KB3201845 更新"^]或更高版本。
 
 * AD FS 3.0 ，随 Windows Server 2012 R2 更新或更高版本提供。
 

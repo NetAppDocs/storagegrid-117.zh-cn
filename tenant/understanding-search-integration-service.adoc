@@ -35,7 +35,7 @@ NOTE: 对于标记和用户元数据， StorageGRID 会将日期和数字作为�
 * 对存储分段中已有的所有对象执行操作，此操作将触发元数据通知消息以发送到目标。
 
 
-StorageGRID 搜索集成服务支持将 Elasticsearch 集群作为目标。与其他平台服务一样，目标也会在端点中指定，而此端点的 URN 会在该服务的配置 XML 中使用。使用 https://["NetApp 互操作性表工具"^] 确定支持的 Elasticsearch 版本。
+StorageGRID 搜索集成服务支持将 Elasticsearch 集群作为目标。与其他平台服务一样，目标也会在端点中指定，而此端点的 URN 会在该服务的配置 XML 中使用。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^] 确定支持的 Elasticsearch 版本。
 
 .相关信息
 link:configuration-xml-for-search-configuration.html["用于搜索集成的配置 XML"]

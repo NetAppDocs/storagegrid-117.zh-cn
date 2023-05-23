@@ -50,7 +50,7 @@ summary: '如果您希望S3存储分段和该存储分段中的对象可供其�
 </CORSConfiguration>
 ----
 +
-有关 CORS 配置 XML 的详细信息，请参见 http://["Amazon Web Services （ AWS ）文档：《 Amazon Simple Storage Service 开发人员指南》"^]。
+有关 CORS 配置 XML 的详细信息，请参见 http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html["Amazon Web Services （ AWS ）文档：《 Amazon Simple Storage Service 开发人员指南》"^]。
 
 . 从信息板中选择*查看存储分段*，或选择*存储(S3)*>*存储分段*。
 . 从表中选择分段名称。

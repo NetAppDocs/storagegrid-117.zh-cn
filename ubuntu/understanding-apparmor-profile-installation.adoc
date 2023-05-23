@@ -36,7 +36,7 @@ sudo apparmor_parser -R /etc/apparmor.d/<profile.name>
 sudo ln -s /etc/apparmor.d/bin.ping /etc/apparmor.d/disable/
 sudo apparmor_parser -R /etc/apparmor.d/bin.ping
 ----
-* 完全禁用 AppArmor 。对于 Ubuntu 9.10 或更高版本，请按照 Ubuntu 联机社区中的说明进行操作： https://["禁用 AppArmor"^]。在较新的Ubuntu版本上、可能无法完全禁用AppArmor。
+* 完全禁用 AppArmor 。对于 Ubuntu 9.10 或更高版本，请按照 Ubuntu 联机社区中的说明进行操作： https://help.ubuntu.com/community/AppArmor#Disable_AppArmor_framework["禁用 AppArmor"^]。在较新的Ubuntu版本上、可能无法完全禁用AppArmor。
 +
 禁用了 StorageGRID 后，日志文件中将不会显示任何指示已启用该功能的条目。
 

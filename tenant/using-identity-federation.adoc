@@ -214,7 +214,7 @@ CAUTION: 对于非ActiveDirectory或Azure身份源、StorageGRID 不会自动阻
 
 === memberOf 和 fint 覆盖
 
-应启用成员和精简覆盖。有关详细信息，请参见中有关反向组成员资格维护的说明http://["OpenLDAP 文档：版本 2.4 管理员指南"^]。
+应启用成员和精简覆盖。有关详细信息，请参见中有关反向组成员资格维护的说明http://www.openldap.org/doc/admin24/index.html["OpenLDAP 文档：版本 2.4 管理员指南"^]。
 
 
 
@@ -230,4 +230,4 @@ CAUTION: 对于非ActiveDirectory或Azure身份源、StorageGRID 不会自动阻
 
 此外，请确保已为用户名帮助中提及的字段编制索引，以获得最佳性能。
 
-请参见中有关反向组成员资格维护的信息http://["OpenLDAP 文档：版本 2.4 管理员指南"^]。
+请参见中有关反向组成员资格维护的信息http://www.openldap.org/doc/admin24/index.html["OpenLDAP 文档：版本 2.4 管理员指南"^]。

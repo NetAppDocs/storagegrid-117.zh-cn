@@ -117,7 +117,7 @@ StorageGRID 外部的对象加密
 
 外部加密方法可以更严格地控制加密算法和密钥。可以与列出的其他方法结合使用。
 
-https://["Amazon Simple Storage Service —开发人员指南：使用客户端加密保护数据"^]
+https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html["Amazon Simple Storage Service —开发人员指南：使用客户端加密保护数据"^]
 
 |===
 

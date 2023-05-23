@@ -57,4 +57,4 @@ StorageGRID 文档
 
 |===
 .相关信息
-https://["NetApp 互操作性表工具"^]
+https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^]

@@ -104,7 +104,7 @@ StorageGRID 系统使用四种类型的网格节点：
 * link:../ubuntu/index.html["安装 Ubuntu 或 Debian"]
 
 
-使用 https://["NetApp 互操作性表工具（ IMT ）"^] 以获取支持的版本列表。
+使用 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^] 以获取支持的版本列表。
 
 
 
@@ -132,7 +132,7 @@ StorageGRID 硬件设备经过专门设计，可在 StorageGRID 系统中使用�
 
 有关详细信息，请参见以下内容：
 
-* https://["NetApp Hardware Universe"^]
+* https://hwu.netapp.com["NetApp Hardware Universe"^]
 * link:../installconfig/hardware-description-sg6100.html["SGF6112存储设备"]
 * link:../installconfig/hardware-description-sg100-and-1000.html["SG100 和 SG1000 服务设备"]
 * link:../installconfig/hardware-description-sg6000.html["SG6000 存储设备"]

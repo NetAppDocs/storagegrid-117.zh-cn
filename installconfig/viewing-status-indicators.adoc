@@ -275,7 +275,7 @@ image::../media/seven_segment_display_codes_for_e2800.gif[E2800 的七段显示�
 
 
 .相关信息
-* https://["NetApp 支持"^]
+* https://mysupport.netapp.com/site/global/dashboard["NetApp 支持"^]
 * link:../sg6000/powering-on-sg6000-cn-controller-and-verifying-operation.html["打开 SG6000-CN 控制器的电源并验证其运行情况"]
 
 
@@ -662,8 +662,8 @@ EP
 
 
 .相关信息
-* https://["NetApp 支持"^]
-* https://["《 E5700 和 E2800 系统监控指南》"^]
+* https://mysupport.netapp.com/site/global/dashboard["NetApp 支持"^]
+* https://library.netapp.com/ecmdocs/ECMLP2588751/html/frameset.html["《 E5700 和 E2800 系统监控指南》"^]
 
 
 --

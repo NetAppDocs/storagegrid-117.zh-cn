@@ -14,7 +14,7 @@ summary: 您必须将 StorageGRID 配置为每个外部密钥管理服务器或 
 您必须将 StorageGRID 配置为每个外部密钥管理服务器或 KMS 集群的客户端，然后才能将 KMS 添加到 StorageGRID 。
 
 .关于此任务
-以下说明适用于Thles CipherTrust Manager。有关支持的版本列表、请使用 https://["NetApp 互操作性表工具（ IMT ）"^]。
+以下说明适用于Thles CipherTrust Manager。有关支持的版本列表、请使用 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^]。
 
 .步骤
 . 在 KMS 软件中，为计划使用的每个 KMS 或 KMS 集群创建一个 StorageGRID 客户端。

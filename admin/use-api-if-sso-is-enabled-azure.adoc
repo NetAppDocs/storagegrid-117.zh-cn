@@ -42,7 +42,7 @@ summary: 如果您已配置并启用单点登录（ SSO ），并且使用 Azure
 .步骤
 . 安装所需的依赖关系，如下所示：
 +
-.. 安装 Node.js （请参见 https://["https://nodejs.org/en/download/"^]）。
+.. 安装 Node.js （请参见 https://nodejs.org/en/download/["https://nodejs.org/en/download/"^]）。
 .. 安装所需的 Node.js 模块（ puppeteer 和 jsdom ）：
 +
 `npm install -g <module>`

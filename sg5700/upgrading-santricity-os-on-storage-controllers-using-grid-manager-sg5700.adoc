@@ -14,11 +14,11 @@ summary: 对于当前使用 SANtricity OS 08.42.20.00 （ 11.42\ ）或更高版
 对于当前使用 SANtricity OS 08.42.20.00 （ 11.42 ）或更高版本的存储控制器，您必须使用网格管理器应用升级。
 
 .开始之前
-* 您已查阅 https://["NetApp 互操作性表工具（ IMT ）"^] 确认用于升级的SANtricity 操作系统版本与您的设备兼容。
+* 您已查阅 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^] 确认用于升级的SANtricity 操作系统版本与您的设备兼容。
 * 您拥有 link:../admin/admin-group-permissions.html["维护或root访问权限"]。
 * 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
 * 您具有配置密码短语。
-* 您有权访问 https://["NetApp下载：StorageGRID 设备"^]。
+* 您有权访问 https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下载：StorageGRID 设备"^]。
 
 
 .关于此任务
@@ -36,7 +36,7 @@ NOTE: 此操作步骤 会自动将 NVSRAM 升级到与 SANtricity 操作系统�
 IMPORTANT: 在开始此操作步骤 之前，请确保应用最新的StorageGRID 修补程序。请参见 link:../maintain/storagegrid-hotfix-procedure.html["StorageGRID 热修补程序操作步骤"] 了解详细信息。
 
 .步骤
-. [[download-SANtricity-OS]]从下载新的SANtricity OS软件文件 https://["NetApp下载：StorageGRID 设备"^]。
+. [[download-SANtricity-OS]]从下载新的SANtricity OS软件文件 https://mysupport.netapp.com/site/products/all/details/storagegrid-appliance/downloads-tab["NetApp下载：StorageGRID 设备"^]。
 +
 请务必为存储控制器选择 SANtricity 操作系统版本。
 
@@ -195,6 +195,6 @@ NOTE: 对于状态为 "Needs Attenance" 的任何节点，请使用维护模式�
 
 
 .相关信息
-https://["NetApp 互操作性表工具"^]
+https://mysupport.netapp.com/matrix["NetApp 互操作性表工具"^]
 
 link:upgrading-santricity-os-on-e2800-controller-using-maintenance-mode.html["使用维护模式升级 E2800 控制器上的 SANtricity 操作系统"]

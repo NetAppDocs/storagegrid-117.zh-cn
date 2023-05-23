@@ -22,7 +22,7 @@ summary: 如果在安装 StorageGRID 系统时出现任何问题，您可以访�
 .相关信息
 要了解如何访问日志文件、请参见 link:../monitor/logs-files-reference.html["日志文件参考"]。
 
-如果您需要其他帮助、请联系 https://["NetApp 支持"^]。
+如果您需要其他帮助、请联系 https://mysupport.netapp.com/site/global/dashboard["NetApp 支持"^]。
 
 
 

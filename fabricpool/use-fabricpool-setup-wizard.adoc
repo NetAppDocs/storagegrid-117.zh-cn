@@ -94,7 +94,7 @@ FabricPool 向导将指导您完成创建一个StorageGRID 云层的过程、此
 NetApp建议不要将一个云层附加到多个集群中的本地层。
 
 
-NOTE: 有关将StorageGRID 与NetApp MetroCluster ™和FabricPool 镜像结合使用的最佳实践，请参阅 https://["TR-4598：《ONTAP 中的FabricPool 最佳实践》"^]。
+NOTE: 有关将StorageGRID 与NetApp MetroCluster ™和FabricPool 镜像结合使用的最佳实践，请参阅 https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598：《ONTAP 中的FabricPool 最佳实践》"^]。
 
 
 

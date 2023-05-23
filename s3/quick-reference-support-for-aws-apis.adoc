@@ -42,12 +42,12 @@ NOTE: 要查看每个操作的AWS文档、请选择标题中的链接。
 
 .相关信息
 * link:../s3/s3-rest-api-supported-operations-and-limitations.html["S3 REST API实施详细信息"]
-* https://["Amazon Simple Storage Service API参考：通用请求标头"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html["Amazon Simple Storage Service API参考：通用请求标头"^]
 
 
 
 
-== https://["AbortMultipartUpload"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html["AbortMultipartUpload"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上此附加URI查询参数：
@@ -63,7 +63,7 @@ link:operations-for-multipart-uploads.html["多部分上传操作"]
 
 
 
-== https://["CompleteMultipartUpload"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html["CompleteMultipartUpload"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上此附加URI查询参数：
@@ -85,7 +85,7 @@ link:complete-multipart-upload.html["完成多部件上传"]
 
 
 
-== https://["CopyObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html["CopyObject"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上以下附加标头：
@@ -120,7 +120,7 @@ link:put-object-copy.html["放置对象副本"]
 
 
 
-== https://["CreateBucket"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html["CreateBucket"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上以下附加标头：
@@ -136,7 +136,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["CreateMultipartUpload"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html["CreateMultipartUpload"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上以下附加标头：
@@ -166,7 +166,7 @@ link:initiate-multipart-upload.html["启动多部件上传"]
 
 
 
-== https://["DeleteBucket"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html["DeleteBucket"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -176,20 +176,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["DeleteBucketCors"^]
-
-.URI查询参数和请求标头
-StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
-
-.请求正文
-无
-
-.StorageGRID 文档
-link:operations-on-buckets.html["对存储分段执行的操作"]
-
-
-
-== https://["DeleteBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html["DeleteBucketCors"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -202,7 +189,20 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["DeleteBucketLifecycle"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html["DeleteBucketEncryption"^]
+
+.URI查询参数和请求标头
+StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
+
+.请求正文
+无
+
+.StorageGRID 文档
+link:operations-on-buckets.html["对存储分段执行的操作"]
+
+
+
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html["DeleteBucketLifecycle"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -217,7 +217,7 @@ StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
 
 
 
-== https://["DeleteBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html["DeleteBucketPolicy"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -230,7 +230,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["DeleteBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html["DeleteBucketReplication"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -243,7 +243,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["DeleteBucketTbaging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html["DeleteBucketTbaging"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -256,7 +256,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["DeleteObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html["DeleteObject"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上此附加请求标头：
@@ -272,7 +272,7 @@ link:operations-on-objects.html["对对象执行的操作"]
 
 
 
-== https://["DeleteObjects"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html["DeleteObjects"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上此附加请求标头：
@@ -288,7 +288,7 @@ link:operations-on-objects.html["对对象执行的操作"] (删除多个对象)
 
 
 
-== https://["DeleteObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html["DeleteObjectTagging"^]
 
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
 
@@ -300,7 +300,7 @@ link:operations-on-objects.html["对对象执行的操作"]
 
 
 
-== https://["GetBucketAcl"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html["GetBucketAcl"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -313,7 +313,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketCors"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html["GetBucketCors"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -326,7 +326,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html["GetBucketEncryption"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -339,7 +339,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketLifecycleConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html["GetBucketLifecycleConfiguration"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -354,7 +354,7 @@ StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
 
 
 
-== https://["GetBucketLocation"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html["GetBucketLocation"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -367,7 +367,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketNotizationConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html["GetBucketNotizationConfiguration"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -380,7 +380,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"] (获取存储�
 
 
 
-== https://["GetBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html["GetBucketPolicy"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -393,7 +393,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html["GetBucketReplication"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -406,7 +406,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketTaging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html["GetBucketTaging"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -419,7 +419,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetBucketVersioning"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html["GetBucketVersioning"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -432,7 +432,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["GetObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html["GetObject"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加URI查询参数：
@@ -466,7 +466,7 @@ link:get-object.html["获取对象"]
 
 
 
-== https://["GetObjectAcl"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html["GetObjectAcl"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -479,7 +479,7 @@ link:operations-on-objects.html["对对象执行的操作"]
 
 
 
-== https://["GetObjectLegalHold"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html["GetObjectLegalHold"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -492,7 +492,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象�
 
 
 
-== https://["GetObjectLockConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html["GetObjectLockConfiguration"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -505,7 +505,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象�
 
 
 
-== https://["GetObject保留"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html["GetObject保留"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -518,7 +518,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象�
 
 
 
-== https://["GetObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html["GetObjectTagging"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -531,7 +531,7 @@ link:operations-on-objects.html["对对象执行的操作"]
 
 
 
-== https://["HeadBucket"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html["HeadBucket"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -544,7 +544,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["HeadObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html["HeadObject"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上以下附加标头：
@@ -567,7 +567,7 @@ link:head-object.html["HEAD 对象"]
 
 
 
-== https://["List桶"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html["List桶"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -580,7 +580,7 @@ link:operations-on-the-service.html["服务上的操作"]
 
 
 
-== https://["ListMultipartUploads"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html["ListMultipartUploads"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加参数：
@@ -601,7 +601,7 @@ link:list-multipart-uploads.html["列出多部件上传"]
 
 
 
-== https://["ListObjects"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html["ListObjects"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加参数：
@@ -621,7 +621,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"] (GET分段)
 
 
 
-== https://["ListObjectsV2"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html["ListObjectsV2"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加参数：
@@ -643,7 +643,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"] (GET分段)
 
 
 
-== https://["ListObjectVersies"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html["ListObjectVersies"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加参数：
@@ -664,7 +664,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"] (获取存储�
 
 
 
-== https://["ListParts"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html["ListParts"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加参数：
@@ -682,7 +682,7 @@ link:list-multipart-uploads.html["列出多部件上传"]
 
 
 
-== https://["PutBucketCors"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html["PutBucketCors"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -695,7 +695,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["PutBucketEncryption"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html["PutBucketEncryption"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -714,7 +714,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["PutBucketLifecycleConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html["PutBucketLifecycleConfiguration"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -751,7 +751,7 @@ StorageGRID 支持以下请求正文XML标记：
 
 
 
-== https://["PutBucketNotizationConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html["PutBucketNotizationConfiguration"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -778,7 +778,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"] (放置存储�
 
 
 
-== https://["PutBucketPolicy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html["PutBucketPolicy"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -788,7 +788,7 @@ StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
 
 
 
-== https://["PutBucketReplication"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html["PutBucketReplication"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -808,7 +808,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["PutBucketTaging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html["PutBucketTaging"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -821,7 +821,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["PutBucketVersioning"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html["PutBucketVersioning"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -838,7 +838,7 @@ link:operations-on-buckets.html["对存储分段执行的操作"]
 
 
 
-== https://["PutObject"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html["PutObject"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上以下附加标头：
@@ -868,7 +868,7 @@ link:put-object.html["PUT 对象"]
 
 
 
-== https://["PutObjectLegalHold"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html["PutObjectLegalHold"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -881,7 +881,7 @@ link:use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象锁定"]
 
 
 
-== https://["PutObjectLockConfiguration"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html["PutObjectLockConfiguration"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -894,7 +894,7 @@ link:use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象锁定"]
 
 
 
-== https://["PutObject保留"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html["PutObject保留"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、加上以下附加标题：
@@ -910,7 +910,7 @@ link:use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象锁定"]
 
 
 
-== https://["PutObjectTagging"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html["PutObjectTagging"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -923,7 +923,7 @@ link:operations-on-objects.html["对对象执行的操作"]
 
 
 
-== https://["SelectObjectContent"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["SelectObjectContent"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
@@ -937,7 +937,7 @@ StorageGRID 支持所有 <<common-params,通用参数和标头>> 。
 
 
 
-== https://["上传部件"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html["上传部件"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加URI查询参数：
@@ -962,7 +962,7 @@ link:upload-part.html["上传部件"]
 
 
 
-== https://["上传PartCopy"^]
+== https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html["上传PartCopy"^]
 
 .URI查询参数和请求标头
 StorageGRID 支持所有 <<common-params,通用参数和标头>> 对于此请求、以及以下附加URI查询参数：

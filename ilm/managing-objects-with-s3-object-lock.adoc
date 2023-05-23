@@ -88,7 +88,7 @@ NOTE: 如果某个对象处于合法保留状态、则无论其保留模式如�
 S3 对象锁定取代了早期 StorageGRID 版本中提供的合规性功能。由于 S3 对象锁定功能符合 Amazon S3 要求，因此它会弃用专有的 StorageGRID 合规性功能，现在称为 "`原有合规性 " 。`
 
 
-NOTE: 已弃用全局合规性设置。如果使用早期版本的StorageGRID 启用此设置、则会自动启用S3对象锁定设置。您可以继续使用StorageGRID 管理现有合规存储分段的设置、但不能创建新的合规存储分段。有关详细信息，请参见 https://["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]。
+NOTE: 已弃用全局合规性设置。如果使用早期版本的StorageGRID 启用此设置、则会自动启用S3对象锁定设置。您可以继续使用StorageGRID 管理现有合规存储分段的设置、但不能创建新的合规存储分段。有关详细信息，请参见 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]。
 
 如果您在先前版本的 StorageGRID 中使用了原有的合规性功能，请参见下表，了解它与 StorageGRID 中的 S3 对象锁定功能的比较情况。
 

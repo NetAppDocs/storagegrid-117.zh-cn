@@ -27,7 +27,7 @@ summary: 此版本已删除或弃用某些功能。查看这些项目，了解�
 
 SG5600设备已停止支持。有关硬件更新选项、请联系您的NetApp销售代表。
 
-如果需要对SG5600硬件执行维护过程、请使用 https://["StorageGRID 11.6说明"^]。
+如果需要对SG5600硬件执行维护过程、请使用 https://docs.netapp.com/us-en/storagegrid-116/sg5600/maintaining-sg5600-appliance.html["StorageGRID 11.6说明"^]。
 
 
 

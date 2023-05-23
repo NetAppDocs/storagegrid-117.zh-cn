@@ -78,4 +78,4 @@ IMPORTANT: 如果已配置任何卷或先前已安装 StorageGRID ，则更改 R
 --
 ====
 .相关信息
-http://["NetApp E 系列系统文档站点"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E 系列系统文档站点"^]

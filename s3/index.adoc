@@ -44,9 +44,9 @@ HTTP
 
 |===
 .相关信息
-https://["IETF RFC 2616 ：超文本传输协议（ HTTP/1.1 ）"^]
+https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616 ：超文本传输协议（ HTTP/1.1 ）"^]
 
-http://["Amazon Web Services （ AWS ）文档： Amazon Simple Storage Service API 参考"^]
+http://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html["Amazon Web Services （ AWS ）文档： Amazon Simple Storage Service API 参考"^]
 
 
 

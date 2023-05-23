@@ -20,7 +20,7 @@ link:../s3/use-s3-api-for-s3-object-lock.html["使用S3 REST API配置S3对象�
 
 link:../ilm/index.html["使用 ILM 管理对象"]
 
-https://["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp 知识库：如何在 StorageGRID 11.5 中管理原有的合规存储分段"^]
 
 要完成此操作，您拥有 S3 ： PutBucketCompliance 权限或帐户 root 。
 

@@ -24,7 +24,7 @@ StorageGRID 负载平衡器服务安装在所有管理节点和所有网关节�
 将客户端流量转发到存储节点时，每个节点上的负载平衡器服务会独立运行。通过加权过程，负载平衡器服务会将更多请求路由到 CPU 可用性更高的存储节点。
 
 
-NOTE: 虽然建议使用 StorageGRID 负载平衡器服务来平衡负载，但您可能希望集成第三方负载平衡器。有关信息，请联系您的 NetApp 客户代表或参阅 https://["TR-4626 ： StorageGRID 第三方和全局负载平衡器"^]。
+NOTE: 虽然建议使用 StorageGRID 负载平衡器服务来平衡负载，但您可能希望集成第三方负载平衡器。有关信息，请联系您的 NetApp 客户代表或参阅 https://www.netapp.com/pdf.html?item=/media/17068-tr4626pdf.pdf["TR-4626 ： StorageGRID 第三方和全局负载平衡器"^]。
 
 
 

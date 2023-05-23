@@ -48,7 +48,7 @@ image::../media/sg6060_rack_retaining_screws.png[SG6060 机架固定螺钉]
 . 可选：如果要从机柜或机架中完全卸下控制器，请按照导轨套件的说明从导轨中卸下控制器。
 
 
-更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://["部件退回和放大器；更换"^] 第页，了解更多信息。
+更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://mysupport.netapp.com/site/info/rma["部件退回和放大器；更换"^] 第页，了解更多信息。
 
 .相关信息
 link:removing-sg6000-cn-controller-cover.html["拆下 SG6000-CN 控制器盖板"]

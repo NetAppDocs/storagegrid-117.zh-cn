@@ -74,7 +74,7 @@ StorageGRID 文档
  a| 
 适用于您的平台的最新文档
  a| 
-有关支持的版本，请参见 https://["互操作性表工具（ IMT ）"^]。
+有关支持的版本，请参见 https://imt.netapp.com/matrix/#welcome["互操作性表工具（ IMT ）"^]。
 
 |===
 
@@ -88,7 +88,7 @@ StorageGRID 文档
 您必须使用网格上当前运行的 StorageGRID 版本执行扩展操作。
 
 .步骤
-. 转至 https://["NetApp 下载： StorageGRID"^]。
+. 转至 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp 下载： StorageGRID"^]。
 . 选择网格上当前运行的 StorageGRID 版本。
 . 使用您的 NetApp 帐户的用户名和密码登录。
 . 阅读最终用户许可协议，选中复选框，然后选择*接受并继续*。

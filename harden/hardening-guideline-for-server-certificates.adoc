@@ -34,7 +34,7 @@ NOTE: StorageGRID 单独管理用于负载平衡器端点的证书。要配置�
 
 使用自定义服务器证书时，请遵循以下准则：
 
-* 证书应具有 `_subjectAltName_` 与StorageGRID 的DNS条目匹配。有关详细信息，请参见中的第 4.2.1.6 节 " `SSubject Alternative Name ，` " https://["RFC 5280 ： PKIX 证书和 CRL 配置文件"^]。
+* 证书应具有 `_subjectAltName_` 与StorageGRID 的DNS条目匹配。有关详细信息，请参见中的第 4.2.1.6 节 " `SSubject Alternative Name ，` " https://tools.ietf.org/html/rfc5280#section-4.2.1.6["RFC 5280 ： PKIX 证书和 CRL 配置文件"^]。
 * 尽可能避免使用通配符证书。此准则的一个例外是S3虚拟托管模式端点的证书、如果事先不知道分段名称、则需要使用通配符。
 * 如果必须在证书中使用通配符，则应执行其他步骤以降低风险。使用通配符模式、例如 `*.s3.example.com`，并且不要使用 `s3.example.com` 其他应用程序的后缀。此模式也适用于路径模式S3访问、例如 `dc1-s1.s3.example.com/mybucket`。
 * 将证书到期时间设置为较短（例如 2 个月），并使用网格管理 API 自动轮换证书。这对于通配符证书尤其重要。

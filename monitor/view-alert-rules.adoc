@@ -18,7 +18,7 @@ summary: 警报规则用于定义触发特定警报的条件。StorageGRID 包�
 .开始之前
 * 您将使用登录到网格管理器 link:../admin/web-browser-requirements.html["支持的 Web 浏览器"]。
 * 您具有管理警报或root访问权限。
-* 您也可以观看以下视频： https://["视频：StorageGRID 11.7的警报概述"^]
+* 您也可以观看以下视频： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b["视频：StorageGRID 11.7的警报概述"^]
 +
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b]
 image::../media/video-screenshot-alert-overview-117.png[视频：StorageGRID 11.7的警报概述]

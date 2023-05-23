@@ -11,7 +11,7 @@ summary: 您必须在所有网格主机上安装 Red Hat Enterprise Linux 或 Ce
 
 
 [role="lead"]
-您必须在所有网格主机上安装 Linux 。使用 https://["NetApp 互操作性表工具"^] 以获取支持的版本列表。
+您必须在所有网格主机上安装 Linux 。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^] 以获取支持的版本列表。
 
 
 IMPORTANT: 确保您的操作系统已升级到Linux内核4.15或更高版本。

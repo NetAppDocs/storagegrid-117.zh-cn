@@ -173,7 +173,7 @@ arn:aws:iam::account_id:federated-group/group_name
 * 您可以使用星号（ * ）作为通配符，以匹配对象密钥中的零个或多个字符。
 * 可以在对象密钥中指定的国际字符应使用 JSON UTF-8 或 JSON \u 转义序列进行编码。不支持百分比编码。
 +
-https://["RFC 2141 URN 语法"^]
+https://www.ietf.org/rfc/rfc2141.txt["RFC 2141 URN 语法"^]
 
 +
 PUT 存储分段策略操作的 HTTP 请求正文必须使用 charset=UTF-8 进行编码。

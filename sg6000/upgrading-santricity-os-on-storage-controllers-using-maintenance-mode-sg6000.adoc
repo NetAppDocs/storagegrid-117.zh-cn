@@ -14,7 +14,7 @@ summary: 对于当前使用 SANtricity 操作系统版本早于 08.42.20.00 的�
 对于当前使用的 SANtricity 操作系统版本早于 08.42.20.00 （ 11.42 ）的存储控制器，您必须使用维护模式操作步骤 来应用升级。
 
 .开始之前
-* 您已查阅 https://["NetApp 互操作性表工具（ IMT ）"^] 确认用于升级的SANtricity 操作系统版本与您的设备兼容。
+* 您已查阅 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^] 确认用于升级的SANtricity 操作系统版本与您的设备兼容。
 * 如果StorageGRID 设备在StorageGRID 系统中运行、则已将SG6000-CN控制器置于中 link:../commonhardware/placing-appliance-into-maintenance-mode.html["维护模式"]。
 +
 
@@ -59,6 +59,6 @@ image::../media/nodes_menu.png[设备节点已重新加入网格]
 
 
 .相关信息
-https://["NetApp 互操作性表工具"^]
+https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^]
 
 link:upgrading-santricity-os-on-storage-controllers-using-grid-manager-sg6000.html["使用网格管理器升级存储控制器上的 SANtricity 操作系统"]

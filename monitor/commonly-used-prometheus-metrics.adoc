@@ -15,7 +15,7 @@ summary: 请参阅此常用Prometheus指标列表、以更好地了解默认警�
 
 您也可以 <<obtain-all-metrics,获取所有指标的完整列表>>。
 
-有关Prometheus查询语法的详细信息、请参见 https://["正在查询Prometheus"^]。
+有关Prometheus查询语法的详细信息、请参见 https://prometheus.io/docs/prometheus/latest/querying/basics/["正在查询Prometheus"^]。
 
 
 

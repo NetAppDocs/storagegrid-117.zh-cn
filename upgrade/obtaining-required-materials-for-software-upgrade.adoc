@@ -56,8 +56,8 @@ Linux RPM或Deb归档文件
 StorageGRID 文档
  a| 
 * link:../release-notes/index.html["发行说明"] 对于StorageGRID 11.7 (需要登录)。在开始升级之前，请务必仔细阅读这些内容。
-* https://["StorageGRID 软件升级解决方案指南"^] 对于要升级到的主要版本(需要登录)
-* 其他 https://["StorageGRID 11.7文档"^]，根据需要。
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide["StorageGRID 软件升级解决方案指南"^] 对于要升级到的主要版本(需要登录)
+* 其他 https://docs.netapp.com/us-en/storagegrid-117/index.html["StorageGRID 11.7文档"^]，根据需要。
 
 
 |===

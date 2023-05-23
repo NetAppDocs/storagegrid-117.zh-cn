@@ -31,4 +31,4 @@ StorageGRID 系统在 OpenStack Swift API 中支持大多数操作。在将 Swif
 StorageGRID 系统可为 OpenStack Swift 对象存储 API v1 定义的受支持操作实施所有通用标头。
 
 .相关信息
-http://["OpenStack ：对象存储 API"^]
+http://docs.openstack.org/developer/swift/api/object_api_v1_overview.html["OpenStack ：对象存储 API"^]

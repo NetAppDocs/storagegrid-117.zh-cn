@@ -264,5 +264,5 @@ NOTE: 如果指定 `x-amz-object-lock-mode`、您还必须指定 `x-amz-object-l
 .相关信息
 * link:../ilm/managing-objects-with-s3-object-lock.html["使用 S3 对象锁定管理对象"]
 * link:../tenant/using-s3-object-lock.html["使用S3对象锁定保留对象"]
-* https://["《 Amazon Simple Storage Service 用户指南：使用 S3 对象锁定》"^]
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html["《 Amazon Simple Storage Service 用户指南：使用 S3 对象锁定》"^]
 

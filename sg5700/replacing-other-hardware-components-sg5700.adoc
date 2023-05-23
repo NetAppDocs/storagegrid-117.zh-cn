@@ -84,4 +84,4 @@ Drive drawer
 .相关信息
 link:replacing-e2800-controller.html["更换 E2800 控制器"]
 
-http://["NetApp E 系列系统文档站点"^]
+http://mysupport.netapp.com/info/web/ECMP1658252.html["NetApp E 系列系统文档站点"^]

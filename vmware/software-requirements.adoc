@@ -40,6 +40,6 @@ CAUTION: 您必须在每个 ESX 主机上正确配置网络时间协议（ NTP �
 
 在部署 StorageGRID 网格节点之前，您必须安装和配置 VMware vSphere 和 vCenter 。
 
-有关受支持的VMware vSphere虚拟机管理程序和VMware vCenter Server软件版本、请参见 https://["NetApp 互操作性表工具"^]。
+有关受支持的VMware vSphere虚拟机管理程序和VMware vCenter Server软件版本、请参见 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^]。
 
 有关安装这些 VMware 产品所需的步骤，请参见 VMware 文档。

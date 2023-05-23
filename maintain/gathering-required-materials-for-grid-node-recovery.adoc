@@ -72,7 +72,7 @@ StorageGRID 安装归档
  a| 
 请访问平台供应商的网站以获取相关文档。
 
-有关您的平台当前支持的版本，请参见 https://["NetApp 互操作性表工具"^]。
+有关您的平台当前支持的版本，请参见 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具"^]。
 
 |===
 
@@ -86,7 +86,7 @@ StorageGRID 安装归档
 
 .步骤
 . 确定当前安装的软件版本。从网格管理器顶部，选择帮助图标并选择 * 关于 * 。
-. 转至 https://["StorageGRID 的 "NetApp 下载 " 页面"^]。
+. 转至 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["StorageGRID 的 "NetApp 下载 " 页面"^]。
 . 选择网格上当前运行的 StorageGRID 版本。
 +
 StorageGRID 软件版本采用以下格式： `11.x.y`。

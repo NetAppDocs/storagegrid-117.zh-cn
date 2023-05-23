@@ -117,7 +117,7 @@ image:../media/icon_alert_green_checkmark.png["图标警报绿色复选标记"]
 
 *已解决警报*：您可以搜索和查看已解决警报的历史记录。
 
-您也可以观看以下视频： https://["视频：StorageGRID 11.7的警报概述"^]
+您也可以观看以下视频： https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b["视频：StorageGRID 11.7的警报概述"^]
 
 [link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18df5a3d-bf19-4a9e-8922-afbd009b141b]
 image::../media/video-screenshot-alert-overview-117.png[视频：StorageGRID 11.7的警报概述]

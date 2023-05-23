@@ -30,7 +30,7 @@ IMPORTANT: 将ESD腕带的腕带端缠绕在手腕上、并将扣具端固定到
 
 
 
-更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://["部件退回和放大器；更换"^] 第页，了解更多信息。
+更换部件后，按照套件随附的 RMA 说明将故障部件退回 NetApp 。请参见 https://mysupport.netapp.com/site/info/rma["部件退回和放大器；更换"^] 第页，了解更多信息。
 
 .相关信息
 link:replace-nic-in-sgf6112.html["更换NIC"]

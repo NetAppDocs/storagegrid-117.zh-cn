@@ -20,7 +20,7 @@ summary: 按照以下说明维护StorageGRID 系统。
 这些说明介绍了所有节点通用的过程、例如、如何应用软件修补程序、恢复网格节点、恢复故障站点、停用网格节点或整个站点、执行网络维护、执行主机级和中间件维护过程以及执行网格节点过程。
 
 
-NOTE: 在这些说明中， "`Linux` " 是指 Red Hat ® Enterprise Linux ® ， Ubuntu ® ， CentOS 或 Debian ® 部署。使用 https://["NetApp 互操作性表工具（ IMT ）"^] 以获取支持的版本列表。
+NOTE: 在这些说明中， "`Linux` " 是指 Red Hat ® Enterprise Linux ® ， Ubuntu ® ， CentOS 或 Debian ® 部署。使用 https://imt.netapp.com/matrix/#welcome["NetApp 互操作性表工具（ IMT ）"^] 以获取支持的版本列表。
 
 
 

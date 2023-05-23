@@ -41,7 +41,7 @@ TIP: 如果未显示更新路径，则您的浏览器可能无法访问NetApp �
 . 对于*Select files*步骤，查看更新路径。
 . 从“下载文件”部分，选择每个*Download*链接，从NetApp 支持站点 下载所需的文件。
 +
-如果未显示更新路径、请转到 https://["NetApp 下载： StorageGRID"^] 确定是否有新版本或修补程序可用并下载所需的文件。
+如果未显示更新路径、请转到 https://mysupport.netapp.com/site/products/all/details/storagegrid/downloads-tab["NetApp 下载： StorageGRID"^] 确定是否有新版本或修补程序可用并下载所需的文件。
 
 +
 
@@ -74,7 +74,7 @@ NOTE: 如果您需要在所有Linux主机上下载并安装RPM或DEB软件包、
 IMPORTANT: 恢复包文件必须受到保护，因为它包含可用于从 StorageGRID 系统获取数据的加密密钥和密码。
 
 . 选择*运行预检*，并等待预检完成。
-. 查看每个报告的预检的详细信息、并解决任何报告的错误。请参见 https://["StorageGRID 软件升级解决方案指南"^] 适用于StorageGRID 11.7版。
+. 查看每个报告的预检的详细信息、并解决任何报告的错误。请参见 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/StorageGRID_software_upgrade_resolution_guide["StorageGRID 软件升级解决方案指南"^] 适用于StorageGRID 11.7版。
 +
 在升级系统之前、您必须解决所有预检_errors_。但是、您不需要在升级之前解决precheck _WARNIS_。
 

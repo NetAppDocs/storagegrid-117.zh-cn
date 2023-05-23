@@ -13,7 +13,7 @@ summary: 您可以使用 S3 SelectObjectContent 请求根据简单的 SQL 语句
 [role="lead"]
 您可以使用 S3 SelectObjectContent 请求根据简单的 SQL 语句筛选 S3 对象的内容。
 
-有关详细信息，请参见 https://["适用于 SelectObjectContent 的 AWS 文档"^]。
+有关详细信息，请参见 https://docs.aws.amazon.com/AmazonS3/latest/API/API_SelectObjectContent.html["适用于 SelectObjectContent 的 AWS 文档"^]。
 
 .开始之前
 * 此租户帐户具有 S3 Select 权限。
