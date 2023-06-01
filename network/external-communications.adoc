@@ -38,7 +38,7 @@ summary: 客户端需要与网格节点进行通信才能载入和检索内容�
 下表显示了用于向节点进行流量的端口。
 
 
-NOTE: 此列表不包括可能配置为的端口 link:../admin/configuring-load-balancer-endpoints.html["负载平衡器端点"]。
+NOTE: 此列表不包括可能配置为的端口 link:../admin/configuring-load-balancer-endpoints.html["负载平衡器端点"] 或用于 link:../monitor/configuring-syslog-server.html["系统日志服务器"]。
 
 [cols="1a,1a,1a,1a,1a,4a"]
 |===
