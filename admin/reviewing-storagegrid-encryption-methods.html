@@ -15005,7 +15005,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 19:09:21 +0000">05/23/2023</time>
+    <time datetime="2023-06-14 16:11:47 +0000">06/14/2023</time>
     
   
 
@@ -15045,7 +15045,19 @@
 <p>您 <a href="kms-configuring.html">"配置密钥管理服务器"</a> 对于StorageGRID 站点、请执行以下操作：和 <a href="../installconfig/optional-enabling-node-encryption.html">"为此设备启用节点加密"</a>。然后，设备节点将连接到 KMS 以请求密钥加密密钥（ Key Encryption Key ， KEK ）。此密钥用于对每个卷上的数据加密密钥（ DEK ）进行加密和解密。</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>安装期间启用了 * 节点加密 * 的设备节点。设备上的所有数据均可防止物理丢失或从数据中心删除。可与某些 StorageGRID 存储和服务设备结合使用。</p>
+<p>安装期间启用了 * 节点加密 * 的设备节点。设备上的所有数据均可防止物理丢失或从数据中心删除。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/note.svg" alt="注">
+</td>
+<td class="content">
+只有存储节点和服务设备才支持使用KMS管理加密密钥。
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
