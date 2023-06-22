@@ -3318,6 +3318,8 @@
   
 
 
+
+
         </li>
       </ul>
     
@@ -10573,7 +10575,14 @@
       class=" "
     ><a class="na-navbar-padding" href="/zh-cn/storagegrid-117/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html">
         其他最佳实践
-      </a></li></ul></li></ul></li></ul></li><li 
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="从StorageGRID中删除FabricPool数据"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/zh-cn/storagegrid-117/fabricpool/remove-fabricpool-data.html">
+        从StorageGRID中删除FabricPool数据
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="使用 StorageGRID"
       data-li-level="1" 
@@ -15005,7 +15014,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-19 14:11:50 +0000">05/19/2023</time>
+    <time datetime="2023-06-22 22:05:31 +0000">06/22/2023</time>
     
   
 
@@ -15029,6 +15038,18 @@
 </td>
 <td class="content">
 以下 ILM 规则和策略仅为示例。配置 ILM 规则的方法有多种。在激活新策略之前，请模拟建议的策略，以确认它将按预期工作，以防止内容丢失。要了解更多信息，请参见 <a href="../ilm/index.html">"使用 ILM 管理对象"</a>。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="注意">
+</td>
+<td class="content">
+为避免数据丢失、请勿使用将过期的ILM规则或删除FabricPool云层数据。将保留期限设置为*永久*、以确保StorageGRID ILM不会删除FabricPool对象。
 </td>
 </tr>
 </table>
@@ -15125,7 +15146,19 @@
 <p>从第0天存储到永久存储</p>
 </div>
 <div class="paragraph">
-<p>在丹佛使用2+1 EC方案通过纠删编码存储对象。</p>
+<p>在丹佛使用2+1 EC方案通过纠删编码存储对象、并将这些对象永久保留在StorageGRID中。</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/storagegrid-117/images/caution.svg" alt="注意">
+</td>
+<td class="content">
+为避免数据丢失、请勿使用将过期的ILM规则或删除FabricPool云层数据。
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -15233,7 +15266,7 @@
 <p>所有其他分段中的所有对象都将被复制。将创建两个副本并将其放置在两个不同的存储节点上。</p>
 </li>
 <li>
-<p>经过删除的副本和复制的副本将保留在StorageGRID 中、直到在ONTAP 中删除为止。StorageGRID ILM 不会删除这些项目。</p>
+<p>这些副本将永久保留在StorageGRID中。StorageGRID ILM不会删除这些对象。</p>
 </li>
 </ul>
 </div>
