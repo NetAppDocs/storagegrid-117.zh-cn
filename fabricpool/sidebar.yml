@@ -41,3 +41,5 @@ entries:
     url: "/fabricpool/best-practices-ilm.html"
   - title: 其他最佳实践
     url: "/fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html"
+- title: 从StorageGRID中删除FabricPool数据
+  url: "/fabricpool/remove-fabricpool-data.html"
