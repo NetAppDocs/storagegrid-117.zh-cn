@@ -15,12 +15,19 @@ SGF6112、SG6000或服务设备上的底板管理控制器(BMC)用户界面可�
 
 在安装设备时、请使用本节中的以下过程配置BMC：
 
-* 更改 BMC 接口的根密码
-* 设置 BMC 管理端口的 IP 地址
-* 访问 BMC 界面
-* 配置SNMP设置
-* 设置电子邮件通知和警报
+* link:../installconfig/changing-root-password-for-bmc-interface.html["更改 BMC 接口的根密码"]
+* link:../installconfig/setting-ip-address-for-bmc-management-port.html["设置 BMC 管理端口的 IP 地址"]
+* link:../installconfig/accessing-bmc-interface.html["访问 BMC 界面"]
+* link:../installconfig/configuring-snmp-settings-for-bmc.html["配置SNMP设置"]
+* link:../installconfig/setting-up-email-notifications-for-alerts.html["为BMC警报设置电子邮件通知"]
 
 
+[NOTE]
+====
+如果设备已安装到网格中且正在运行StorageGRID软件、请使用以下过程：
 
-NOTE: 如果此设备已安装到网格中且正在运行StorageGRID 软件、请参见以下过程、了解BMC配置的替代机制。
+* link:../commonhardware/placing-appliance-into-maintenance-mode.html["将设备置于维护模式"] 以访问StorageGRID设备安装程序。
+* 请参见 link:../installconfig/setting-ip-address-for-bmc-management-port.html["设置 BMC 管理端口的 IP 地址"] 有关使用StorageGRID设备安装程序访问BMC界面的信息。
+
+
+====

@@ -617,17 +617,17 @@ link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-
 
 
  a| 
-interfaces_target_nnnn
+interface_target_nnnnnn
  a| 
 O
  a| 
 要添加到此节点的额外接口的名称和可选问题描述 。您可以向每个节点添加多个额外接口。
 
-对于 _nnnn_ ，请为要添加的每个 interfaces_target 条目指定一个唯一编号。
+对于_nnnn_、请为要添加的每个interface_target条目指定一个唯一编号。
 
 对于此值，请指定裸机主机上物理接口的名称。然后，也可以添加一个逗号并提供接口的问题描述 ，该接口将显示在 "VLAN interfaces" 页面和 "HA Groups" 页面上。
 
-例如： `INTERFACES_TARGET_01=ens256, Trunk`
+例如： `INTERFACE_TARGET_0001=ens256, Trunk`
 
 如果添加中继接口，则必须在 StorageGRID 中配置 VLAN 接口。如果添加访问接口、则可以将该接口直接添加到HA组；无需配置VLAN接口。
 

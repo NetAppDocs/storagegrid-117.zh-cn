@@ -42,10 +42,10 @@ IMPORTANT: 在软件升级、恢复操作步骤 或扩展操作步骤 处于活�
 
 . 向文件中添加一个条目，以指定要添加到节点的每个额外接口的名称以及问题描述 （可选）。请使用此格式。
 +
-`INTERFACES_TARGET_nnnn=_value_`
+`INTERFACE_TARGET_nnnn=_value_`
 
 +
-对于_nnnn_、为每个指定一个唯一编号 `INTERFACES_TARGET` 要添加的条目。
+对于_nnnn_、为每个指定一个唯一编号 `INTERFACE_TARGET` 要添加的条目。
 
 +
 对于 _value_ ，指定裸机主机上物理接口的名称。然后，也可以添加一个逗号并提供接口的问题描述 ，该接口将显示在 "VLAN interfaces" 页面和 "HA Groups" 页面上。
@@ -54,7 +54,7 @@ IMPORTANT: 在软件升级、恢复操作步骤 或扩展操作步骤 处于活�
 例如：
 
 +
-`INTERFACES_TARGET_01=ens256, Trunk`
+`INTERFACE_TARGET_0001=ens256, Trunk`
 
 +
 
