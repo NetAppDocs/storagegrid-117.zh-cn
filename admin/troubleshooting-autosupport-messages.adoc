@@ -18,6 +18,9 @@ summary: 如果尝试发送 AutoSupport 消息失败， StorageGRID 系统将根
 image::../media/autosupport_results_tab.png[AutoSupport 消息发送失败]
 
 
+NOTE: 如果您配置了代理服务器以将AutoSupport消息转发到NetApp、则应这样做 link:configuring-admin-proxy-settings.html["验证代理服务器配置设置是否正确"]。
+
+
 
 == 每周 AutoSupport 消息失败
 

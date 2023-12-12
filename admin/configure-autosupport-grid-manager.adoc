@@ -18,6 +18,9 @@ summary: 您可以在首次安装 StorageGRID 时启用 AutoSupport 功能和各
 * 您具有 root 访问权限或其他网格配置权限。
 * 如果您要使用HTTPS发送AutoSupport 消息、则表示您已直接或提供了对主管理节点的出站Internet访问 link:configuring-admin-proxy-settings.html["使用代理服务器"] (不需要入站连接)。
 * 如果在"HTTPS"页面上选择了StorageGRID AutoSupport 、则表示您已将代理服务器配置为以HTTPS形式转发AutoSupport 消息。NetApp的AutoSupport 服务器将拒绝使用HTTP发送的消息。
++
+link:configuring-admin-proxy-settings.html["了解如何配置管理代理设置"]。
+
 * 如果要使用 SMTP 作为 AutoSupport 消息的协议，则表示已配置 SMTP 邮件服务器。警报电子邮件通知使用相同的邮件服务器配置（旧系统）。
 
 
