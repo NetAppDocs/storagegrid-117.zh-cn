@@ -21,6 +21,7 @@ summary: 如果您计划使用云存储池将对象移出 StorageGRID 系统，�
 * 请勿对Swift客户端已导出的对象使用云存储池。Swift 不支持后对象还原请求，因此 StorageGRID 将无法检索已过渡到 S3 Glacier 存储或 Azure Blob 存储归档层的任何 Swift 对象。发出 Swift GET 对象请求以检索这些对象将失败（ 403 已禁用）。
 * 不支持将云存储池与 FabricPool 结合使用，因为从云存储池目标检索对象会增加延迟。
 * 无法将启用了S3对象锁定的对象放置在云存储池中。
+* 如果云存储池的目标S3存储分段已启用S3对象锁定、则尝试配置存储分段复制(PutBucketReplication)将失败、并显示AccessDenied错误。
 
 
 
