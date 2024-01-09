@@ -86,6 +86,9 @@ HDD02或HDD2指上部插槽中的驱动器，HDD03或HDD3指下部插槽中的�
 +
 ... 要还原BMC配置以使用静态IP、网络掩码和网关、请输入以下命令：
 +
+`*run-host-command ipmitool lan set 1 ipsrc static*`
+
++
 `*run-host-command ipmitool lan set 1 ipaddr _Appliance_IP_*`
 
 +
