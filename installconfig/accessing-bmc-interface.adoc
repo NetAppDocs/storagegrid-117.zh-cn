@@ -61,9 +61,10 @@ image::../media/sg100_bmc_management_port.png[SG100 BMC管理端口]
 
 NOTE: 如果尚未配置 `BMC_Port_IP`，按照中的说明进行操作 link:configuring-bmc-interface.html["配置BMC接口"]。如果由于硬件问题而无法遵循此操作步骤 ，并且尚未配置 BMC IP 地址，则仍可访问此 BMC 。默认情况下， BMC 使用 DHCP 获取 IP 地址。如果在BMC网络上启用了DHCP、则网络管理员可以提供分配给BMC MAC的IP地址、该地址印在设备正面的标签上。如果BMC网络上未启用DHCP、BMC将在几分钟后不会响应、并为自己分配默认静态IP `192.168.0.120`。您可能需要将膝上型计算机直接连接到BMC端口、并更改网络设置以为膝上型计算机分配IP、例如 `192.168.0.200/24`，以便浏览到 `192.168.0.120`。
 
-. 使用您在时设置的密码输入 root 用户名和密码 link:changing-root-password-for-bmc-interface.html["已更改默认根密码"]：
+. 使用您在时设置的密码输入管理员或root用户名和密码 link:changing-root-password-for-bmc-interface.html["已更改默认根密码"]：
 +
-image::../media/bmc_signin_page.gif[BMC 登录页面]
+
+NOTE: 默认用户取决于您安装StorageGRID设备的时间。对于新安装，默认用户为*admin*；对于旧安装，默认用户为*root*。
 
 . 选择 * 登录 * 。
 +

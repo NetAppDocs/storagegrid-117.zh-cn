@@ -15,7 +15,7 @@ SGF6112、SG6000或服务设备上的底板管理控制器(BMC)用户界面可�
 
 在安装设备时、请使用本节中的以下过程配置BMC：
 
-* link:../installconfig/changing-root-password-for-bmc-interface.html["更改 BMC 接口的根密码"]
+* link:../installconfig/changing-root-password-for-bmc-interface.html["更改BMC界面的管理员或root密码"]
 * link:../installconfig/setting-ip-address-for-bmc-management-port.html["设置 BMC 管理端口的 IP 地址"]
 * link:../installconfig/accessing-bmc-interface.html["访问 BMC 界面"]
 * link:../installconfig/configuring-snmp-settings-for-bmc.html["配置SNMP设置"]
