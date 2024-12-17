@@ -39,7 +39,7 @@ image::../media/dashboard_health_panel_license_status.png[信息板运行状况�
 ** 许可证结束日期。*不适用*表示永久许可证。
 ** 支持服务合同结束日期
 +
-此日期是从当前许可证文件中读取的、如果您在获取许可证文件后延长或续订了支持服务合同、则此日期可能已过时。要更新此值、请参见 link:updating-storagegrid-license-information.html["更新 StorageGRID 许可证信息"]。您还可以使用Active IQ 查看实际合同结束日期。
+此日期是从当前许可证文件中读取的、如果您在获取许可证文件后延长或续订了支持服务合同、则此日期可能已过时。要更新此值，请参见link:updating-storagegrid-license-information.html["更新 StorageGRID 许可证信息"]。您还可以使用Active IQ数字顾问(也称为数字顾问)查看实际合同结束日期。
 
 ** 许可证文本文件的内容
 +
