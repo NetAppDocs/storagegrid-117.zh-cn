@@ -283,6 +283,8 @@ entries:
       url: "/admin/what-storage-volume-watermarks-are.html"
   - title: 管理对象元数据存储
     url: "/admin/managing-object-metadata-storage.html"
+  - title: 增加元数据保留空间设置
+    url: "/admin/increasing-metadata-reserved-space-setting.html"
   - title: 压缩存储的对象
     url: "/admin/configuring-stored-object-compression.html"
   - title: 存储节点配置设置
